@@ -1,50 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | Your Name</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio – Pastel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-rose-50 text-gray-800">
 
-<!-- HEADER -->
-<header>
-    <div class="logo">Your Logo</div>
-
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="resume.html">Resume</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="contact.html">Contact</a>
+<!-- NAVBAR -->
+<header class="bg-white shadow-sm sticky top-0 z-40">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="#hero" class="text-2xl font-bold">YourName</a>
+    <nav class="hidden md:flex gap-6 items-center text-sm">
+      <a href="#about" class="hover:text-rose-400">About</a>
+      <a href="#portfolio" class="hover:text-rose-400">Portfolio</a>
+      <a href="#services" class="hover:text-rose-400">Services</a>
+      <a href="#contact" class="hover:text-rose-400">Contact</a>
+      <a href="#" class="px-4 py-2 border rounded-md text-sm">Resume</a>
     </nav>
-
-    <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
+    <div class="md:hidden">
+      <a href="#portfolio" class="text-sm">Menu</a>
     </div>
+  </div>
 </header>
 
-<div class="mobile-nav">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="resume.html">Resume</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="contact.html">Contact</a>
-</div>
+<!-- HERO -->
+<section id="hero" class="pt-12 pb-20">
+  <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <div>
+      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">Designer & Developer
+        <span class="block text-rose-400">Crafting soft & aesthetic experiences</span>
+      </h1>
+      <p class="mt-6 text-gray-600 max-w-xl">A short intro describing your personality and mission. Soft pastel aesthetic included.</p>
 
-<!-- HERO SECTION -->
-<section class="hero fade-in">
-    <h1>Your Name Here</h1>
-    <p>Your tagline goes here…</p>
-    <button class="btn">View My Work</button>
+      <div class="mt-8 flex gap-4">
+        <a href="#portfolio" class="px-6 py-3 bg-rose-300 text-white rounded-md shadow">View Work</a>
+        <a href="#contact" class="px-6 py-3 border rounded-md">Hire Me</a>
+      </div>
+    </div>
+
+    <div class="relative">
+      <div class="w-full h-72 md:h-96 rounded-xl overflow-hidden shadow-lg">
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d" class="w-full h-full object-cover" />
+      </div>
+    </div>
+  </div>
 </section>
 
-<button id="topBtn">↑</button>
+<!-- ABOUT -->
+<section id="about" class="py-16">
+  <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div>
+      <h2 class="text-2xl font-bold">About</h2>
+      <p class="mt-4 text-gray-600">Introduce your skills, passion, and background.</p>
+    </div>
 
-<script src="script.js"></script>
+    <div class="md:col-span-2">
+      <h3 class="text-xl font-semibold">Skills</h3>
+      <div class="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div class="bg-white p-3 rounded-lg shadow-sm">UI/UX</div>
+        <div class="bg-white p-3 rounded-lg shadow-sm">HTML</div>
+        <div class="bg-white p-3 rounded-lg shadow-sm">CSS</div>
+        <div class="bg-white p-3 rounded-lg shadow-sm">Figma</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="py-16 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-2xl font-bold">Services</h2>
+
+    <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="p-6 bg-rose-50 rounded-lg shadow-sm">
+        <h4 class="font-semibold">UI Design</h4>
+        <p class="mt-2 text-sm text-gray-600">Soft, clean, aesthetic visual design.</p>
+      </div>
+      <div class="p-6 bg-rose-50 rounded-lg shadow-sm">
+        <h4 class="font-semibold">Web Dev</h4>
+        <p class="mt-2 text-sm text-gray-600">Modern responsive websites.</p>
+      </div>
+      <div class="p-6 bg-rose-50 rounded-lg shadow-sm">
+        <h4 class="font-semibold">Branding</h4>
+        <p class="mt-2 text-sm text-gray-600">Pastel color branding & moodboards.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio" class="py-16">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-2xl font-bold">Portfolio</h2>
+
+    <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+        <img src="https://images.unsplash.com/photo-150" class="h-40 w-full object-cover" />
+        <div class="p-4">
+          <h4 class="font-semibold">Project 1</h4>
+          <p class="text-sm text-gray-600 mt-2">Short project description.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-16 bg-white">
+  <div class="max-w-4xl mx-auto px-6">
+    <h2 class="text-2xl font-bold">Contact</h2>
+
+    <form class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+      <input class="p-3 rounded-md border" placeholder="Your Name" />
+      <input class="p-3 rounded-md border" placeholder="Your Email" />
+      <textarea class="p-3 rounded-md border md:col-span-2" rows="6" placeholder="Message"></textarea>
+      <div class="md:col-span-2 text-right">
+        <button class="px-6 py-3 bg-rose-300 text-white rounded-md">Send</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-rose-50 py-6 text-center text-sm text-gray-600">
+  © 2025 YourName. All Rights Reserved.
+</footer>
+
 </body>
 </html>
-

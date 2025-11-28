@@ -1,153 +1,213 @@
+<!-- index.html (Home) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio – Ain Suriani</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    /* Soft professional pastel theme */
-    :root {
-      --soft-bg: #f9f7ff;
-      --soft-accent: #cabdff;
-      --soft-accent-2: #a997ff;
-      --text-main: #3a3a3c;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .animate-fadeIn { animation: fadeIn 0.8s ease-in-out; }
-</style>
-  <script src="https://unpkg.com/framer-motion/dist/framer-motion.umd.js"></script>
+  <title>Home | Ain Suriani</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="motion-safe:animate-fadeIn" class="bg-[var(--soft-bg)] text-[var(--text-main)]">
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">Ain Suriani</a>
+    <ul>
+      <li><a href="about.html">About</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-<!-- NAVBAR -->
-<header class="bg-white shadow-sm sticky top-0 z-40">
-  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-    <a href="#hero" class="text-2xl font-bold tracking-wide">Ain Suriani</a>
-    <nav class="hidden md:flex gap-6 items-center text-sm font-medium">
-      <a href="#about" class="hover:text-[var(--soft-accent-2)]">About</a>
-      <a href="#portfolio" class="hover:text-[var(--soft-accent-2)]">Portfolio</a>
-      <a href="#research" class="hover:text-[var(--soft-accent-2)]">Research</a>
-      <a href="#contact" class="hover:text-[var(--soft-accent-2)]">Contact</a>
-      <a href="#" class="px-4 py-2 border rounded-md text-sm hover:bg-[var(--soft-accent)] hover:text-white transition">Resume</a>
-    </nav>
-    <div class="md:hidden">
-      <a href="#portfolio" class="text-sm">Menu</a>
-    </div>
-  </div>
-</header>
+  <header class="hero">
+    <h1>Welcome to My Research Portfolio</h1>
+    <p>Discover my academic journey, research work, and publications.</p>
+  </header>
+</body>
+</html>
 
-<!-- HERO -->
-<section id="hero" class="pt-16 pb-24">
-  <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-    <div>
-      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
-        Welcome to My Portfolio
-        <span class="block text-[var(--soft-accent-2)] mt-2">Nur Ain Suriani</span>
-      </h1>
-      <p class="mt-6 text-gray-600 max-w-xl text-lg">A clean, structured space to explore my academic work, personal projects, and creative journey.</p>
-    </div>
 
-    <div class="relative">
-      <div class="w-full h-72 md:h-96 rounded-2xl overflow-hidden shadow-xl">
-        <img src="image/photoshootsmf.jpg" class="w-full h-full object-cover" />
-      </div>
-    </div>
-  </div>
-</section>
+<!-- about.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="logo">Ain Suriani</a>
+    <ul>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-<!-- ABOUT -->
-<section id="about" class="py-20 bg-white">
-  <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
-    <div>
-      <h2 class="text-3xl font-bold">About Me</h2>
-      <p class="mt-4 text-gray-600 leading-relaxed">A brief overview of who I am, my background, and my goals.</p>
-    </div>
+  <section class="page-section">
+    <h2>About Me</h2>
+    <p>[Add your introduction here]</p>
+  </section>
+</body>
+</html>
 
-    <div class="md:col-span-2">
-      <h3 class="text-xl font-semibold mb-4">Skills</h3>
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-        <div class="bg-[var(--soft-bg)] p-4 rounded-lg shadow-sm text-center font-medium">Emceeing</div>
-        <div class="bg-[var(--soft-bg)] p-4 rounded-lg shadow-sm text-center font-medium">Basic Coding</div>
-        <div class="bg-[var(--soft-bg)] p-4 rounded-lg shadow-sm text-center font-medium">Teamwork</div>
-        <div class="bg-[var(--soft-bg)] p-4 rounded-lg shadow-sm text-center font-medium">Hosting</div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- PORTFOLIO -->
-<section id="portfolio" class="py-20">
-  <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-3xl font-bold">Portfolio</h2>
-    <p class="text-gray-600 mt-2">A collection of my work and projects.</p>
+<!-- portfolio.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="logo">Ain Suriani</a>
+    <ul>
+      <li><a href="about.html">About</a></li>
+      <li><a href="portfolio.html" class="active">Portfolio</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-    <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="bg-white rounded-xl shadow-md overflow-hidden">
-        <img src="https://images.unsplash.com/photo-150" class="h-48 w-full object-cover" />
-        <div class="p-5">
-          <h4 class="font-semibold text-lg">Project 1</h4>
-          <p class="text-sm text-gray-600 mt-2">Short description of your work.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  <section class="page-section">
+    <h2>Research Portfolio</h2>
+    <p>[Insert your research work here]</p>
+  </section>
+</body>
+</html>
 
-<!-- RESEARCH SECTION -->
-<section id="research" class="py-20 bg-white">
-  <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-3xl font-bold">Research</h2>
-    <p class="text-gray-600 mt-2">Academic interests, research projects, reports, and publications.</p>
 
-    <div class="mt-8 space-y-6">
-      <div class="p-6 bg-[var(--soft-bg)] rounded-xl shadow-sm">
-        <h3 class="text-xl font-semibold">Research Title 1</h3>
-        <p class="mt-2 text-gray-600 text-sm">Brief summary of your research or academic work.</p>
-      </div>
+<!-- education.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Education</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="logo">Ain Suriani</a>
+    <ul>
+      <li><a href="about.html">About</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="education.html" class="active">Education</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-      <div class="p-6 bg-[var(--soft-bg)] rounded-xl shadow-sm">
-        <h3 class="text-xl font-semibold">Research Title 2</h3>
-        <p class="mt-2 text-gray-600 text-sm">Describe findings, objectives, or methodology.</p>
-      </div>
-    </div>
-  </div>
-</section>
+  <section class="page-section">
+    <h2>Education & Skills</h2>
+    <p>[Add your academic background here]</p>
+  </section>
+</body>
+</html>
 
-<!-- CONTACT -->
-<section id="contact" class="py-20">
-  <div class="max-w-4xl mx-auto px-6 text-center">
-    <h2 class="text-3xl font-bold">Contact</h2>
-    <p class="text-gray-600 mt-2">Reach out through my social platforms for collaborations or research inquiries.</p>
 
-    <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6">
+<!-- gallery.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="logo">Ain Suriani</a>
+    <ul>
+      <li><a href="about.html">About</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="gallery.html" class="active">Gallery</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-      <a href="#" target="_blank" class="flex flex-col items-center bg-white p-6 rounded-xl shadow-md hover:bg-[var(--soft-accent)] hover:text-white transition">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" class="w-12 h-12" />
-        <span class="mt-3 font-medium">WhatsApp</span>
-      </a>
+  <section class="page-section">
+    <h2>Gallery</h2>
+    <p>[Insert images here]</p>
+  </section>
+</body>
+</html>
 
-      <a href="#" target="_blank" class="flex flex-col items-center bg-white p-6 rounded-xl shadow-md hover:bg-[var(--soft-accent)] hover:text-white transition">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" class="w-12 h-12" />
-        <span class="mt-3 font-medium">Instagram</span>
-      </a>
 
-      <a href="#" target="_blank" class="flex flex-col items-center bg-white p-6 rounded-xl shadow-md hover:bg-[var(--soft-accent)] hover:text-white transition">
-        <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" class="w-12 h-12" />
-        <span class="mt-3 font-medium">Facebook</span>
-      </a>
+<!-- resume.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="logo">Ain Suriani</a>
+    <ul>
+      <li><a href="about.html">About</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="resume.html" class="active">Resume</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-    </div>
-  </div>
-</section>
+  <section class="page-section">
+    <h2>Resume (PDF Viewer)</h2>
+    <p>Upload your resume PDF to this folder and rename it <strong>resume.pdf</strong>.</p>
 
-<!-- FOOTER -->
-<footer class="bg-[var(--soft-bg)] py-6 text-center text-sm text-gray-600">
-  © 2025 Ain Suriani. All Rights Reserved.
-</footer>
+    <iframe src="resume.pdf" class="pdf-viewer"></iframe>
 
+    <a href="resume.pdf" download class="download-btn">Download Resume</a>
+  </section>
+</body>
+</html>
+
+
+<!-- contact.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="logo">Ain Suriani</a>
+    <ul>
+      <li><a href="about.html">About</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="page-section">
+    <h2>Contact</h2>
+    <p>WhatsApp, Instagram, Facebook links go here.</p>
+  </section>
 </body>
 </html>

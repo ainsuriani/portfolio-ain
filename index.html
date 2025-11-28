@@ -3,21 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio – Pastel</title>
+  <title>Portfolio – Ain Suriani</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Soft professional pastel theme */
+    :root {
+      --soft-bg: #f9f7ff;
+      --soft-accent: #cabdff;
+      --soft-accent-2: #a997ff;
+      --text-main: #3a3a3c;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeIn { animation: fadeIn 0.8s ease-in-out; }
+</style>
+  <script src="https://unpkg.com/framer-motion/dist/framer-motion.umd.js"></script>
 </head>
-<body class="bg-rose-50 text-gray-800">
+<body class="motion-safe:animate-fadeIn" class="bg-[var(--soft-bg)] text-[var(--text-main)]">
 
 <!-- NAVBAR -->
 <header class="bg-white shadow-sm sticky top-0 z-40">
   <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-    <a href="#hero" class="text-2xl font-bold">ain sarizam</a>
-    <nav class="hidden md:flex gap-6 items-center text-sm">
-      <a href="#about" class="hover:text-rose-400">About</a>
-      <a href="#portfolio" class="hover:text-rose-400">Portfolio</a>
-      <a href="#blog" class="hover:text-rose-400">Blog</a>
-      <a href="#contact" class="hover:text-rose-400">Contact</a>
-      <a href="#" class="px-4 py-2 border rounded-md text-sm">Resume</a>
+    <a href="#hero" class="text-2xl font-bold tracking-wide">Ain Suriani</a>
+    <nav class="hidden md:flex gap-6 items-center text-sm font-medium">
+      <a href="#about" class="hover:text-[var(--soft-accent-2)]">About</a>
+      <a href="#portfolio" class="hover:text-[var(--soft-accent-2)]">Portfolio</a>
+      <a href="#research" class="hover:text-[var(--soft-accent-2)]">Research</a>
+      <a href="#contact" class="hover:text-[var(--soft-accent-2)]">Contact</a>
+      <a href="#" class="px-4 py-2 border rounded-md text-sm hover:bg-[var(--soft-accent)] hover:text-white transition">Resume</a>
     </nav>
     <div class="md:hidden">
       <a href="#portfolio" class="text-sm">Menu</a>
@@ -26,22 +41,18 @@
 </header>
 
 <!-- HERO -->
-<section id="hero" class="pt-12 pb-20">
-  <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+<section id="hero" class="pt-16 pb-24">
+  <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
     <div>
-      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight"> Personal Portfolio
-        <span class="block text-rose-400">Nur Ain Suriani Binti Sarizam</span>
+      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
+        Welcome to My Portfolio
+        <span class="block text-[var(--soft-accent-2)] mt-2">Nur Ain Suriani</span>
       </h1>
-      <p class="mt-6 text-gray-600 max-w-xl">Love yourself mwahhh</p>
-
-      <div class="mt-8 flex gap-4">
-        <a href="#portfolio" class="px-6 py-3 bg-rose-300 text-white rounded-md shadow">View Work</a>
-        <a href="#contact" class="px-6 py-3 border rounded-md">Contact Me</a>
-      </div>
+      <p class="mt-6 text-gray-600 max-w-xl text-lg">A clean, structured space to explore my academic work, personal projects, and creative journey.</p>
     </div>
 
     <div class="relative">
-      <div class="w-full h-72 md:h-96 rounded-xl overflow-hidden shadow-lg">
+      <div class="w-full h-72 md:h-96 rounded-2xl overflow-hidden shadow-xl">
         <img src="image/photoshootsmf.jpg" class="w-full h-full object-cover" />
       </div>
     </div>
@@ -49,146 +60,93 @@
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="py-16">
-  <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+<section id="about" class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
     <div>
-      <h2 class="text-2xl font-bold">About</h2>
-      <p class="mt-4 text-gray-600">Hye, welcome to my personal website </p>
+      <h2 class="text-3xl font-bold">About Me</h2>
+      <p class="mt-4 text-gray-600 leading-relaxed">A brief overview of who I am, my background, and my goals.</p>
     </div>
 
     <div class="md:col-span-2">
-      <h3 class="text-xl font-semibold">Skills</h3>
-      <div class="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-4">
-        <div class="bg-white p-3 rounded-lg shadow-sm">Emceeing</div>
-        <div class="bg-white p-3 rounded-lg shadow-sm">Basic Coding</div>
-        <div class="bg-white p-3 rounded-lg shadow-sm">Work in Group</div>
-        <div class="bg-white p-3 rounded-lg shadow-sm">Hosting</div>
+      <h3 class="text-xl font-semibold mb-4">Skills</h3>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div class="bg-[var(--soft-bg)] p-4 rounded-lg shadow-sm text-center font-medium">Emceeing</div>
+        <div class="bg-[var(--soft-bg)] p-4 rounded-lg shadow-sm text-center font-medium">Basic Coding</div>
+        <div class="bg-[var(--soft-bg)] p-4 rounded-lg shadow-sm text-center font-medium">Teamwork</div>
+        <div class="bg-[var(--soft-bg)] p-4 rounded-lg shadow-sm text-center font-medium">Hosting</div>
       </div>
     </div>
   </div>
 </section>
-
 
 <!-- PORTFOLIO -->
-<section id="portfolio" class="py-16">
+<section id="portfolio" class="py-20">
   <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-2xl font-bold">Portfolio</h2>
+    <h2 class="text-3xl font-bold">Portfolio</h2>
+    <p class="text-gray-600 mt-2">A collection of my work and projects.</p>
 
-    <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="bg-white rounded-lg shadow-sm overflow-hidden">
-        <img src="https://images.unsplash.com/photo-150" class="h-40 w-full object-cover" />
-        <div class="p-4">
-          <h4 class="font-semibold">Project 1</h4>
-          <p class="text-sm text-gray-600 mt-2">Short project description.</p>
+    <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <img src="https://images.unsplash.com/photo-150" class="h-48 w-full object-cover" />
+        <div class="p-5">
+          <h4 class="font-semibold text-lg">Project 1</h4>
+          <p class="text-sm text-gray-600 mt-2">Short description of your work.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- BLOG -->
-<section id="blog" class="py-16 bg-white">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-2xl font-bold">Blog</h2>
-      <p class="text-gray-600 mt-2">Latest updates, reflections, and personal stories.</p>
-  
-      <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-rose-50 p-5 rounded-xl shadow-sm">
-          <h3 class="font-semibold text-lg">Blog Title 1</h3>
-          <p class="mt-2 text-sm text-gray-600">Short intro of your blog post. You may write anything here.</p>
-          <a href="#" class="mt-3 inline-block text-rose-400 text-sm font-medium">Read More →</a>
-        </div>
-  
-        <div class="bg-rose-50 p-5 rounded-xl shadow-sm">
-          <h3 class="font-semibold text-lg">Blog Title 2</h3>
-          <p class="mt-2 text-sm text-gray-600">Share your thoughts, experience, or updates here.</p>
-          <a href="#" class="mt-3 inline-block text-rose-400 text-sm font-medium">Read More →</a>
-        </div>
-  
-        <div class="bg-rose-50 p-5 rounded-xl shadow-sm">
-          <h3 class="font-semibold text-lg">Blog Title 3</h3>
-          <p class="mt-2 text-sm text-gray-600">Highlight your stories, ideas or knowledge.</p>
-          <a href="#" class="mt-3 inline-block text-rose-400 text-sm font-medium">Read More →</a>
-        </div>
+<!-- RESEARCH SECTION -->
+<section id="research" class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl font-bold">Research</h2>
+    <p class="text-gray-600 mt-2">Academic interests, research projects, reports, and publications.</p>
+
+    <div class="mt-8 space-y-6">
+      <div class="p-6 bg-[var(--soft-bg)] rounded-xl shadow-sm">
+        <h3 class="text-xl font-semibold">Research Title 1</h3>
+        <p class="mt-2 text-gray-600 text-sm">Brief summary of your research or academic work.</p>
+      </div>
+
+      <div class="p-6 bg-[var(--soft-bg)] rounded-xl shadow-sm">
+        <h3 class="text-xl font-semibold">Research Title 2</h3>
+        <p class="mt-2 text-gray-600 text-sm">Describe findings, objectives, or methodology.</p>
       </div>
     </div>
-  </section>
-
-<!-- ALBUM SECTION -->
-<section id="album" class="py-16 bg-rose-50">
-    <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-2xl font-bold">Album</h2>
-    <p class="text-gray-600 mt-2">A collection of my favourite photos and memories.</p>
-    
-    
-    <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-    <div class="bg-rose-50 rounded-lg overflow-hidden shadow-sm">
-    <img src="image/" class="h-48 w-full object-cover" />
-    <div class="p-4 text-sm text-gray-700">Memory 1 description</div>
-    </div>
-    
-    
-    <div class="bg-rose-50 rounded-lg overflow-hidden shadow-sm">
-    <img src="image/" class="h-48 w-full object-cover" />
-    <div class="p-4 text-sm text-gray-700">Memory 2 description</div>
-    </div>
-    
-    
-    <div class="bg-rose-50 rounded-lg overflow-hidden shadow-sm">
-    <img src="image/" class="h-48 w-full object-cover" />
-    <div class="p-4 text-sm text-gray-700">Memory 3 description</div>
-    </div>
-    </div>
-    </div>
-    </section>
+  </div>
+</section>
 
 <!-- CONTACT -->
-<section id="contact" class="py-16 bg-white">
-  <div class="max-w-4xl mx-auto px-6">
-    <h2 class="text-2xl font-bold">Contact</h2>
-    <p class="text-gray-600 mt-2">
-      For research purposes, collaborations, or academic inquiries, you may reach me through the platforms below.
-    </p>
+<section id="contact" class="py-20">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold">Contact</h2>
+    <p class="text-gray-600 mt-2">Reach out through my social platforms for collaborations or research inquiries.</p>
 
-    <!-- Social Buttons -->
-    <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+    <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6">
 
-      <!-- Instagram -->
-      <a href="https://instagram.com/yourusername" target="_blank"
-        class="flex flex-col items-center bg-rose-50 p-5 rounded-xl shadow-sm hover:bg-rose-100 transition">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" class="w-10 h-10" />
-        <span class="mt-2 text-sm font-medium text-gray-700">Instagram</span>
+      <a href="#" target="_blank" class="flex flex-col items-center bg-white p-6 rounded-xl shadow-md hover:bg-[var(--soft-accent)] hover:text-white transition">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" class="w-12 h-12" />
+        <span class="mt-3 font-medium">WhatsApp</span>
       </a>
 
-      <!-- Facebook -->
-      <a href="https://facebook.com/yourusername" target="_blank"
-        class="flex flex-col items-center bg-rose-50 p-5 rounded-xl shadow-sm hover:bg-rose-100 transition">
-        <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" class="w-10 h-10" />
-        <span class="mt-2 text-sm font-medium text-gray-700">Facebook</span>
+      <a href="#" target="_blank" class="flex flex-col items-center bg-white p-6 rounded-xl shadow-md hover:bg-[var(--soft-accent)] hover:text-white transition">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" class="w-12 h-12" />
+        <span class="mt-3 font-medium">Instagram</span>
       </a>
 
-      <!-- Threads -->
-      <a href="https://threads.net/yourusername" target="_blank"
-        class="flex flex-col items-center bg-rose-50 p-5 rounded-xl shadow-sm hover:bg-rose-100 transition">
-        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384061.png" class="w-10 h-10" />
-        <span class="mt-2 text-sm font-medium text-gray-700">Threads</span>
-      </a>
-
-      <!-- Twitter / X -->
-      <a href="https://twitter.com/yourusername" target="_blank"
-        class="flex flex-col items-center bg-rose-50 p-5 rounded-xl shadow-sm hover:bg-rose-100 transition">
-        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968830.png" class="w-10 h-10" />
-        <span class="mt-2 text-sm font-medium text-gray-700">Twitter / X</span>
+      <a href="#" target="_blank" class="flex flex-col items-center bg-white p-6 rounded-xl shadow-md hover:bg-[var(--soft-accent)] hover:text-white transition">
+        <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" class="w-12 h-12" />
+        <span class="mt-3 font-medium">Facebook</span>
       </a>
 
     </div>
   </div>
 </section>
 
-
 <!-- FOOTER -->
-<footer class="bg-rose-50 py-6 text-center text-sm text-gray-600">
-  © 2025 ainsarizam. All Rights Reserved.
+<footer class="bg-[var(--soft-bg)] py-6 text-center text-sm text-gray-600">
+  © 2025 Ain Suriani. All Rights Reserved.
 </footer>
 
 </body>

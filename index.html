@@ -4,33 +4,47 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio – Nur Ain Suriani</title>
+
+  <!-- BEAUTIFUL FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- AOS (scroll animations) -->
+  <!-- AOS Animations -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #3a3a3c;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 0.5px;
+    }
+
     :root {
-      --soft-bg: #f9f7ff;
-      --soft-accent: #cabdff;
-      --soft-accent-2: #a997ff;
+      --soft-bg: #F9F7FF;
+      --soft-accent: #CABDFF;
+      --soft-accent-2: #A997FF;
       --text-main: #3a3a3c;
     }
 
-    /* Custom glass morphism */
+    /* Glass effect */
     .glass {
       background: rgba(255, 255, 255, 0.4);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.2);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
     }
 
-    /* Navbar blur on scroll */
+    /* Navbar scroll effect */
     header.scrolled {
       backdrop-filter: blur(15px);
-      background: rgba(255, 255, 255, 0.75);
+      background: rgba(255,255,255,0.85);
     }
 
-    /* Floating Back to Top button */
+    /* Back to top button */
     #backToTop {
       position: fixed;
       bottom: 30px;
@@ -42,22 +56,23 @@
       cursor: pointer;
       display: none;
       font-size: 20px;
-      z-index: 999;
       box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+      z-index: 999;
     }
   </style>
 </head>
 
-<body class="bg-[var(--soft-bg)] text-[var(--text-main)]">
+<body class="bg-[var(--soft-bg)]">
 
 <!-- NAVBAR -->
 <header id="navbar" class="bg-white shadow-sm sticky top-0 z-40 transition-all duration-300">
   <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
 
-    <!-- Left corner: Image + Name -->
+    <!-- Left side: Profile + Name -->
     <div class="flex items-center gap-3">
-      <img src="image/profile.jpg" class="w-12 h-12 rounded-full object-cover border-2 border-[var(--soft-accent-2)]" />
-      <a href="#hero" class="text-2xl font-bold tracking-wide">Nur Ain Suriani Binti Sarizam</a>
+      <img src="image/profile.jpg" 
+           class="w-12 h-12 rounded-full object-cover border-2 border-[var(--soft-accent-2)]" />
+      <a href="#hero" class="text-2xl font-bold">Nur Ain Suriani</a>
     </div>
 
     <!-- Desktop Menu -->
@@ -70,11 +85,10 @@
       <a class="px-4 py-2 border rounded-md hover:bg-[var(--soft-accent)] hover:text-white transition">Resume</a>
     </nav>
 
-    <!-- Mobile Menu Button -->
-    <button id="mobileBtn" class="md:hidden text-xl">☰</button>
+    <!-- Mobile Menu -->
+    <button id="mobileBtn" class="md:hidden text-2xl">☰</button>
   </div>
 
-  <!-- Mobile dropdown -->
   <div id="mobileMenu" class="hidden flex flex-col px-6 pb-4 bg-white border-t text-sm">
     <a href="#about" class="py-2">About</a>
     <a href="#portfolio" class="py-2">Portfolio</a>
@@ -85,25 +99,24 @@
 </header>
 
 <!-- HERO -->
-<section id="hero" class="pt-20 pb-24 bg-[#0f172a] text-white">
+<section id="hero" class="pt-24 pb-24 bg-[#0f172a] text-white">
   <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
 
     <div data-aos="fade-right">
       <h1 class="text-5xl md:text-6xl font-extrabold leading-tight">
         Welcome to My Portfolio
-        <span class="block text-[var(--soft-accent-2)] mt-2">Nur Ain Suriani</span>
+        <span class="block text-[var(--soft-accent-2)] mt-3">Nur Ain Suriani</span>
       </h1>
       <p class="mt-6 text-gray-300 max-w-xl text-lg">
-        A clean, structured space to explore my academic work, personal projects, and creative journey.
+        Explore my journey — from personal projects to creative work.
       </p>
     </div>
 
     <div data-aos="fade-left">
-      <div class="w-full h-72 md:h-96 rounded-2xl overflow-hidden shadow-xl transform hover:scale-105 transition">
+      <div class="w-full h-72 md:h-96 rounded-2xl overflow-hidden shadow-xl hover:scale-105 transition">
         <img src="image/photoshootsmf.jpg" class="w-full h-full object-cover" />
       </div>
     </div>
-
   </div>
 </section>
 
@@ -113,7 +126,7 @@
 
     <div data-aos="fade-up">
       <h2 class="text-3xl font-bold">About Me</h2>
-      <p class="mt-4 text-gray-600">A brief overview of who I am, my background, and my goals.</p>
+      <p class="mt-4 text-gray-600">A short introduction about who I am and my goals.</p>
     </div>
 
     <div class="md:col-span-2" data-aos="fade-up" data-aos-delay="150">
@@ -132,116 +145,104 @@
 <!-- PORTFOLIO -->
 <section id="portfolio" class="py-20 bg-[#e0f2fe]">
   <div class="max-w-6xl mx-auto px-6">
+
     <h2 class="text-3xl font-bold">Portfolio</h2>
-    <p class="text-gray-600 mt-2">A collection of my work and projects.</p>
+    <p class="text-gray-600 mt-2">A showcase of my work and experiences.</p>
 
     <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-      <!-- Card -->
       <div class="bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition" data-aos="zoom-in">
         <img src="https://images.unsplash.com/photo-150" class="h-48 w-full object-cover" />
         <div class="p-5">
           <h4 class="font-semibold text-lg">Project 1</h4>
-          <p class="text-sm text-gray-600 mt-2">Short description of your work.</p>
+          <p class="text-sm text-gray-600 mt-2">Short description of your project here.</p>
         </div>
       </div>
 
     </div>
+
   </div>
 </section>
 
-<!-- BLOG -->
-<section id="blog" class="py-20 bg-[#f0f9ff]">
+<!-- BLOG SECTION -->
+<section id="blog" class="py-20 bg-[#fdf2f8]">
   <div class="max-w-6xl mx-auto px-6">
-
+    
     <h2 class="text-3xl font-bold">Blog</h2>
-    <p class="text-gray-600 mt-2">Latest updates, reflections, and stories.</p>
+    <p class="text-gray-600 mt-2">Sharing my thoughts, journeys, and reflections.</p>
 
-    <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
 
-      <div class="glass p-6 rounded-xl shadow-sm hover:scale-105 transition" data-aos="fade-up">
-        <h3 class="text-xl font-semibold">Blog Title 1</h3>
-        <p class="mt-2 text-gray-700 text-sm">Short intro or summary.</p>
-        <a class="mt-3 inline-block text-[var(--soft-accent-2)] text-sm font-medium">Read More →</a>
+      <div class="bg-white rounded-xl shadow hover:shadow-xl transition p-5" data-aos="fade-up">
+        <img src="https://source.unsplash.com/random/400x250?notebook" class="rounded-lg w-full h-48 object-cover">
+        <h3 class="mt-4 font-semibold text-xl">Blog Title 1</h3>
+        <p class="text-gray-600 text-sm mt-2">Short summary of your blog. You can update this later.</p>
       </div>
 
-      <div class="glass p-6 rounded-xl shadow-sm hover:scale-105 transition" data-aos="fade-up" data-aos-delay="150">
-        <h3 class="text-xl font-semibold">Blog Title 2</h3>
-        <p class="mt-2 text-gray-700 text-sm">Share thoughts or updates.</p>
-        <a class="mt-3 inline-block text-[var(--soft-accent-2)] text-sm font-medium">Read More →</a>
+      <div class="bg-white rounded-xl shadow hover:shadow-xl transition p-5" data-aos="fade-up" data-aos-delay="150">
+        <img src="https://source.unsplash.com/random/400x250?desk" class="rounded-lg w-full h-48 object-cover">
+        <h3 class="mt-4 font-semibold text-xl">Blog Title 2</h3>
+        <p class="text-gray-600 text-sm mt-2">Short summary of your blog. You can update this later.</p>
       </div>
 
-      <div class="glass p-6 rounded-xl shadow-sm hover:scale-105 transition" data-aos="fade-up" data-aos-delay="300">
-        <h3 class="text-xl font-semibold">Blog Title 3</h3>
-        <p class="mt-2 text-gray-700 text-sm">Ideas or experiences.</p>
-        <a class="mt-3 inline-block text-[var(--soft-accent-2)] text-sm font-medium">Read More →</a>
+      <div class="bg-white rounded-xl shadow hover:shadow-xl transition p-5" data-aos="fade-up" data-aos-delay="300">
+        <img src="https://source.unsplash.com/random/400x250?workspace" class="rounded-lg w-full h-48 object-cover">
+        <h3 class="mt-4 font-semibold text-xl">Blog Title 3</h3>
+        <p class="text-gray-600 text-sm mt-2">Short summary of your blog. You can update this later.</p>
       </div>
 
     </div>
-
   </div>
 </section>
 
-<!-- ALBUM -->
-<section id="album" class="py-20 bg-[#dbeafe]">
+<!-- PHOTO ALBUM -->
+<section id="album" class="py-20 bg-[#f1f5f9]">
   <div class="max-w-6xl mx-auto px-6">
 
     <h2 class="text-3xl font-bold">Album</h2>
-    <p class="text-gray-600 mt-2">Favourite photos and memories.</p>
+    <p class="text-gray-600 mt-2">A collection of my favourite memories.</p>
 
-    <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-      <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:scale-105 transition" data-aos="flip-left">
-        <img src="image/album1.jpg" class="h-48 w-full object-cover" />
-        <div class="p-4 text-sm text-gray-700">Memory 1</div>
-      </div>
-
-      <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:scale-105 transition" data-aos="flip-left" data-aos-delay="150">
-        <img src="image/album2.jpg" class="h-48 w-full object-cover" />
-        <div class="p-4 text-sm text-gray-700">Memory 2</div>
-      </div>
-
-      <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:scale-105 transition" data-aos="flip-left" data-aos-delay="300">
-        <img src="image/album3.jpg" class="h-48 w-full object-cover" />
-        <div class="p-4 text-sm text-gray-700">Memory 3</div>
-      </div>
-
+    <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+      <img src="image/photoshootsmf.jpg" class="rounded-xl h-48 w-full object-cover hover:scale-105 transition shadow">
+      <img src="image/photoshootsmf.jpg" class="rounded-xl h-48 w-full object-cover hover:scale-105 transition shadow">
+      <img src="image/photoshootsmf.jpg" class="rounded-xl h-48 w-full object-cover hover:scale-105 transition shadow">
+      <img src="image/photoshootsmf.jpg" class="rounded-xl h-48 w-full object-cover hover:scale-105 transition shadow">
     </div>
+
   </div>
 </section>
 
 <!-- CONTACT -->
-<!-- CONTACT -->
-<section id="contact" class="py-16 bg-[#f1f5f9]">
-  <div class="max-w-4xl mx-auto px-6" data-aos="fade-up">
+<section id="contact" class="py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
 
-    <h2 class="text-2xl font-bold">Contact</h2>
-    <p class="text-gray-600 mt-2">Reach me through the platforms below.</p>
+    <h2 class="text-3xl font-bold">Contact</h2>
+    <p class="text-gray-600 mt-2">Get in touch with me easily.</p>
 
-    <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+    <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
 
       <!-- WhatsApp -->
-      <a href="https://wa.me/qr/6YTWPWI5DV22M1" 
-         target="_blank"
-         class="glass p-5 rounded-xl hover:scale-105 transition flex flex-col items-center">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" class="w-10 h-10" />
-        <span class="mt-2 text-sm font-medium">WhatsApp</span>
+      <a href="https://wa.me/601123008722" target="_blank" 
+         class="glass p-6 rounded-xl shadow-lg hover:scale-105 transition flex flex-col items-center text-center">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" class="w-12 mb-3">
+        <h4 class="text-xl font-semibold">WhatsApp</h4>
+        <p class="text-gray-600 text-sm mt-1">Chat with me instantly</p>
+      </a>
+
+      <!-- Email -->
+      <a href="ainsuriani23@gmail.com"
+         class="glass p-6 rounded-xl shadow-lg hover:scale-105 transition flex flex-col items-center text-center">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" class="w-12 mb-3">
+        <h4 class="text-xl font-semibold">Email</h4>
+        <p class="text-gray-600 text-sm mt-1">Send me an email</p>
       </a>
 
       <!-- Instagram -->
-      <a href="https://www.instagram.com/ainsarizam/?hl=en" 
-         target="_blank"
-         class="glass p-5 rounded-xl hover:scale-105 transition flex flex-col items-center">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" class="w-10 h-10" />
-        <span class="mt-2 text-sm font-medium">Instagram</span>
-      </a>
-
-      <!-- Facebook -->
-      <a href="https://www.facebook.com/nurainsuriani.sarizam"
-         target="_blank"
-         class="glass p-5 rounded-xl hover:scale-105 transition flex flex-col items-center">
-        <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" class="w-10 h-10" />
-        <span class="mt-2 text-sm font-medium">Facebook</span>
+      <a href="https://www.instagram.com/ainsarizam" target="_blank"
+         class="glass p-6 rounded-xl shadow-lg hover:scale-105 transition flex flex-col items-center text-center">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="w-12 mb-3">
+        <h4 class="text-xl font-semibold">Instagram</h4>
+        <p class="text-gray-600 text-sm mt-1">Follow my updates</p>
       </a>
 
     </div>
@@ -249,36 +250,37 @@
   </div>
 </section>
 
-
 <!-- FOOTER -->
-<footer class="bg-[#0f172a] py-6 text-center text-white">
-  © 2025 ainsarizam. All Rights Reserved.
+<footer class="py-6 bg-[#0f172a] text-center text-gray-300 text-sm">
+  © 2025 ainsarizam — All rights reserved.
 </footer>
 
-<!-- Back to Top -->
+<!-- BACK TO TOP BUTTON -->
 <div id="backToTop">↑</div>
 
-<!-- JS: scroll, animations -->
+<!-- AOS JS -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-  AOS.init({
-    duration: 800,
-    once: true
-  });
+  AOS.init();
 
-  const navbar = document.getElementById("navbar");
-  const backToTop = document.getElementById("backToTop");
-
+  // NAVBAR SCROLL EFFECT
   window.addEventListener("scroll", () => {
-    navbar.classList.toggle("scrolled", window.scrollY > 30);
-    backToTop.style.display = window.scrollY > 300 ? "block" : "none";
+    const nav = document.getElementById("navbar");
+    if (window.scrollY > 50) nav.classList.add("scrolled");
+    else nav.classList.remove("scrolled");
   });
 
-  backToTop.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
-
+  // MOBILE MENU
   document.getElementById("mobileBtn").onclick = () => {
     document.getElementById("mobileMenu").classList.toggle("hidden");
   };
+
+  // BACK TO TOP
+  const topBtn = document.getElementById("backToTop");
+  window.addEventListener("scroll", () => {
+    topBtn.style.display = window.scrollY > 400 ? "block" : "none";
+  });
+  topBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
 </script>
 
 </body>

@@ -5,91 +5,127 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio – Nur Ain Suriani</title>
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS (scroll animations) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
   <style>
-    /* Soft professional pastel theme */
     :root {
       --soft-bg: #f9f7ff;
       --soft-accent: #cabdff;
       --soft-accent-2: #a997ff;
       --text-main: #3a3a3c;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+
+    /* Custom glass morphism */
+    .glass {
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
     }
-    .animate-fadeIn { animation: fadeIn 0.8s ease-in-out; }
-</style>
-  <script src="https://unpkg.com/framer-motion/dist/framer-motion.umd.js"></script>
+
+    /* Navbar blur on scroll */
+    header.scrolled {
+      backdrop-filter: blur(15px);
+      background: rgba(255, 255, 255, 0.75);
+    }
+
+    /* Floating Back to Top button */
+    #backToTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--soft-accent-2);
+      color: white;
+      padding: 12px 14px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      font-size: 20px;
+      z-index: 999;
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+    }
+  </style>
 </head>
-<body class="motion-safe:animate-fadeIn" class="bg-[var(--soft-bg)] text-[var(--text-main)]">
+
+<body class="bg-[var(--soft-bg)] text-[var(--text-main)]">
 
 <!-- NAVBAR -->
-<header class="bg-white shadow-sm sticky top-0 z-40">
+<header id="navbar" class="bg-white shadow-sm sticky top-0 z-40 transition-all duration-300">
   <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-    <!-- Left corner: Profile Picture + Name -->
+
+    <!-- Left corner: Image + Name -->
     <div class="flex items-center gap-3">
-      <!-- Profile Picture -->
-      <img src="image/profile.jpg" alt="Profile Picture"
-           class="w-12 h-12 rounded-full object-cover border-2 border-[var(--soft-accent-2)]" />
-      <!-- Full Name -->
-      <a href="#hero" class="text-2xl font-bold tracking-wide text-[var(--text-main)]">
-        Nur Ain Suriani Binti Sarizam
-      </a>
+      <img src="image/profile.jpg" class="w-12 h-12 rounded-full object-cover border-2 border-[var(--soft-accent-2)]" />
+      <a href="#hero" class="text-2xl font-bold tracking-wide">Nur Ain Suriani Binti Sarizam</a>
     </div>
 
-    <!-- Navigation buttons -->
+    <!-- Desktop Menu -->
     <nav class="hidden md:flex gap-6 items-center text-sm font-medium">
       <a href="#about" class="hover:text-[var(--soft-accent-2)]">About</a>
       <a href="#portfolio" class="hover:text-[var(--soft-accent-2)]">Portfolio</a>
       <a href="#blog" class="hover:text-[var(--soft-accent-2)]">Blog</a>
       <a href="#album" class="hover:text-[var(--soft-accent-2)]">Album</a>
       <a href="#contact" class="hover:text-[var(--soft-accent-2)]">Contact</a>
-      <a href="#" class="px-4 py-2 border rounded-md text-sm hover:bg-[var(--soft-accent)] hover:text-white transition">Resume</a>
+      <a class="px-4 py-2 border rounded-md hover:bg-[var(--soft-accent)] hover:text-white transition">Resume</a>
     </nav>
 
-    <!-- Mobile menu -->
-    <div class="md:hidden">
-      <a href="#portfolio" class="text-sm">Menu</a>
-    </div>
+    <!-- Mobile Menu Button -->
+    <button id="mobileBtn" class="md:hidden text-xl">☰</button>
+  </div>
+
+  <!-- Mobile dropdown -->
+  <div id="mobileMenu" class="hidden flex flex-col px-6 pb-4 bg-white border-t text-sm">
+    <a href="#about" class="py-2">About</a>
+    <a href="#portfolio" class="py-2">Portfolio</a>
+    <a href="#blog" class="py-2">Blog</a>
+    <a href="#album" class="py-2">Album</a>
+    <a href="#contact" class="py-2">Contact</a>
   </div>
 </header>
 
 <!-- HERO -->
-<section id="hero" class="pt-16 pb-24 bg-[#0f172a] text-white">
+<section id="hero" class="pt-20 pb-24 bg-[#0f172a] text-white">
   <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-    <div>
-      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
+
+    <div data-aos="fade-right">
+      <h1 class="text-5xl md:text-6xl font-extrabold leading-tight">
         Welcome to My Portfolio
         <span class="block text-[var(--soft-accent-2)] mt-2">Nur Ain Suriani</span>
       </h1>
-      <p class="mt-6 text-gray-600 max-w-xl text-lg">A clean, structured space to explore my academic work, personal projects, and creative journey.</p>
+      <p class="mt-6 text-gray-300 max-w-xl text-lg">
+        A clean, structured space to explore my academic work, personal projects, and creative journey.
+      </p>
     </div>
 
-    <div class="relative">
-      <div class="w-full h-72 md:h-96 rounded-2xl overflow-hidden shadow-xl">
+    <div data-aos="fade-left">
+      <div class="w-full h-72 md:h-96 rounded-2xl overflow-hidden shadow-xl transform hover:scale-105 transition">
         <img src="image/photoshootsmf.jpg" class="w-full h-full object-cover" />
       </div>
     </div>
+
   </div>
 </section>
 
 <!-- ABOUT -->
 <section id="about" class="py-20 bg-[#f1f5f9]">
   <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
-    <div>
+
+    <div data-aos="fade-up">
       <h2 class="text-3xl font-bold">About Me</h2>
-      <p class="mt-4 text-gray-600 leading-relaxed">A brief overview of who I am, my background, and my goals.</p>
+      <p class="mt-4 text-gray-600">A brief overview of who I am, my background, and my goals.</p>
     </div>
 
-    <div class="md:col-span-2">
+    <div class="md:col-span-2" data-aos="fade-up" data-aos-delay="150">
       <h3 class="text-xl font-semibold mb-4">Skills</h3>
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-        <div class="bg-[var(--soft-bg)] p-4 rounded-lg shadow-sm text-center font-medium">Emceeing</div>
-        <div class="bg-[var(--soft-bg)] p-4 rounded-lg shadow-sm text-center font-medium">Basic Coding</div>
-        <div class="bg-[var(--soft-bg)] p-4 rounded-lg shadow-sm text-center font-medium">Teamwork</div>
-        <div class="bg-[var(--soft-bg)] p-4 rounded-lg shadow-sm text-center font-medium">Hosting</div>
+        <div class="glass p-4 rounded-lg shadow hover:scale-105 transition text-center">Emceeing</div>
+        <div class="glass p-4 rounded-lg shadow hover:scale-105 transition text-center">Basic Coding</div>
+        <div class="glass p-4 rounded-lg shadow hover:scale-105 transition text-center">Teamwork</div>
+        <div class="glass p-4 rounded-lg shadow hover:scale-105 transition text-center">Hosting</div>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -100,111 +136,139 @@
     <p class="text-gray-600 mt-2">A collection of my work and projects.</p>
 
     <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="bg-white rounded-xl shadow-md overflow-hidden">
+
+      <!-- Card -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition" data-aos="zoom-in">
         <img src="https://images.unsplash.com/photo-150" class="h-48 w-full object-cover" />
         <div class="p-5">
           <h4 class="font-semibold text-lg">Project 1</h4>
           <p class="text-sm text-gray-600 mt-2">Short description of your work.</p>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- BLOG SECTION -->
+<!-- BLOG -->
 <section id="blog" class="py-20 bg-[#f0f9ff]">
   <div class="max-w-6xl mx-auto px-6">
+
     <h2 class="text-3xl font-bold">Blog</h2>
-    <p class="text-gray-600 mt-2">Latest updates, reflections, and personal stories.</p>
+    <p class="text-gray-600 mt-2">Latest updates, reflections, and stories.</p>
 
     <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="bg-[var(--soft-bg)] p-6 rounded-xl shadow-sm">
+
+      <div class="glass p-6 rounded-xl shadow-sm hover:scale-105 transition" data-aos="fade-up">
         <h3 class="text-xl font-semibold">Blog Title 1</h3>
-        <p class="mt-2 text-gray-600 text-sm">Short intro or summary of your blog post.</p>
-        <a href="#" class="mt-3 inline-block text-[var(--soft-accent-2)] text-sm font-medium">Read More →</a>
+        <p class="mt-2 text-gray-700 text-sm">Short intro or summary.</p>
+        <a class="mt-3 inline-block text-[var(--soft-accent-2)] text-sm font-medium">Read More →</a>
       </div>
 
-      <div class="bg-[var(--soft-bg)] p-6 rounded-xl shadow-sm">
+      <div class="glass p-6 rounded-xl shadow-sm hover:scale-105 transition" data-aos="fade-up" data-aos-delay="150">
         <h3 class="text-xl font-semibold">Blog Title 2</h3>
-        <p class="mt-2 text-gray-600 text-sm">Share your thoughts, experiences, or updates here.</p>
-        <a href="#" class="mt-3 inline-block text-[var(--soft-accent-2)] text-sm font-medium">Read More →</a>
+        <p class="mt-2 text-gray-700 text-sm">Share thoughts or updates.</p>
+        <a class="mt-3 inline-block text-[var(--soft-accent-2)] text-sm font-medium">Read More →</a>
       </div>
 
-      <div class="bg-[var(--soft-bg)] p-6 rounded-xl shadow-sm">
+      <div class="glass p-6 rounded-xl shadow-sm hover:scale-105 transition" data-aos="fade-up" data-aos-delay="300">
         <h3 class="text-xl font-semibold">Blog Title 3</h3>
-        <p class="mt-2 text-gray-600 text-sm">Highlight your stories, ideas, or knowledge.</p>
-        <a href="#" class="mt-3 inline-block text-[var(--soft-accent-2)] text-sm font-medium">Read More →</a>
+        <p class="mt-2 text-gray-700 text-sm">Ideas or experiences.</p>
+        <a class="mt-3 inline-block text-[var(--soft-accent-2)] text-sm font-medium">Read More →</a>
       </div>
+
     </div>
+
   </div>
 </section>
 
-<!-- ALBUM SECTION -->
+<!-- ALBUM -->
 <section id="album" class="py-20 bg-[#dbeafe]">
   <div class="max-w-6xl mx-auto px-6">
+
     <h2 class="text-3xl font-bold">Album</h2>
-    <p class="text-gray-600 mt-2">A collection of my favourite photos and memories.</p>
+    <p class="text-gray-600 mt-2">Favourite photos and memories.</p>
 
     <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="bg-white rounded-xl overflow-hidden shadow-sm">
+
+      <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:scale-105 transition" data-aos="flip-left">
         <img src="image/album1.jpg" class="h-48 w-full object-cover" />
-        <div class="p-4 text-sm text-gray-700">Memory 1 description</div>
+        <div class="p-4 text-sm text-gray-700">Memory 1</div>
       </div>
 
-      <div class="bg-white rounded-xl overflow-hidden shadow-sm">
+      <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:scale-105 transition" data-aos="flip-left" data-aos-delay="150">
         <img src="image/album2.jpg" class="h-48 w-full object-cover" />
-        <div class="p-4 text-sm text-gray-700">Memory 2 description</div>
+        <div class="p-4 text-sm text-gray-700">Memory 2</div>
       </div>
 
-      <div class="bg-white rounded-xl overflow-hidden shadow-sm">
+      <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:scale-105 transition" data-aos="flip-left" data-aos-delay="300">
         <img src="image/album3.jpg" class="h-48 w-full object-cover" />
-        <div class="p-4 text-sm text-gray-700">Memory 3 description</div>
+        <div class="p-4 text-sm text-gray-700">Memory 3</div>
       </div>
+
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="py-16 bg-[#f1f5f9]">
-  <div class="max-w-4xl mx-auto px-6">
-    <h2 class="text-2xl font-bold">Contact</h2>
-    <p class="text-gray-600 mt-2">
-      For research purposes, collaborations, or academic inquiries, you may reach me through the platforms below.
-    </p>
+  <div class="max-w-4xl mx-auto px-6" data-aos="fade-up">
 
-    <!-- Social Buttons -->
+    <h2 class="text-2xl font-bold">Contact</h2>
+    <p class="text-gray-600 mt-2">Reach me through the platforms below.</p>
+
     <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
 
-      <!-- WhatsApp -->
-      <a href="https://wa.me/yourphonenumber" target="_blank"
-        class="flex flex-col items-center bg-rose-50 p-5 rounded-xl shadow-sm hover:bg-rose-100 transition">
+      <a class="glass p-5 rounded-xl hover:scale-105 transition flex flex-col items-center">
         <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" class="w-10 h-10" />
-        <span class="mt-2 text-sm font-medium text-gray-700">WhatsApp</span>
+        <span class="mt-2 text-sm font-medium">WhatsApp</span>
       </a>
 
-      <!-- Instagram -->
-      <a href="https://instagram.com/yourusername" target="_blank"
-        class="flex flex-col items-center bg-rose-50 p-5 rounded-xl shadow-sm hover:bg-rose-100 transition">
+      <a class="glass p-5 rounded-xl hover:scale-105 transition flex flex-col items-center">
         <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" class="w-10 h-10" />
-        <span class="mt-2 text-sm font-medium text-gray-700">Instagram</span>
+        <span class="mt-2 text-sm font-medium">Instagram</span>
       </a>
 
-      <!-- Facebook -->
-      <a href="https://facebook.com/yourusername" target="_blank"
-        class="flex flex-col items-center bg-rose-50 p-5 rounded-xl shadow-sm hover:bg-rose-100 transition">
+      <a class="glass p-5 rounded-xl hover:scale-105 transition flex flex-col items-center">
         <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" class="w-10 h-10" />
-        <span class="mt-2 text-sm font-medium text-gray-700">Facebook</span>
+        <span class="mt-2 text-sm font-medium">Facebook</span>
       </a>
 
     </div>
+
   </div>
 </section>
 
-
 <!-- FOOTER -->
-<footer  class="bg-[#0f172a] py-6 text-center text-sm text-white">
+<footer class="bg-[#0f172a] py-6 text-center text-white">
   © 2025 ainsarizam. All Rights Reserved.
 </footer>
+
+<!-- Back to Top -->
+<div id="backToTop">↑</div>
+
+<!-- JS: scroll, animations -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true
+  });
+
+  const navbar = document.getElementById("navbar");
+  const backToTop = document.getElementById("backToTop");
+
+  window.addEventListener("scroll", () => {
+    navbar.classList.toggle("scrolled", window.scrollY > 30);
+    backToTop.style.display = window.scrollY > 300 ? "block" : "none";
+  });
+
+  backToTop.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
+  document.getElementById("mobileBtn").onclick = () => {
+    document.getElementById("mobileMenu").classList.toggle("hidden");
+  };
+</script>
 
 </body>
 </html>

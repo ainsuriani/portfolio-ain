@@ -3,174 +3,123 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Album – Nur Ain Suriani</title>
+  <title>About – Nur Ain Suriani</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-  <!-- Polaroid + Scrapbook CSS -->
-  <style>
-    body {
-      background: url('image/scrapbook-bg.jpg') center/cover no-repeat;
-    }
-
-    .polaroid {
-      background: white;
-      padding: 12px 12px 40px;
-      border-radius: 12px;
-      box-shadow: 0 12px 25px rgba(0,0,0,.15);
-      position: relative;
-      transform: rotate(var(--rotate, 0deg));
-      transition: all 0.3s ease;
-      cursor: pointer;
-      animation: float 4s ease-in-out infinite;
-    }
-
-    .polaroid::before {
-      content: "📎"; /* Tape or pin decoration */
-      position: absolute;
-      top: -28px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 1.2rem;
-    }
-
-    .polaroid img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 10px;
-    }
-
-    .polaroid span {
-      position: absolute;
-      bottom: 10px;
-      width: 100%;
-      left: 0;
-      text-align: center;
-      font-size: .85rem;
-      color: #444;
-      font-family: 'Courier New', monospace;
-    }
-
-    .polaroid:hover {
-      transform: rotate(0deg) scale(1.08);
-      z-index: 10;
-    }
-
-    @keyframes float {
-      0%,100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-    }
-
-    /* Lightbox overlay */
-    .lightbox-overlay {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.8);
-      justify-content: center;
-      align-items: center;
-      z-index: 50;
-    }
-
-    .lightbox-overlay img {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 12px;
-    }
-  </style>
 </head>
 
-<body>
-
-<header id="navbar" class="bg-white shadow-sm sticky top-0 z-40 transition-all duration-300">
-  <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-    <div class="flex items-center gap-3">
-      <img src="image/profile.jpg" class="w-12 h-12 rounded-full object-cover border-2 border-[var(--soft-accent-2)]" />
-      <a href="index.html" class="text-2xl font-bold">Nur Ain Suriani</a>
-    </div>
-
-    <nav class="hidden md:flex gap-6 items-center text-sm font-medium">
-      <a href="about.html">About</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="blog.html">Blog</a>
-      <a href="album.html" class="text-[var(--soft-accent-2)] font-semibold">Album</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-
-    <button id="mobileBtn" class="md:hidden text-2xl">☰</button>
-  </div>
-</header>
-
-<main>
-  <section class="py-20">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center">My Memory Album 📸</h2>
-      <p class="text-gray-600 mt-2 text-center">A collection of my favourite memories.</p>
-
-      <div class="mt-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
-        <!-- Polaroid Items -->
-        <div class="polaroid" style="--rotate: -2deg;" data-aos="fade-up">
-          <img src="image/photoshootsmf.jpg" onclick="openLightbox(this)">
-          <span>Sweet Memory</span>
-        </div>
-        <div class="polaroid" style="--rotate: 3deg;" data-aos="fade-up" data-aos-delay="100">
-          <img src="image/photoshootsmf.jpg" onclick="openLightbox(this)">
-          <span>Best Day</span>
-        </div>
-        <div class="polaroid" style="--rotate: -1deg;" data-aos="fade-up" data-aos-delay="200">
-          <img src="image/photoshootsmf.jpg" onclick="openLightbox(this)">
-          <span>Captured Moment</span>
-        </div>
-        <div class="polaroid" style="--rotate: 2deg;" data-aos="fade-up" data-aos-delay="300">
-          <img src="image/photoshootsmf.jpg" onclick="openLightbox(this)">
-          <span>Favourite Shot</span>
-        </div>
+<body class="bg-[#f1f5f9]">
+  <header id="navbar" class="bg-white shadow-sm sticky top-0 z-40 transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="image/profile.jpg" 
+             class="w-12 h-12 rounded-full object-cover border-2 border-[var(--soft-accent-2)]" />
+        <a href="index.html" class="text-2xl font-bold">Nur Ain Suriani</a>
       </div>
+
+      <nav class="hidden md:flex gap-6 items-center text-sm font-medium">
+        <a href="about.html" class="hover:text-[var(--soft-accent-2)] font-semibold text-[var(--soft-accent-2)]">About</a>
+        <a href="portfolio.html" class="hover:text-[var(--soft-accent-2)]">Portfolio</a>
+        <a href="blog.html" class="hover:text-[var(--soft-accent-2)]">Blog</a>
+        <a href="album.html" class="hover:text-[var(--soft-accent-2)]">Album</a>
+        <a href="contact.html" class="hover:text-[var(--soft-accent-2)]">Contact</a>
+        <a class="px-4 py-2 border rounded-md hover:bg-[var(--soft-accent)] hover:text-white transition">Resume</a>
+      </nav>
+
+      <button id="mobileBtn" class="md:hidden text-2xl">☰</button>
     </div>
-  </section>
-</main>
 
-<!-- Lightbox Overlay -->
-<div id="lightbox" class="lightbox-overlay" onclick="closeLightbox()">
-  <img id="lightbox-img" src="">
-</div>
+    <div id="mobileMenu" class="hidden flex flex-col px-6 pb-4 bg-white border-t text-sm">
+      <a href="about.html" class="py-2 font-semibold text-[var(--soft-accent-2)]">About</a>
+      <a href="portfolio.html" class="py-2">Portfolio</a>
+      <a href="blog.html" class="py-2">Blog</a>
+      <a href="album.html" class="py-2">Album</a>
+      <a href="contact.html" class="py-2">Contact</a>
+    </div>
+  </header>
 
-<footer class="bg-[#0f172a] text-center text-gray-300 text-sm py-6 mt-auto">
-  © 2025 ainsarizam — All rights reserved.
-</footer>
+  <main>
+    <!-- INTRO SECTION -->
+    <section class="py-20">
+      <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10">
 
-<div id="backToTop">↑</div>
+        <div data-aos="fade-up">
+          <h2 class="text-3xl font-bold">About Me</h2>
+          <p class="mt-4 text-gray-600 leading-relaxed">
+            Hi, I’m <strong>Nur Ain Suriani</strong>, a passionate and creative individual who enjoys
+            exploring web design, digital creativity, and communication. I love learning new
+            skills and turning ideas into meaningful digital experiences.
+          </p>
+        </div>
 
-<script src="script.js"></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init();
+        <div class="md:col-span-2" data-aos="fade-up" data-aos-delay="150">
+          <h3 class="text-xl font-semibold mb-4">Skills</h3>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <div class="glass p-4 rounded-lg shadow text-center">🎤 Emceeing</div>
+            <div class="glass p-4 rounded-lg shadow text-center">💻 Basic Coding</div>
+            <div class="glass p-4 rounded-lg shadow text-center">🤝 Teamwork</div>
+            <div class="glass p-4 rounded-lg shadow text-center">🎙️ Hosting</div>
+          </div>
+        </div>
 
-  // Mobile menu
-  document.getElementById("mobileBtn").onclick = () => {
-    document.getElementById("mobileMenu").classList.toggle("hidden");
-  };
+      </div>
+    </section>
 
-  // Back to top
-  const topBtn = document.getElementById("backToTop");
-  window.addEventListener("scroll", () => {
-    topBtn.style.display = window.scrollY > 400 ? "block" : "none";
-  });
-  topBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
+    <!-- EDUCATION + EXPERIENCE -->
+    <section class="py-12 bg-white">
+      <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10">
 
-  // Lightbox
-  function openLightbox(img) {
-    document.getElementById("lightbox-img").src = img.src;
-    document.getElementById("lightbox").style.display = "flex";
-  }
-  function closeLightbox() {
-    document.getElementById("lightbox").style.display = "none";
-  }
-</script>
+        <div data-aos="fade-up">
+          <h3 class="text-2xl font-semibold mb-4">Education</h3>
+          <p class="text-gray-600">
+            🎓 Primary School - SK Kampung Baru Si Rusa(2008-2016)br>
+            🎓 Secondary School - SMA Telok Kemang (2017-2020)<br>
+            🎓 Secondary School - SMK Kampung Baru Si Rusa (2020-2022)<br>
+            🎓 Diploma in Information Management- UiTM Kampus Rembau (2022-2024)<br>
+            🎓 Bachelor of Information Science (Hons) Information Content Management - UiTM Kampus Puncak Perdana (2025-now)<br>
+            
+          </p>
+        </div>
+
+        <div data-aos="fade-up" data-aos-delay="150">
+          <h3 class="text-2xl font-semibold mb-4">Experience</h3>
+          <ul class="text-gray-600 space-y-2">
+            <li>• Program Emcee for Final Year EVent for Diploma</li>
+            <li>• Committee member in student activities</li>
+            <li>• Internship trainee in Majlis Perbandaran Port Dickson</li>
+            <li>• Program Leader for Final Project in Diploma</li>
+            <li>• Join community service in mosque</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- GOALS SECTION -->
+    <section class="py-16">
+      <div class="max-w-4xl mx-auto px-6 text-center" data-aos="fade-up">
+        <h3 class="text-2xl font-semibold mb-4">My Goal</h3>
+        <p class="text-gray-600 leading-relaxed">
+          My goal is to become a creative front-end developer and continue building
+          user-friendly, beautiful, and meaningful digital experiences that inspire others.
+          I also want to upgrade my confident levels to face others especially in emceeing and
+          communicate with others to change information and opinion. 
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-6 bg-[#0f172a] text-center text-gray-300 text-sm">
+    © 2025 ainsarizam — All rights reserved.
+  </footer>
+
+  <div id="backToTop">↑</div>
+
+  <script src="script.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
 
 </body>
 </html>

@@ -11,66 +11,109 @@
 </head>
 
 <body class="bg-[#f1f5f9]">
-    <header id="navbar" class="bg-white shadow-sm sticky top-0 z-40 transition-all duration-300">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-      
-          <div class="flex items-center gap-3">
-            <img src="image/profile.jpg" 
-                 class="w-12 h-12 rounded-full object-cover border-2 border-[var(--soft-accent-2)]" />
-            <a href="index.html" class="text-2xl font-bold">Nur Ain Suriani</a>
-          </div>
-      
-          <nav class="hidden md:flex gap-6 items-center text-sm font-medium">
-            <a href="about.html" class="hover:text-[var(--soft-accent-2)]">About</a>
-            <a href="portfolio.html" class="hover:text-[var(--soft-accent-2)]">Portfolio</a>
-            <a href="blog.html" class="hover:text-[var(--soft-accent-2)]">Blog</a>
-            <a href="album.html" class="hover:text-[var(--soft-accent-2)]">Album</a>
-            <a href="contact.html" class="hover:text-[var(--soft-accent-2)]">Contact</a>
-            <a class="px-4 py-2 border rounded-md hover:bg-[var(--soft-accent)] hover:text-white transition">Resume</a>
-          </nav>
-      
-          <button id="mobileBtn" class="md:hidden text-2xl">☰</button>
-        </div>
-      
-        <div id="mobileMenu" class="hidden flex flex-col px-6 pb-4 bg-white border-t text-sm">
-          <a href="about.html" class="py-2">About</a>
-          <a href="portfolio.html" class="py-2">Portfolio</a>
-          <a href="blog.html" class="py-2">Blog</a>
-          <a href="album.html" class="py-2">Album</a>
-          <a href="contact.html" class="py-2">Contact</a>
-        </div>
-      </header>      
-
-<main>
-<section class="py-20">
-  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10">
-
-    <div data-aos="fade-up">
-      <h2 class="text-3xl font-bold">About Me</h2>
-      <p class="mt-4 text-gray-600">A short introduction about who I am and my goals.</p>
-    </div>
-
-    <div class="md:col-span-2" data-aos="fade-up" data-aos-delay="150">
-      <h3 class="text-xl font-semibold mb-4">Skills</h3>
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-        <div class="glass p-4 rounded-lg shadow text-center">Emceeing</div>
-        <div class="glass p-4 rounded-lg shadow text-center">Basic Coding</div>
-        <div class="glass p-4 rounded-lg shadow text-center">Teamwork</div>
-        <div class="glass p-4 rounded-lg shadow text-center">Hosting</div>
+  <header id="navbar" class="bg-white shadow-sm sticky top-0 z-40 transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="image/profile.jpg" 
+             class="w-12 h-12 rounded-full object-cover border-2 border-[var(--soft-accent-2)]" />
+        <a href="index.html" class="text-2xl font-bold">Nur Ain Suriani</a>
       </div>
+
+      <nav class="hidden md:flex gap-6 items-center text-sm font-medium">
+        <a href="about.html" class="hover:text-[var(--soft-accent-2)] font-semibold text-[var(--soft-accent-2)]">About</a>
+        <a href="portfolio.html" class="hover:text-[var(--soft-accent-2)]">Portfolio</a>
+        <a href="blog.html" class="hover:text-[var(--soft-accent-2)]">Blog</a>
+        <a href="album.html" class="hover:text-[var(--soft-accent-2)]">Album</a>
+        <a href="contact.html" class="hover:text-[var(--soft-accent-2)]">Contact</a>
+        <a class="px-4 py-2 border rounded-md hover:bg-[var(--soft-accent)] hover:text-white transition">Resume</a>
+      </nav>
+
+      <button id="mobileBtn" class="md:hidden text-2xl">☰</button>
     </div>
 
-  </div>
-</section>
-</main>
+    <div id="mobileMenu" class="hidden flex flex-col px-6 pb-4 bg-white border-t text-sm">
+      <a href="about.html" class="py-2 font-semibold text-[var(--soft-accent-2)]">About</a>
+      <a href="portfolio.html" class="py-2">Portfolio</a>
+      <a href="blog.html" class="py-2">Blog</a>
+      <a href="album.html" class="py-2">Album</a>
+      <a href="contact.html" class="py-2">Contact</a>
+    </div>
+  </header>
 
-<footer class="py-6 bg-[#0f172a] text-center text-gray-300 text-sm">
+  <main>
+    <!-- INTRO SECTION -->
+    <section class="py-20">
+      <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10">
+
+        <div data-aos="fade-up">
+          <h2 class="text-3xl font-bold">About Me</h2>
+          <p class="mt-4 text-gray-600 leading-relaxed">
+            Hi, I’m <strong>Nur Ain Suriani</strong>, a passionate and creative individual who enjoys
+            exploring web design, digital creativity, and communication. I love learning new
+            skills and turning ideas into meaningful digital experiences.
+          </p>
+        </div>
+
+        <div class="md:col-span-2" data-aos="fade-up" data-aos-delay="150">
+          <h3 class="text-xl font-semibold mb-4">Skills</h3>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <div class="glass p-4 rounded-lg shadow text-center">🎤 Emceeing</div>
+            <div class="glass p-4 rounded-lg shadow text-center">💻 Basic Coding</div>
+            <div class="glass p-4 rounded-lg shadow text-center">🤝 Teamwork</div>
+            <div class="glass p-4 rounded-lg shadow text-center">🎙️ Hosting</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EDUCATION + EXPERIENCE -->
+    <section class="py-12 bg-white">
+      <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10">
+
+        <div data-aos="fade-up">
+          <h3 class="text-2xl font-semibold mb-4">Education</h3>
+          <p class="text-gray-600">
+            🎓 Diploma in Information Management<br>
+            Universiti Teknologi MARA Kampus Rembau<br>
+            2022 – 2024
+          </p>
+        </div>
+
+        <div data-aos="fade-up" data-aos-delay="150">
+          <h3 class="text-2xl font-semibold mb-4">Experience</h3>
+          <ul class="text-gray-600 space-y-2">
+            <li>• Program Emcee for campus events</li>
+            <li>• Committee member in student activities</li>
+            <li>• Internship trainee in Majlis Perbandaraan Port Dickson</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- GOALS SECTION -->
+    <section class="py-16">
+      <div class="max-w-4xl mx-auto px-6 text-center" data-aos="fade-up">
+        <h3 class="text-2xl font-semibold mb-4">My Goal</h3>
+        <p class="text-gray-600 leading-relaxed">
+          My goal is to become a creative front-end developer and continue building
+          user-friendly, beautiful, and meaningful digital experiences that inspire others. 
+          I also want to be more confident to face others and show my talent as an emcee.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-6 bg-[#0f172a] text-center text-gray-300 text-sm">
     © 2025 ainsarizam — All rights reserved.
   </footer>
 
-<div id="backToTop">↑</div>
-<script src="script.js"></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>AOS.init();</script>
+  <div id="backToTop">↑</div>
+
+  <script src="script.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+
 </body>
 </html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog – Nur Ain Suriani</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body class="bg-[#fdf2f8]">
+
+    <header id="navbar" class="bg-white shadow-sm sticky top-0 z-40 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      
+          <div class="flex items-center gap-3">
+            <img src="image/profile.jpg" 
+                 class="w-12 h-12 rounded-full object-cover border-2 border-[var(--soft-accent-2)]" />
+            <a href="index.html" class="text-2xl font-bold">Nur Ain Suriani</a>
+          </div>
+      
+          <nav class="hidden md:flex gap-6 items-center text-sm font-medium">
+            <a href="about.html" class="hover:text-[var(--soft-accent-2)]">About</a>
+            <a href="portfolio.html" class="hover:text-[var(--soft-accent-2)]">Portfolio</a>
+            <a href="blog.html" class="hover:text-[var(--soft-accent-2)]">Blog</a>
+            <a href="album.html" class="hover:text-[var(--soft-accent-2)]">Album</a>
+            <a href="contact.html" class="hover:text-[var(--soft-accent-2)]">Contact</a>
+            <a class="px-4 py-2 border rounded-md hover:bg-[var(--soft-accent)] hover:text-white transition">Resume</a>
+          </nav>
+      
+          <button id="mobileBtn" class="md:hidden text-2xl">☰</button>
+        </div>
+      
+        <div id="mobileMenu" class="hidden flex flex-col px-6 pb-4 bg-white border-t text-sm">
+          <a href="about.html" class="py-2">About</a>
+          <a href="portfolio.html" class="py-2">Portfolio</a>
+          <a href="blog.html" class="py-2">Blog</a>
+          <a href="album.html" class="py-2">Album</a>
+          <a href="contact.html" class="py-2">Contact</a>
+        </div>
+      </header>      
+
+<section class="py-20">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl font-bold">Blog</h2>
+
+    <div class="mt-10 grid md:grid-cols-3 gap-8">
+
+      <div class="bg-white rounded-xl shadow p-5" data-aos="fade-up">
+        <img src="https://source.unsplash.com/random/400x250?notebook" class="rounded-lg w-full h-48 object-cover">
+        <h3 class="mt-4 font-semibold text-xl">Blog Title 1</h3>
+        <p class="text-sm mt-2 text-gray-600">Short summary of your blog.</p>
+      </div>
+
+      <div class="bg-white rounded-xl shadow p-5" data-aos="fade-up" data-aos-delay="150">
+        <img src="https://source.unsplash.com/random/400x250?desk" class="rounded-lg w-full h-48 object-cover">
+        <h3 class="mt-4 font-semibold text-xl">Blog Title 2</h3>
+        <p class="text-sm mt-2 text-gray-600">Short summary of your blog.</p>
+      </div>
+
+      <div class="bg-white rounded-xl shadow p-5" data-aos="fade-up" data-aos-delay="300">
+        <img src="https://source.unsplash.com/random/400x250?workspace" class="rounded-lg w-full h-48 object-cover">
+        <h3 class="mt-4 font-semibold text-xl">Blog Title 3</h3>
+        <p class="text-sm mt-2 text-gray-600">Short summary of your blog.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div id="backToTop">↑</div>
+<script src="script.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init();</script>
+</body>
+</html>

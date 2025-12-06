@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root {
+  --soft-bg: #F9F7FF;
+  --soft-accent: #CABDFF;
+  --soft-accent-2: #A997FF;
+  --text-main: #3a3a3c;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-main);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 0.5px;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+header.scrolled {
+  backdrop-filter: blur(15px);
+  background: rgba(255,255,255,0.85);
+}
+
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--soft-accent-2);
+  color: white;
+  padding: 12px 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  font-size: 20px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+  z-index: 999;
+}

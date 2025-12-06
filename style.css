@@ -1,30 +1,23 @@
+/* GOOGLE FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap');
 
+/* BASE STYLES */
 html, body {
-    height: 100%;
-    margin: 0;
-  }
-  
-  body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  
-  main {
-    flex: 1;
-  }
-    
-:root {
-  --soft-bg: #F9F7FF;
-  --soft-accent: #CABDFF;
-  --soft-accent-2: #A997FF;
-  --text-main: #3a3a3c;
+  height: 100%;
+  margin: 0;
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   font-family: 'Poppins', sans-serif;
   color: var(--text-main);
+  background: var(--soft-bg);
+}
+
+main {
+  flex: 1;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -32,17 +25,28 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.5px;
 }
 
+/* ROOT COLORS */
+:root {
+  --soft-bg: #F9F7FF;
+  --soft-accent: #CABDFF;
+  --soft-accent-2: #A997FF;
+  --text-main: #3a3a3c;
+}
+
+/* GLASS EFFECT */
 .glass {
   background: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
+/* HEADER SCROLL EFFECT */
 header.scrolled {
   backdrop-filter: blur(15px);
   background: rgba(255,255,255,0.85);
 }
 
+/* BACK TO TOP BUTTON */
 #backToTop {
   position: fixed;
   bottom: 30px;
@@ -56,4 +60,49 @@ header.scrolled {
   font-size: 20px;
   box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
   z-index: 999;
+}
+
+/* POLAROID STYLING */
+.polaroid {
+  background: white;
+  padding: 12px 12px 40px;
+  border-radius: 12px;
+  box-shadow: 0 12px 25px rgba(0,0,0,.15);
+  position: relative;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.polaroid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.polaroid span {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  font-size: .85rem;
+  color: #444;
+  font-family: 'Courier New', monospace;
+}
+
+.polaroid:hover {
+  transform: rotate(1deg) scale(1.05);
+  z-index: 10;
+}
+
+/* RESPONSIVE GRID SPACING */
+.grid {
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    gap: 1rem;
+  }
 }

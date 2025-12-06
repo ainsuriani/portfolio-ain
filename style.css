@@ -62,15 +62,42 @@ header.scrolled {
   z-index: 999;
 }
 
-/* POLAROID STYLING */
+/* POLAROID + STRING EFFECT */
+.string-line {
+  position: relative;
+  height: 2px;
+  background: #cbd5f5;
+  margin-bottom: 3rem;
+}
+
+.polaroid::before {
+  content: "📎";
+  position: absolute;
+  top: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+}
+
 .polaroid {
   background: white;
   padding: 12px 12px 40px;
   border-radius: 12px;
   box-shadow: 0 12px 25px rgba(0,0,0,.15);
   position: relative;
-  transition: 0.3s ease;
+  transform: rotate(var(--rotate));
+  transition: all 0.3s ease;
   cursor: pointer;
+  animation: float 4s ease-in-out infinite;
+}
+
+.polaroid:nth-child(odd){
+  animation-delay: 1s;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0) rotate(var(--rotate)); }
+  50% { transform: translateY(-8px) rotate(0deg); }
 }
 
 .polaroid img {
@@ -92,7 +119,7 @@ header.scrolled {
 }
 
 .polaroid:hover {
-  transform: rotate(1deg) scale(1.05);
+  transform: rotate(0deg) scale(1.08);
   z-index: 10;
 }
 
@@ -106,3 +133,33 @@ header.scrolled {
     gap: 1rem;
   }
 }
+
+/* LIGHTBOX */
+#lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+    cursor: pointer;
+  }
+  
+  #lightbox img {
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+  }
+  
+  #lightbox img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Optional scrapbook background */
+  body.album-page {
+    background: url('image/scrapbook-bg.jpg') no-repeat center top;
+    background-size: cover;
+  }
+  

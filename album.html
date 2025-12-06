@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-  <!-- Polaroid Custom CSS -->
+  <!-- Polaroid + Lightbox CSS -->
   <style>
     .polaroid {
       background: white;
@@ -19,6 +19,17 @@
       position: relative;
       transition: 0.3s ease;
       cursor: pointer;
+      transform: rotate(var(--rotate));
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .polaroid:nth-child(odd){
+      animation-delay: 1s;
+    }
+
+    @keyframes float {
+      0%,100% { transform: translateY(0) rotate(var(--rotate)); }
+      50% { transform: translateY(-8px) rotate(0deg); }
     }
 
     .polaroid img {
@@ -40,13 +51,42 @@
     }
 
     .polaroid:hover {
-      transform: rotate(1deg) scale(1.05);
+      transform: rotate(0deg) scale(1.08);
       z-index: 10;
+    }
+
+    /* LIGHTBOX */
+    #lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 50;
+      cursor: pointer;
+    }
+
+    #lightbox img {
+      max-width: 90%;
+      max-height: 90vh;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+    }
+
+    #lightbox img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Optional scrapbook background */
+    body {
+      background: url('image/scrapbook-bg.jpg') no-repeat center top;
+      background-size: cover;
     }
   </style>
 </head>
 
-<body class="bg-[#f1f5f9]">
+<body>
 
 <!-- HEADER -->
 <header id="navbar" class="bg-white shadow-sm sticky top-0 z-40 transition-all duration-300">
@@ -72,32 +112,32 @@
 </header>
 
 <!-- ALBUM SECTION -->
-<main>
-  <section class="py-20">
+<main class="py-20 flex-1">
+  <section>
     <div class="max-w-6xl mx-auto px-6">
 
       <h2 class="text-3xl font-bold text-center">My Memory Album 📸</h2>
       <p class="text-gray-600 mt-2 text-center">A collection of my favourite memories.</p>
 
-      <div class="mt-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
+      <div class="mt-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 justify-items-center">
 
-        <div class="polaroid" data-aos="fade-up">
-          <img src="image/photoshootsmf.jpg">
+        <div class="polaroid" style="--rotate:-4deg" data-aos="fade-up">
+          <img src="image/photoshootsmf.jpg" alt="Sweet Memory">
           <span>Sweet Memory</span>
         </div>
 
-        <div class="polaroid" data-aos="fade-up" data-aos-delay="100">
-          <img src="image/photoshootsmf.jpg">
+        <div class="polaroid" style="--rotate:3deg" data-aos="fade-up" data-aos-delay="100">
+          <img src="image/photoshootsmf.jpg" alt="Best Day">
           <span>Best Day</span>
         </div>
 
-        <div class="polaroid" data-aos="fade-up" data-aos-delay="200">
-          <img src="image/photoshootsmf.jpg">
+        <div class="polaroid" style="--rotate:-2deg" data-aos="fade-up" data-aos-delay="200">
+          <img src="image/photoshootsmf.jpg" alt="Captured Moment">
           <span>Captured Moment</span>
         </div>
 
-        <div class="polaroid" data-aos="fade-up" data-aos-delay="300">
-          <img src="image/photoshootsmf.jpg">
+        <div class="polaroid" style="--rotate:4deg" data-aos="fade-up" data-aos-delay="300">
+          <img src="image/photoshootsmf.jpg" alt="Favourite Shot">
           <span>Favourite Shot</span>
         </div>
 
@@ -107,7 +147,12 @@
   </section>
 </main>
 
-<!-- FOOTER FIXED AT BOTTOM -->
+<!-- LIGHTBOX -->
+<div id="lightbox">
+  <img id="lightbox-img" src="" alt="Album Photo">
+</div>
+
+<!-- FOOTER -->
 <footer class="bg-[#0f172a] text-center text-gray-300 text-sm py-6 mt-auto">
   © 2025 ainsarizam — All rights reserved.
 </footer>
@@ -117,6 +162,25 @@
 
 <script src="script.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>AOS.init();</script>
+<script>
+  AOS.init();
+
+  // LIGHTBOX FUNCTIONALITY
+  const polaroidImages = document.querySelectorAll(".polaroid img");
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+
+  polaroidImages.forEach(img => {
+    img.addEventListener("click", () => {
+      lightbox.style.display = "flex";
+      lightboxImg.src = img.src;
+    });
+  });
+
+  lightbox.addEventListener("click", () => {
+    lightbox.style.display = "none";
+    lightboxImg.src = "";
+  });
+</script>
 </body>
 </html>

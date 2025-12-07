@@ -10,65 +10,66 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <style>
-    /* Album image card */
     .album-card {
-      position: relative;
+      border-radius: 14px;
       overflow: hidden;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
       cursor: pointer;
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: 0.3s ease;
+      background: #fff;
+    }
+
+    .album-card:hover {
+      transform: translateY(-6px);
     }
 
     .album-card img {
       width: 100%;
-      height: 220px;
+      height: 240px;
       object-fit: cover;
-      transition: transform 0.3s;
     }
 
-    .album-card:hover img {
-      transform: scale(1.05);
-    }
-
-    .album-card .caption {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(0,0,0,0.6);
-      color: #fff;
+    .album-caption {
+      padding: 14px;
+      background: #0f172a;
+      color: white;
       text-align: center;
-      padding: 6px 0;
-      font-size: 0.9rem;
-      transition: background 0.3s;
+      font-weight: 600;
+      letter-spacing: 0.3px;
     }
 
-    .album-card:hover .caption {
-      background: rgba(0,0,0,0.8);
-    }
-
-    /* Lightbox */
+    /* LIGHTBOX */
     #lightbox {
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.85);
+      background: rgba(0,0,0,0.9);
       display: none;
       align-items: center;
       justify-content: center;
       z-index: 50;
-      cursor: pointer;
+      flex-direction: column;
     }
 
     #lightbox img {
       max-width: 90%;
-      max-height: 90vh;
+      max-height: 80vh;
       border-radius: 12px;
-      transition: transform 0.3s ease;
     }
 
-    #lightbox img:hover {
-      transform: scale(1.05);
+    .lightbox-controls {
+      color: white;
+      margin-top: 20px;
+      display: flex;
+      gap: 20px;
+    }
+
+    .lightbox-controls button {
+      background: white;
+      color: black;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -76,115 +77,126 @@
 <body class="bg-[#f1f5f9]">
 
 <!-- HEADER -->
-<header id="navbar" class="bg-white shadow-sm sticky top-0 z-40 transition-all duration-300">
+<header class="bg-white shadow-sm sticky top-0 z-40">
   <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
     <div class="flex items-center gap-3">
-      <img src="image/logonama1.png" class="w-12 h-12 rounded-full object-cover border-2 border-[var(--soft-accent-2)]" />
+      <img src="image/logonama1.png" class="w-12 h-12 rounded-full object-cover" />
       <a href="index.html" class="text-2xl font-bold">Nur Ain Suriani</a>
     </div>
 
-    <nav class="hidden md:flex gap-6 items-center text-sm font-medium">
+    <nav class="hidden md:flex gap-6 text-sm font-medium">
       <a href="about.html">About</a>
       <a href="portfolio.html">Portfolio</a>
       <a href="blog.html">Blog</a>
-      <a href="album.html" class="text-[var(--soft-accent-2)] font-semibold">Album</a>
+      <a href="album.html" class="font-bold text-blue-600">Album</a>
       <a href="contact.html">Contact</a>
-      <a class="px-4 py-2 border rounded-md hover:bg-[var(--soft-accent)] hover:text-white transition">Resume</a>
     </nav>
-
-    <button id="mobileBtn" class="md:hidden text-2xl">☰</button>
   </div>
 </header>
 
-<!-- ALBUM SECTION -->
-<main class="py-20 flex-1">
-  <section>
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center">My Memory Album</h2>
-      <p class="text-gray-600 mt-2 text-center">A collection of my favourite memories.</p>
+<!-- ALBUM -->
+<main class="py-20">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center">My Life Album</h2>
+    <p class="text-gray-600 text-center mt-2">Each album contains multiple memories.</p>
 
-      <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+    <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
 
-        <!-- Album Card Example -->
-        <div class="album-card" data-aos="fade-up">
-          <img src="image/miniaindresspink.jpg" alt="Sweet Memory">
-          <div class="caption">Pra Sekolah</div>
-        </div>
-
-        <div class="album-card" data-aos="fade-up" data-aos-delay="100">
-          <img src="image/photoshootsmf.jpg" alt="Best Day">
-          <div class="caption">Best Day</div>
-        </div>
-
-        <div class="album-card" data-aos="fade-up" data-aos-delay="200">
-          <img src="image/photoshootsmf.jpg" alt="Captured Moment">
-          <div class="caption">Captured Moment</div>
-        </div>
-
-        <div class="album-card" data-aos="fade-up" data-aos-delay="300">
-          <img src="image/photoshootsmf.jpg" alt="Favourite Shot">
-          <div class="caption">Favourite Shot</div>
-        </div>
-
-        <div class="album-card" data-aos="fade-up" data-aos-delay="400">
-          <img src="image/photoshootsmf.jpg" alt="Memorable Day">
-          <div class="caption">Memorable Day</div>
-        </div>
-
-        <div class="album-card" data-aos="fade-up" data-aos-delay="500">
-          <img src="image/photoshootsmf.jpg" alt="Cherished Moment">
-          <div class="caption">Cherished Moment</div>
-        </div>
-
-        <div class="album-card" data-aos="fade-up" data-aos-delay="400">
-          <img src="image/photoshootsmf.jpg" alt="Memorable Day">
-          <div class="caption">Memorable Day</div>
-        </div>
-
-        <div class="album-card" data-aos="fade-up" data-aos-delay="500">
-          <img src="image/photoshootsmf.jpg" alt="Cherished Moment">
-          <div class="caption">Cherished Moment</div>
-        </div>
-
+      <!-- ALBUM 1 -->
+      <div class="album-card" 
+           data-images="image/miniaindresspink.jpg,image/photoshootsmf.jpg,image/miniaindresspink.jpg">
+        <img src="image/miniaindresspink.jpg">
+        <div class="album-caption">Childhood</div>
       </div>
+
+      <!-- ALBUM 2 -->
+      <div class="album-card" 
+           data-images="image/photoshootsmf.jpg,image/miniaindresspink.jpg,image/photoshootsmf.jpg">
+        <img src="image/photoshootsmf.jpg">
+        <div class="album-caption">Preschool</div>
+      </div>
+
+      <!-- ALBUM 3 -->
+      <div class="album-card" 
+           data-images="image/photoshootsmf.jpg,image/photoshootsmf.jpg,image/miniaindresspink.jpg">
+        <img src="image/photoshootsmf.jpg">
+        <div class="album-caption">Primary School</div>
+      </div>
+
+      <!-- ALBUM 4 -->
+      <div class="album-card" 
+           data-images="image/photoshootsmf.jpg,image/photoshootsmf.jpg,image/miniaindresspink.jpg">
+        <img src="image/photoshootsmf.jpg">
+        <div class="album-caption">High School</div>
+      </div>
+
+      <!-- ALBUM 5 -->
+      <div class="album-card" 
+           data-images="image/photoshootsmf.jpg,image/photoshootsmf.jpg,image/miniaindresspink.jpg">
+        <img src="image/photoshootsmf.jpg">
+        <div class="album-caption">University</div>
+      </div>
+
+      <!-- ALBUM 6 -->
+      <div class="album-card" 
+           data-images="image/photoshootsmf.jpg,image/photoshootsmf.jpg,image/miniaindresspink.jpg">
+        <img src="image/photoshootsmf.jpg">
+        <div class="album-caption">Holiday & Travel</div>
+      </div>
+
     </div>
-  </section>
+  </div>
 </main>
 
 <!-- LIGHTBOX -->
 <div id="lightbox">
-  <img id="lightbox-img" src="" alt="Album Photo">
+  <img id="lightbox-img">
+  <div class="lightbox-controls">
+    <button id="prevBtn">◀</button>
+    <button id="nextBtn">▶</button>
+    <button id="closeBtn">✖</button>
+  </div>
 </div>
 
 <!-- FOOTER -->
-<footer class="bg-[#0f172a] text-center text-gray-300 text-sm py-6 mt-auto">
+<footer class="bg-[#0f172a] text-center text-gray-300 text-sm py-6">
   © 2025 ainsarizam — All rights reserved.
 </footer>
 
-<!-- BACK TO TOP -->
-<div id="backToTop">↑</div>
-
-<script src="script.js"></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-  AOS.init();
-
-  // LIGHTBOX FUNCTIONALITY
-  const albumCards = document.querySelectorAll(".album-card img");
+  const cards = document.querySelectorAll(".album-card");
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightbox-img");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+  const closeBtn = document.getElementById("closeBtn");
 
-  albumCards.forEach(img => {
-    img.addEventListener("click", () => {
+  let images = [];
+  let currentIndex = 0;
+
+  cards.forEach(card => {
+    card.addEventListener("click", () => {
+      images = card.dataset.images.split(",");
+      currentIndex = 0;
+      lightboxImg.src = images[currentIndex];
       lightbox.style.display = "flex";
-      lightboxImg.src = img.src;
     });
   });
 
-  lightbox.addEventListener("click", () => {
+  nextBtn.onclick = () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    lightboxImg.src = images[currentIndex];
+  };
+
+  prevBtn.onclick = () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    lightboxImg.src = images[currentIndex];
+  };
+
+  closeBtn.onclick = () => {
     lightbox.style.display = "none";
-    lightboxImg.src = "";
-  });
+  };
 </script>
+
 </body>
 </html>

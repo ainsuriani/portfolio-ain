@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Album – Nur Ain Suriani</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="style.css" />
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 <style>
@@ -17,17 +18,12 @@
   transition: 0.3s ease;
   background: #fff;
 }
-
-.album-card:hover {
-  transform: translateY(-6px);
-}
-
+.album-card:hover { transform: translateY(-6px); }
 .album-card img {
   width: 100%;
   height: 240px;
   object-fit: cover;
 }
-
 .album-caption {
   padding: 14px;
   background: #0f172a;
@@ -36,7 +32,7 @@
   font-weight: 600;
 }
 
-/* ✅ SIMPLE LIGHTBOX (NO TRANSITION) */
+/* LIGHTBOX */
 #lightbox {
   position: fixed;
   inset: 0;
@@ -54,7 +50,7 @@
   border-radius: 12px;
 }
 
-/* ✅ CONTROLS */
+/* CONTROLS */
 #prevBtn, #nextBtn, #closeBtn {
   position: absolute;
   background: white;
@@ -65,29 +61,31 @@
   cursor: pointer;
   z-index: 1000;
 }
-
 #prevBtn { left: 20px; }
 #nextBtn { right: 20px; }
 #closeBtn { top: 20px; right: 20px; }
 </style>
 </head>
 
-<body class="bg-[#f1f5f9]">
+<body class="bg-[#fdf2f8]">
 
-<!-- HEADER -->
-<header class="bg-white shadow-sm sticky top-0 z-40">
+<!-- ✅ SAME NAVBAR AS BLOG -->
+<header id="navbar" class="bg-white shadow-sm sticky top-0 z-40 transition-all duration-300">
   <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+
     <div class="flex items-center gap-3">
-      <img src="image/logonama1.png" class="w-12 h-12 rounded-full object-cover">
+      <img src="image/logonama1.png" 
+           class="w-12 h-12 rounded-full object-cover border-2 border-[var(--soft-accent-2)]" />
       <a href="index.html" class="text-2xl font-bold">Nur Ain Suriani</a>
     </div>
 
     <nav class="hidden md:flex gap-6 items-center text-sm font-medium">
-      <a href="about.html">About</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="blog.html">Blog</a>
-      <a href="album.html">Album</a>
-      <a href="contact.html">Contact</a>
+      <a href="about.html" class="hover:text-[var(--soft-accent-2)]">About</a>
+      <a href="portfolio.html" class="hover:text-[var(--soft-accent-2)]">Portfolio</a>
+      <a href="blog.html" class="hover:text-[var(--soft-accent-2)]">Blog</a>
+      <a href="album.html" class="hover:text-[var(--soft-accent-2)]">Album</a>
+      <a href="contact.html" class="hover:text-[var(--soft-accent-2)]">Contact</a>
+      <a class="px-4 py-2 border rounded-md hover:bg-[var(--soft-accent)] hover:text-white transition">Resume</a>
     </nav>
 
     <button id="mobileBtn" class="md:hidden text-2xl">☰</button>
@@ -102,7 +100,7 @@
   </div>
 </header>
 
-<!-- ALBUM -->
+<!-- ✅ ALBUM CONTENT -->
 <main class="py-20">
   <div class="max-w-6xl mx-auto px-6">
     <h2 class="text-3xl font-bold text-center" data-aos="fade-up">My Life Album</h2>
@@ -162,7 +160,7 @@
   <button id="closeBtn">✕</button>
 </div>
 
-<footer class="bg-[#0f172a] text-center text-gray-300 text-sm py-6">
+<footer class="py-6 bg-[#0f172a] text-center text-gray-300 text-sm">
   © 2025 ainsarizam — All rights reserved.
 </footer>
 
@@ -171,10 +169,10 @@
 <script>
 AOS.init({ duration: 800, once: true });
 
-// ✅ MOBILE MENU
+// MOBILE MENU
 mobileBtn.onclick = () => mobileMenu.classList.toggle("hidden");
 
-// ✅ SIMPLE SLIDESHOW (NO AUTO, NO TRANSITION)
+// LIGHTBOX
 const cards = document.querySelectorAll(".album-card");
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");

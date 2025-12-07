@@ -35,41 +35,50 @@
       color: white;
       text-align: center;
       font-weight: 600;
-      letter-spacing: 0.3px;
     }
 
-    /* LIGHTBOX */
+    /* ✅ LIGHTBOX WITH BLUR & ANIMATION */
     #lightbox {
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.9);
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(12px);
       display: none;
       align-items: center;
       justify-content: center;
-      z-index: 50;
-      flex-direction: column;
+      z-index: 999;
+      animation: fadeIn 0.4s ease;
     }
 
     #lightbox img {
       max-width: 90%;
-      max-height: 80vh;
+      max-height: 85vh;
       border-radius: 12px;
+      animation: zoomIn 0.4s ease;
     }
 
-    .lightbox-controls {
-      color: white;
-      margin-top: 20px;
-      display: flex;
-      gap: 20px;
-    }
-
-    .lightbox-controls button {
+    #prevBtn, #nextBtn, #closeBtn {
+      position: absolute;
       background: white;
       color: black;
       padding: 10px 16px;
-      border-radius: 8px;
+      border-radius: 999px;
       font-weight: bold;
       cursor: pointer;
+    }
+
+    #prevBtn { left: 20px; }
+    #nextBtn { right: 20px; }
+    #closeBtn { top: 20px; right: 20px; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.85); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
     }
   </style>
 </head>
@@ -77,22 +86,20 @@
 <body class="bg-[#f1f5f9]">
 
 <!-- HEADER -->
-<header id="navbar" class="bg-white shadow-sm sticky top-0 z-40 transition-all duration-300">
+<header id="navbar" class="bg-white shadow-sm sticky top-0 z-40">
   <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
 
     <div class="flex items-center gap-3">
-      <img src="image/logonama1.png" 
-           class="w-12 h-12 rounded-full object-cover border-2 border-[var(--soft-accent-2)]" />
+      <img src="image/logonama1.png" class="w-12 h-12 rounded-full object-cover" />
       <a href="index.html" class="text-2xl font-bold">Nur Ain Suriani</a>
     </div>
 
     <nav class="hidden md:flex gap-6 items-center text-sm font-medium">
-      <a href="about.html" class="hover:text-[var(--soft-accent-2)]">About</a>
-      <a href="portfolio.html" class="hover:text-[var(--soft-accent-2)]">Portfolio</a>
-      <a href="blog.html" class="hover:text-[var(--soft-accent-2)]">Blog</a>
-      <a href="album.html" class="hover:text-[var(--soft-accent-2)]">Album</a>
-      <a href="contact.html" class="hover:text-[var(--soft-accent-2)]">Contact</a>
-      <a class="px-4 py-2 border rounded-md hover:bg-[var(--soft-accent)] hover:text-white transition">Resume</a>
+      <a href="about.html">About</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="blog.html">Blog</a>
+      <a href="album.html">Album</a>
+      <a href="contact.html">Contact</a>
     </nav>
 
     <button id="mobileBtn" class="md:hidden text-2xl">☰</button>
@@ -110,61 +117,47 @@
 <!-- ALBUM -->
 <main class="py-20">
   <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-3xl font-bold text-center">My Life Album</h2>
-    <p class="text-gray-600 text-center mt-2">Each album contains multiple memories.</p>
+    <h2 class="text-3xl font-bold text-center" data-aos="fade-up">My Life Album</h2>
+    <p class="text-gray-600 text-center mt-2" data-aos="fade-up">Each album contains multiple memories.</p>
 
     <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
 
-      <!-- ALBUM 1 -->
-      <div class="album-card" 
-           data-images="image/miniaindresspink.jpg,image/minius.jpg,image/kidspeacebajuoren.jpg">
+      <div class="album-card" data-aos="zoom-in" data-images="image/miniaindresspink.jpg,image/minius.jpg,image/kidspeacebajuoren.jpg">
         <img src="image/miniaindresspink.jpg">
         <div class="album-caption">Childhood</div>
       </div>
 
-      <!-- ALBUM 2 -->
-      <div class="album-card" 
-           data-images="image/famlamabajukuning.jpg,image/ibuayahdatc.jpg,image/siblingsstudio.jpg,image/famstudio.jpg">
+      <div class="album-card" data-aos="zoom-in" data-images="image/famlamabajukuning.jpg,image/ibuayahdatc.jpg,image/siblingsstudio.jpg,image/famstudio.jpg">
         <img src="image/famlamabajukuning.jpg">
         <div class="album-caption">Family</div>
       </div>
 
-      <!-- ALBUM 3 -->
-      <div class="album-card" 
-           data-images="image/withizrulsekren.jpg">
+      <div class="album-card" data-aos="zoom-in" data-images="image/withizrulsekren.jpg">
         <img src="image/withizrulsekren.jpg">
         <div class="album-caption">Primary School</div>
       </div>
 
-      <!-- ALBUM 4 -->
-      <div class="album-card" 
-           data-images="image/withcikgumirul.jpg,image/daynnnaz.jpg">
+      <div class="album-card" data-aos="zoom-in" data-images="image/withcikgumirul.jpg,image/daynnnaz.jpg">
         <img src="image/withcikgumirul.jpg">
         <div class="album-caption">Secondary School I</div>
       </div>
 
-      <!-- ALBUM 5 -->
-      <div class="album-card" 
-           data-images="image/smkdepansekolah.jpg,image/smkdktdataran.jpg,image/smkwithjimah.jpg,image/smksolo.jpg">
+      <div class="album-card" data-aos="zoom-in" data-images="image/smkdepansekolah.jpg,image/smkdktdataran.jpg,image/smkwithjimah.jpg,image/smksolo.jpg">
         <img src="image/smkdepansekolah.jpg">
         <div class="album-caption">Secondary School II</div>
       </div>
 
-      <!-- ALBUM 6 -->
-      <div class="album-card" 
-           data-images="image/girlsdip.jpg,image/kelasallblack.jpg,image/kelassem1.jpg,image/masjidall.jpg,image/masjidpp.jpg,image/mentordip.jpg">
+      <div class="album-card" data-aos="zoom-in" data-images="image/girlsdip.jpg,image/kelasallblack.jpg,image/kelassem1.jpg,image/masjidall.jpg,image/masjidpp.jpg,image/mentordip.jpg">
         <img src="image/convo.jpg">
         <div class="album-caption">Diploma</div>
       </div>
 
-      <div class="album-card" 
-           data-images="image/aquaria.jpg,image/farminthecity.jpg,image/kl.jpg,image/luge.jpg,image/padangbesaq.jpg,image/penarikan.jpg,image/zoonegara.jpg">
+      <div class="album-card" data-aos="zoom-in" data-images="image/aquaria.jpg,image/farminthecity.jpg,image/kl.jpg,image/luge.jpg,image/padangbesaq.jpg,image/penarikan.jpg,image/zoonegara.jpg">
         <img src="image/aquaria.jpg">
         <div class="album-caption">Holiday & Travel</div>
       </div>
 
-       <div class="album-card" 
-           data-images="image/farminthecity2.jpg,image/dekanhitam.jpg,image/convopegangjubah.jpg">
+      <div class="album-card" data-aos="zoom-in" data-images="image/farminthecity2.jpg,image/dekanhitam.jpg,image/convopegangjubah.jpg">
         <img src="image/dekanhitam.jpg">
         <div class="album-caption">Myself</div>
       </div>
@@ -173,54 +166,85 @@
   </div>
 </main>
 
-<!-- LIGHTBOX -->
+<!-- ✅ LIGHTBOX -->
 <div id="lightbox">
+  <button id="prevBtn">❮</button>
   <img id="lightbox-img">
-  <div class="lightbox-controls">
-    <button id="prevBtn">◀</button>
-    <button id="nextBtn">▶</button>
-    <button id="closeBtn">✖</button>
-  </div>
+  <button id="nextBtn">❯</button>
+  <button id="closeBtn">✕</button>
 </div>
 
-<!-- FOOTER -->
 <footer class="bg-[#0f172a] text-center text-gray-300 text-sm py-6">
   © 2025 ainsarizam — All rights reserved.
 </footer>
 
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
 <script>
-  const cards = document.querySelectorAll(".album-card");
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImg = document.getElementById("lightbox-img");
-  const prevBtn = document.getElementById("prevBtn");
-  const nextBtn = document.getElementById("nextBtn");
-  const closeBtn = document.getElementById("closeBtn");
+AOS.init({ duration: 800, once: true });
 
-  let images = [];
-  let currentIndex = 0;
+// ✅ MOBILE MENU
+mobileBtn.onclick = () => mobileMenu.classList.toggle("hidden");
 
-  cards.forEach(card => {
-    card.addEventListener("click", () => {
-      images = card.dataset.images.split(",");
-      currentIndex = 0;
-      lightboxImg.src = images[currentIndex];
-      lightbox.style.display = "flex";
-    });
-  });
+// ✅ LIGHTBOX FEATURES
+const cards = document.querySelectorAll(".album-card");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
 
-  nextBtn.onclick = () => {
+let images = [];
+let currentIndex = 0;
+let interval;
+let startX = 0;
+
+function showImage(i) {
+  lightboxImg.style.opacity = 0;
+  setTimeout(() => {
+    lightboxImg.src = images[i];
+    lightboxImg.style.opacity = 1;
+  }, 150);
+}
+
+function startAuto() {
+  stopAuto();
+  interval = setInterval(() => {
     currentIndex = (currentIndex + 1) % images.length;
-    lightboxImg.src = images[currentIndex];
-  };
+    showImage(currentIndex);
+  }, 3000);
+}
 
-  prevBtn.onclick = () => {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    lightboxImg.src = images[currentIndex];
-  };
+function stopAuto() { if (interval) clearInterval(interval); }
 
-  closeBtn.onclick = () => {
-    lightbox.style.display = "none";
+cards.forEach(card => {
+  card.onclick = () => {
+    images = card.dataset.images.split(",");
+    currentIndex = 0;
+    lightbox.style.display = "flex";
+    document.body.style.overflow = "hidden";
+    showImage(0);
+    startAuto();
   };
+});
+
+nextBtn.onclick = () => { currentIndex++; showImage(currentIndex %= images.length); };
+prevBtn.onclick = () => { currentIndex--; showImage((currentIndex + images.length) % images.length); };
+closeBtn.onclick = () => { lightbox.style.display = "none"; stopAuto(); document.body.style.overflow = "auto"; };
+
+// ✅ KEYBOARD
+document.onkeydown = e => {
+  if (lightbox.style.display === "flex") {
+    if (e.key === "ArrowRight") nextBtn.click();
+    if (e.key === "ArrowLeft") prevBtn.click();
+    if (e.key === "Escape") closeBtn.click();
+  }
+};
+
+// ✅ SWIPE GESTURE
+lightboxImg.addEventListener("touchstart", e => startX = e.touches[0].clientX);
+lightboxImg.addEventListener("touchend", e => {
+  let endX = e.changedTouches[0].clientX;
+  if (startX - endX > 50) nextBtn.click();
+  if (endX - startX > 50) prevBtn.click();
+});
 </script>
 
 </body>

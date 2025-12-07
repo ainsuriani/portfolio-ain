@@ -9,53 +9,46 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-  <!-- Polaroid + Lightbox CSS -->
   <style>
-    .polaroid {
-      background: white;
-      padding: 12px 12px 40px;
-      border-radius: 12px;
-      box-shadow: 0 12px 25px rgba(0,0,0,.15);
+    /* Album image card */
+    .album-card {
       position: relative;
-      transition: 0.3s ease;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
       cursor: pointer;
-      transform: rotate(var(--rotate));
-      animation: float 4s ease-in-out infinite;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    .polaroid:nth-child(odd){
-      animation-delay: 1s;
-    }
-
-    @keyframes float {
-      0%,100% { transform: translateY(0) rotate(var(--rotate)); }
-      50% { transform: translateY(-8px) rotate(0deg); }
-    }
-
-    .polaroid img {
+    .album-card img {
       width: 100%;
-      height: 200px;
+      height: 220px;
       object-fit: cover;
-      border-radius: 10px;
+      transition: transform 0.3s;
     }
 
-    .polaroid span {
+    .album-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .album-card .caption {
       position: absolute;
-      bottom: 10px;
-      width: 100%;
+      bottom: 0;
       left: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
       text-align: center;
-      font-size: .85rem;
-      color: #444;
-      font-family: 'Courier New', monospace;
+      padding: 6px 0;
+      font-size: 0.9rem;
+      transition: background 0.3s;
     }
 
-    .polaroid:hover {
-      transform: rotate(0deg) scale(1.08);
-      z-index: 10;
+    .album-card:hover .caption {
+      background: rgba(0,0,0,0.8);
     }
 
-    /* LIGHTBOX */
+    /* Lightbox */
     #lightbox {
       position: fixed;
       inset: 0;
@@ -77,24 +70,16 @@
     #lightbox img:hover {
       transform: scale(1.05);
     }
-
-    /* Optional scrapbook background */
-    body {
-      background: url('image/scrapbook-bg.jpg') no-repeat center top;
-      background-size: cover;
-    }
   </style>
 </head>
 
-<body>
+<body class="bg-[#f1f5f9]">
 
 <!-- HEADER -->
 <header id="navbar" class="bg-white shadow-sm sticky top-0 z-40 transition-all duration-300">
   <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-
     <div class="flex items-center gap-3">
-      <img src="image/logonama1.png" 
-           class="w-12 h-12 rounded-full object-cover border-2 border-[var(--soft-accent-2)]" />
+      <img src="image/logonama1.png" class="w-12 h-12 rounded-full object-cover border-2 border-[var(--soft-accent-2)]" />
       <a href="index.html" class="text-2xl font-bold">Nur Ain Suriani</a>
     </div>
 
@@ -115,34 +100,43 @@
 <main class="py-20 flex-1">
   <section>
     <div class="max-w-6xl mx-auto px-6">
-
-      <h2 class="text-3xl font-bold text-center">My Memory Album 📸</h2>
+      <h2 class="text-3xl font-bold text-center">My Memory Album</h2>
       <p class="text-gray-600 mt-2 text-center">A collection of my favourite memories.</p>
 
-      <div class="mt-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 justify-items-center">
+      <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
 
-        <div class="polaroid" style="--rotate:-4deg" data-aos="fade-up">
+        <!-- Album Card Example -->
+        <div class="album-card" data-aos="fade-up">
           <img src="image/photoshootsmf.jpg" alt="Sweet Memory">
-          <span>Sweet Memory</span>
+          <div class="caption">Sweet Memory</div>
         </div>
 
-        <div class="polaroid" style="--rotate:3deg" data-aos="fade-up" data-aos-delay="100">
+        <div class="album-card" data-aos="fade-up" data-aos-delay="100">
           <img src="image/photoshootsmf.jpg" alt="Best Day">
-          <span>Best Day</span>
+          <div class="caption">Best Day</div>
         </div>
 
-        <div class="polaroid" style="--rotate:-2deg" data-aos="fade-up" data-aos-delay="200">
+        <div class="album-card" data-aos="fade-up" data-aos-delay="200">
           <img src="image/photoshootsmf.jpg" alt="Captured Moment">
-          <span>Captured Moment</span>
+          <div class="caption">Captured Moment</div>
         </div>
 
-        <div class="polaroid" style="--rotate:4deg" data-aos="fade-up" data-aos-delay="300">
+        <div class="album-card" data-aos="fade-up" data-aos-delay="300">
           <img src="image/photoshootsmf.jpg" alt="Favourite Shot">
-          <span>Favourite Shot</span>
+          <div class="caption">Favourite Shot</div>
+        </div>
+
+        <div class="album-card" data-aos="fade-up" data-aos-delay="400">
+          <img src="image/photoshootsmf.jpg" alt="Memorable Day">
+          <div class="caption">Memorable Day</div>
+        </div>
+
+        <div class="album-card" data-aos="fade-up" data-aos-delay="500">
+          <img src="image/photoshootsmf.jpg" alt="Cherished Moment">
+          <div class="caption">Cherished Moment</div>
         </div>
 
       </div>
-
     </div>
   </section>
 </main>
@@ -166,11 +160,11 @@
   AOS.init();
 
   // LIGHTBOX FUNCTIONALITY
-  const polaroidImages = document.querySelectorAll(".polaroid img");
+  const albumCards = document.querySelectorAll(".album-card img");
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightbox-img");
 
-  polaroidImages.forEach(img => {
+  albumCards.forEach(img => {
     img.addEventListener("click", () => {
       lightbox.style.display = "flex";
       lightboxImg.src = img.src;

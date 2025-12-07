@@ -1,102 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Album – Nur Ain Suriani</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Album – Nur Ain Suriani</title>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-  <style>
-    .album-card {
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-      cursor: pointer;
-      transition: 0.3s ease;
-      background: #fff;
-    }
-  
-    .album-card:hover {
-      transform: translateY(-6px);
-    }
-  
-    .album-card img {
-      width: 100%;
-      height: 240px;
-      object-fit: cover;
-    }
-  
-    .album-caption {
-      padding: 14px;
-      background: #0f172a;
-      color: white;
-      text-align: center;
-      font-weight: 600;
-    }
-  
-    /* ✅ SMOOTH BLUR LIGHTBOX */
-    #lightbox {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.6);
-      backdrop-filter: blur(14px);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 999;
-      animation: fadeIn 0.4s ease;
-    }
-  
-    /* ✅ TRUE SMOOTH SLIDESHOW TRANSITION */
-    #lightbox img {
-      max-width: 90%;
-      max-height: 85vh;
-      border-radius: 12px;
-      position: absolute;
-      opacity: 0;
-      transform: scale(1.05);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-  
-    #lightbox img.show {
-      opacity: 1;
-      transform: scale(1);
-    }
-  
-    #prevBtn, #nextBtn, #closeBtn {
-      position: absolute;
-      background: white;
-      color: black;
-      padding: 10px 16px;
-      border-radius: 999px;
-      font-weight: bold;
-      cursor: pointer;
-      z-index: 1000;
-    }
-  
-    #prevBtn { left: 20px; }
-    #nextBtn { right: 20px; }
-    #closeBtn { top: 20px; right: 20px; }
-  
-    @keyframes fadeIn {
-      from { opacity: 0 }
-      to { opacity: 1 }
-    }
-  </style>
-  
+<style>
+.album-card {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: 0.3s ease;
+  background: #fff;
+}
+
+.album-card:hover {
+  transform: translateY(-6px);
+}
+
+.album-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.album-caption {
+  padding: 14px;
+  background: #0f172a;
+  color: white;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* ✅ SIMPLE LIGHTBOX (NO TRANSITION) */
+#lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(12px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 85vh;
+  border-radius: 12px;
+}
+
+/* ✅ CONTROLS */
+#prevBtn, #nextBtn, #closeBtn {
+  position: absolute;
+  background: white;
+  color: black;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+#prevBtn { left: 20px; }
+#nextBtn { right: 20px; }
+#closeBtn { top: 20px; right: 20px; }
+</style>
 </head>
 
 <body class="bg-[#f1f5f9]">
 
 <!-- HEADER -->
-<header id="navbar" class="bg-white shadow-sm sticky top-0 z-40">
+<header class="bg-white shadow-sm sticky top-0 z-40">
   <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-
     <div class="flex items-center gap-3">
-      <img src="image/logonama1.png" class="w-12 h-12 rounded-full object-cover" />
+      <img src="image/logonama1.png" class="w-12 h-12 rounded-full object-cover">
       <a href="index.html" class="text-2xl font-bold">Nur Ain Suriani</a>
     </div>
 
@@ -128,42 +110,42 @@
 
     <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
 
-      <div class="album-card" data-aos="zoom-in" data-images="image/miniaindresspink.jpg,image/minius.jpg,image/kidspeacebajuoren.jpg">
+      <div class="album-card" data-images="image/miniaindresspink.jpg,image/minius.jpg,image/kidspeacebajuoren.jpg">
         <img src="image/miniaindresspink.jpg">
         <div class="album-caption">Childhood</div>
       </div>
 
-      <div class="album-card" data-aos="zoom-in" data-images="image/famlamabajukuning.jpg,image/ibuayahdatc.jpg,image/siblingsstudio.jpg,image/famstudio.jpg">
+      <div class="album-card" data-images="image/famlamabajukuning.jpg,image/ibuayahdatc.jpg,image/siblingsstudio.jpg,image/famstudio.jpg">
         <img src="image/famlamabajukuning.jpg">
         <div class="album-caption">Family</div>
       </div>
 
-      <div class="album-card" data-aos="zoom-in" data-images="image/withizrulsekren.jpg">
+      <div class="album-card" data-images="image/withizrulsekren.jpg">
         <img src="image/withizrulsekren.jpg">
         <div class="album-caption">Primary School</div>
       </div>
 
-      <div class="album-card" data-aos="zoom-in" data-images="image/withcikgumirul.jpg,image/daynnnaz.jpg">
+      <div class="album-card" data-images="image/withcikgumirul.jpg,image/daynnnaz.jpg">
         <img src="image/withcikgumirul.jpg">
         <div class="album-caption">Secondary School I</div>
       </div>
 
-      <div class="album-card" data-aos="zoom-in" data-images="image/smkdepansekolah.jpg,image/smkdktdataran.jpg,image/smkwithjimah.jpg,image/smksolo.jpg">
+      <div class="album-card" data-images="image/smkdepansekolah.jpg,image/smkdktdataran.jpg,image/smkwithjimah.jpg,image/smksolo.jpg">
         <img src="image/smkdepansekolah.jpg">
         <div class="album-caption">Secondary School II</div>
       </div>
 
-      <div class="album-card" data-aos="zoom-in" data-images="image/girlsdip.jpg,image/kelasallblack.jpg,image/kelassem1.jpg,image/masjidall.jpg,image/masjidpp.jpg,image/mentordip.jpg">
+      <div class="album-card" data-images="image/girlsdip.jpg,image/kelasallblack.jpg,image/kelassem1.jpg,image/masjidall.jpg,image/masjidpp.jpg,image/mentordip.jpg">
         <img src="image/convo.jpg">
         <div class="album-caption">Diploma</div>
       </div>
 
-      <div class="album-card" data-aos="zoom-in" data-images="image/aquaria.jpg,image/farminthecity.jpg,image/kl.jpg,image/luge.jpg,image/padangbesaq.jpg,image/penarikan.jpg,image/zoonegara.jpg">
+      <div class="album-card" data-images="image/aquaria.jpg,image/farminthecity.jpg,image/kl.jpg,image/luge.jpg,image/padangbesaq.jpg,image/penarikan.jpg,image/zoonegara.jpg">
         <img src="image/aquaria.jpg">
         <div class="album-caption">Holiday & Travel</div>
       </div>
 
-      <div class="album-card" data-aos="zoom-in" data-images="image/farminthecity2.jpg,image/dekanhitam.jpg,image/convopegangjubah.jpg">
+      <div class="album-card" data-images="image/farminthecity2.jpg,image/dekanhitam.jpg,image/convopegangjubah.jpg">
         <img src="image/dekanhitam.jpg">
         <div class="album-caption">Myself</div>
       </div>
@@ -172,7 +154,7 @@
   </div>
 </main>
 
-<!-- ✅ LIGHTBOX -->
+<!-- LIGHTBOX -->
 <div id="lightbox">
   <button id="prevBtn">❮</button>
   <img id="lightbox-img">
@@ -192,102 +174,42 @@ AOS.init({ duration: 800, once: true });
 // ✅ MOBILE MENU
 mobileBtn.onclick = () => mobileMenu.classList.toggle("hidden");
 
-// ✅ LIGHTBOX SLIDESHOW SYSTEM
+// ✅ SIMPLE SLIDESHOW (NO AUTO, NO TRANSITION)
 const cards = document.querySelectorAll(".album-card");
 const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
 const closeBtn = document.getElementById("closeBtn");
 
 let images = [];
 let currentIndex = 0;
-let autoSlide;
-let startX = 0;
-let currentImg = null;
 
-// ✅ SMOOTH MORPH IMAGE FUNCTION
-function morphImage(src) {
-  const newImg = document.createElement("img");
-  newImg.src = src;
-  lightbox.appendChild(newImg);
-
-  requestAnimationFrame(() => {
-    newImg.classList.add("show");
-  });
-
-  if (currentImg) {
-    currentImg.classList.remove("show");
-    setTimeout(() => currentImg.remove(), 800);
-  }
-
-  currentImg = newImg;
-}
-
-// ✅ AUTO SLIDESHOW
-function startAuto() {
-  stopAuto();
-  autoSlide = setInterval(() => {
-    currentIndex = (currentIndex + 1) % images.length;
-    morphImage(images[currentIndex]);
-  }, 3000);
-}
-
-function stopAuto() {
-  if (autoSlide) clearInterval(autoSlide);
-}
-
-// ✅ OPEN LIGHTBOX
 cards.forEach(card => {
   card.onclick = () => {
     images = card.dataset.images.split(",");
     currentIndex = 0;
     lightbox.style.display = "flex";
+    lightboxImg.src = images[0];
     document.body.style.overflow = "hidden";
-    morphImage(images[0]);
-    startAuto();
   };
 });
 
-// ✅ CONTROLS
 nextBtn.onclick = () => {
   currentIndex = (currentIndex + 1) % images.length;
-  morphImage(images[currentIndex]);
+  lightboxImg.src = images[currentIndex];
 };
 
 prevBtn.onclick = () => {
   currentIndex = (currentIndex - 1 + images.length) % images.length;
-  morphImage(images[currentIndex]);
+  lightboxImg.src = images[currentIndex];
 };
 
 closeBtn.onclick = () => {
-  stopAuto();
   lightbox.style.display = "none";
-  if (currentImg) currentImg.remove();
-  currentImg = null;
   document.body.style.overflow = "auto";
 };
-
-// ✅ KEYBOARD CONTROLS
-document.onkeydown = e => {
-  if (lightbox.style.display === "flex") {
-    if (e.key === "ArrowRight") nextBtn.click();
-    if (e.key === "ArrowLeft") prevBtn.click();
-    if (e.key === "Escape") closeBtn.click();
-  }
-};
-
-// ✅ SWIPE GESTURE
-lightbox.addEventListener("touchstart", e => {
-  startX = e.touches[0].clientX;
-});
-
-lightbox.addEventListener("touchend", e => {
-  let endX = e.changedTouches[0].clientX;
-  if (startX - endX > 50) nextBtn.click();
-  if (endX - startX > 50) prevBtn.click();
-});
 </script>
-
 
 </body>
 </html>

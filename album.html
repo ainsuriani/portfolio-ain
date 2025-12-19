@@ -69,36 +69,52 @@
 
 <body class="bg-[#fdf2f8]">
 
-<!-- ✅ SAME NAVBAR AS BLOG -->
+<!-- Header -->
 <header id="navbar" class="bg-white shadow-sm sticky top-0 z-40 transition-all duration-300">
-  <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+  <div class="max-w-6xl mx-auto px-4 py-4 flex items-center">
 
+    <!-- Logo (LEFT) -->
     <div class="flex items-center gap-3">
       <img src="image/logonama1.png" 
            class="w-12 h-12 rounded-full object-cover border-2 border-[var(--soft-accent-2)]" />
       <a href="index.html" class="text-2xl font-bold">Nur Ain Suriani</a>
     </div>
 
-    <nav class="hidden md:flex gap-6 items-center text-sm font-medium">
+    <!-- Desktop Nav (RIGHT) -->
+    <nav class="hidden md:flex gap-6 items-center text-sm font-medium ml-auto">
       <a href="about.html" class="hover:text-[var(--soft-accent-2)]">About</a>
       <a href="portfolio.html" class="hover:text-[var(--soft-accent-2)]">Portfolio</a>
       <a href="blog.html" class="hover:text-[var(--soft-accent-2)]">Blog</a>
-      <a href="album.html" class="hover:text-[var(--soft-accent-2)]">Album</a>
+
+      <!-- ACTIVE PAGE -->
+      <a href="album.html"
+         class="font-semibold text-[var(--soft-accent-2)] hover:text-[var(--soft-accent-2)]">
+        Album
+      </a>
+
       <a href="contact.html" class="hover:text-[var(--soft-accent-2)]">Contact</a>
-      <a class="px-4 py-2 border rounded-md hover:bg-[var(--soft-accent)] hover:text-white transition">Resume</a>
+
+      <a href="resume.html"
+         class="px-4 py-2 border rounded-md hover:bg-[var(--soft-accent)] hover:text-white transition">
+        Resume
+      </a>
     </nav>
 
-    <button id="mobileBtn" class="md:hidden text-2xl">☰</button>
+    <!-- Mobile Button -->
+    <button id="mobileBtn" class="md:hidden text-2xl ml-auto">☰</button>
   </div>
 
+  <!-- Mobile Menu -->
   <div id="mobileMenu" class="hidden flex flex-col px-6 pb-4 bg-white border-t text-sm">
     <a href="about.html" class="py-2">About</a>
     <a href="portfolio.html" class="py-2">Portfolio</a>
     <a href="blog.html" class="py-2">Blog</a>
-    <a href="album.html" class="py-2">Album</a>
+    <a href="album.html" class="py-2 font-semibold text-[var(--soft-accent-2)]">Album</a>
     <a href="contact.html" class="py-2">Contact</a>
+    <a href="resume.html" class="py-2">Resume</a>
   </div>
 </header>
+
 
 <!-- ✅ ALBUM CONTENT -->
 <main class="py-20">

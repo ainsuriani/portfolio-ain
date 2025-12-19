@@ -13,35 +13,51 @@
 <body class="bg-[#e0f2fe]">
 
   <!-- Header -->
-  <header id="navbar" class="bg-white shadow-sm sticky top-0 z-40 transition-all duration-300">
-    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+<header id="navbar" class="bg-white shadow-sm sticky top-0 z-40 transition-all duration-300">
+  <div class="max-w-6xl mx-auto px-4 py-4 flex items-center">
 
-      <div class="flex items-center gap-3">
-        <img src="image/logonama1.png" 
-             class="w-12 h-12 rounded-full object-cover border-2 border-[var(--soft-accent-2)]" />
-        <a href="index.html" class="text-2xl font-bold">Nur Ain Suriani</a>
-      </div>
-
-      <nav class="hidden md:flex gap-6 items-center text-sm font-medium">
-        <a href="about.html" class="hover:text-[var(--soft-accent-2)]">About</a>
-        <a href="portfolio.html" class="hover:text-[var(--soft-accent-2)]">Portfolio</a>
-        <a href="blog.html" class="hover:text-[var(--soft-accent-2)]">Blog</a>
-        <a href="album.html" class="hover:text-[var(--soft-accent-2)]">Album</a>
-        <a href="contact.html" class="hover:text-[var(--soft-accent-2)]">Contact</a>
-        <a href="resume.html" class="px-4 py-2 border rounded-md hover:bg-[var(--soft-accent)] hover:text-white transition"> Resume
-      </nav>
-
-      <button id="mobileBtn" class="md:hidden text-2xl">☰</button>
+    <!-- Logo (LEFT) -->
+    <div class="flex items-center gap-3">
+      <img src="image/logonama1.png" 
+           class="w-12 h-12 rounded-full object-cover border-2 border-[var(--soft-accent-2)]" />
+      <a href="index.html" class="text-2xl font-bold">Nur Ain Suriani</a>
     </div>
 
-    <div id="mobileMenu" class="hidden flex flex-col px-6 pb-4 bg-white border-t text-sm">
-      <a href="about.html" class="py-2">About</a>
-      <a href="portfolio.html" class="py-2">Portfolio</a>
-      <a href="blog.html" class="py-2">Blog</a>
-      <a href="album.html" class="py-2">Album</a>
-      <a href="contact.html" class="py-2">Contact</a>
-    </div>
-  </header>      
+    <!-- Desktop Nav (RIGHT) -->
+    <nav class="hidden md:flex gap-6 items-center text-sm font-medium ml-auto">
+      <a href="about.html" class="hover:text-[var(--soft-accent-2)]">About</a>
+
+      <!-- ACTIVE PAGE -->
+      <a href="portfolio.html"
+         class="font-semibold text-[var(--soft-accent-2)] hover:text-[var(--soft-accent-2)]">
+        Portfolio
+      </a>
+
+      <a href="blog.html" class="hover:text-[var(--soft-accent-2)]">Blog</a>
+      <a href="album.html" class="hover:text-[var(--soft-accent-2)]">Album</a>
+      <a href="contact.html" class="hover:text-[var(--soft-accent-2)]">Contact</a>
+
+      <a href="resume.html"
+         class="px-4 py-2 border rounded-md hover:bg-[var(--soft-accent)] hover:text-white transition">
+        Resume
+      </a>
+    </nav>
+
+    <!-- Mobile Button -->
+    <button id="mobileBtn" class="md:hidden text-2xl ml-auto">☰</button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden flex flex-col px-6 pb-4 bg-white border-t text-sm">
+    <a href="about.html" class="py-2">About</a>
+    <a href="portfolio.html" class="py-2 font-semibold text-[var(--soft-accent-2)]">Portfolio</a>
+    <a href="blog.html" class="py-2">Blog</a>
+    <a href="album.html" class="py-2">Album</a>
+    <a href="contact.html" class="py-2">Contact</a>
+    <a href="resume.html" class="py-2">Resume</a>
+  </div>
+</header>
+      
 
   <!-- Main Content -->
   <main>  

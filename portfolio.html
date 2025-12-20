@@ -12,7 +12,6 @@
 
 <body class="bg-[#e0f2fe]">
 
-<!-- Header -->
 <header id="navbar" class="bg-white shadow-sm sticky top-0 z-40 transition-all duration-300">
   <div class="max-w-6xl mx-auto px-4 py-4 flex items-center">
     <div class="flex items-center gap-3">
@@ -31,7 +30,6 @@
   </div>
 </header>
 
-<!-- Main -->
 <main>
 <section class="py-20">
   <div class="max-w-6xl mx-auto px-6">
@@ -40,10 +38,9 @@
 
     <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-      <!-- Project 1 -->
+      <!-- Project Cards -->
       <div class="project-card bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition"
-           data-images="image/byd.jpg,image/crochet.jpg,image/mywebsite.jpg"
-           data-aos="zoom-in">
+           data-images="image/byd.jpg,image/crochet.jpg,image/mywebsite.jpg" data-aos="zoom-in">
         <img src="image/github.jpg" class="h-48 w-full object-cover" />
         <div class="p-5">
           <span class="inline-block bg-blue-200 text-blue-800 text-xs px-2 py-1 rounded-full">Website and Programming</span>
@@ -53,10 +50,8 @@
         </div>
       </div>
 
-      <!-- Project 2 -->
       <div class="project-card bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition"
-           data-images="image/emceekickstart.jpg,image/kickstart.jpg,image/group-kickstart.jpg"
-           data-aos="zoom-in">
+           data-images="image/emceekickstart.jpg,image/kickstart.jpg,image/group-kickstart.jpg" data-aos="zoom-in">
         <img src="image/group-kickstart.jpg" class="h-48 w-full object-cover" />
         <div class="p-5">
           <span class="inline-block bg-green-200 text-green-800 text-xs px-2 py-1 rounded-full">Programme</span>
@@ -66,10 +61,8 @@
         </div>
       </div>
 
-      <!-- Project 3 -->
       <div class="project-card bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition"
-           data-images="image/interfac.jpg,image/interfac-nisa.jpg"
-           data-aos="zoom-in">
+           data-images="image/interfac.jpg,image/interfac-nisa.jpg" data-aos="zoom-in">
         <img src="image/interfac.jpg" class="h-48 w-full object-cover" />
         <div class="p-5">
           <span class="inline-block bg-purple-200 text-purple-800 text-xs px-2 py-1 rounded-full">Programme</span>
@@ -79,10 +72,8 @@
         </div>
       </div>
 
-      <!-- Project 4 -->
       <div class="project-card bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition"
-           data-images="image/agm-ramai.jpg,image/agm-smf.jpg,image/agm-smfnisa.jpg"
-           data-aos="zoom-in">
+           data-images="image/agm-ramai.jpg,image/agm-smf.jpg,image/agm-smfnisa.jpg" data-aos="zoom-in">
         <img src="image/agm-ramai.jpg" class="h-48 w-full object-cover" />
         <div class="p-5">
           <span class="inline-block bg-yellow-200 text-yellow-800 text-xs px-2 py-1 rounded-full">Sekretatriat Mahasiswa Fakulti Sains Maklumat</span>
@@ -92,10 +83,8 @@
         </div>
       </div>
 
-      <!-- Project 5 -->
       <div class="project-card bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition"
-           data-images="image/mtinkspire.jpg,image/mtinkspire2.jpg,image/mtinkspire3.jpg"
-           data-aos="zoom-in">
+           data-images="image/mtinkspire.jpg,image/mtinkspire2.jpg,image/mtinkspire3.jpg" data-aos="zoom-in">
         <img src="image/mtinkspire.jpg" class="h-48 w-full object-cover" />
         <div class="p-5">
           <span class="inline-block bg-blue-200 text-blue-800 text-xs px-2 py-1 rounded-full">Programme</span>
@@ -105,10 +94,8 @@
         </div>
       </div>
 
-      <!-- Project 6 -->
       <div class="project-card bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition"
-           data-images="image/wwa-ramai.jpg,image/wwa-dewan.jpg,image/wwa-taklimat.jpg,image/wwa-post.jpg"
-           data-aos="zoom-in">
+           data-images="image/wwa-ramai.jpg,image/wwa-dewan.jpg,image/wwa-taklimat.jpg,image/wwa-post.jpg" data-aos="zoom-in">
         <img src="image/wwa-ramai.jpg" class="h-48 w-full object-cover" />
         <div class="p-5">
           <span class="inline-block bg-teal-200 text-teal-800 text-xs px-2 py-1 rounded-full">Programme</span>
@@ -152,13 +139,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   buttons.forEach(btn => {
     btn.addEventListener("click", () => {
-      currentImages = btn.closest(".project-card").dataset.images.split(",");
+      const data = btn.closest(".project-card").getAttribute("data-images");
+      currentImages = data.split(",").map(img => img.trim());
       currentIndex = 0;
       lightboxImg.src = currentImages[currentIndex];
       lightbox.classList.remove("hidden");
-      lightbox.classList.add("flex");
+      lightbox.classList.add("flex", "items-center", "justify-center");
     });
   });
+
+  const showImage = () => lightboxImg.src = currentImages[currentIndex];
 
   closeBtn.addEventListener("click", () => {
     lightbox.classList.add("hidden");
@@ -166,16 +156,16 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   prevBtn.addEventListener("click", () => {
-    if (currentImages.length > 0) {
+    if(currentImages.length){
       currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
-      lightboxImg.src = currentImages[currentIndex];
+      showImage();
     }
   });
 
   nextBtn.addEventListener("click", () => {
-    if (currentImages.length > 0) {
+    if(currentImages.length){
       currentIndex = (currentIndex + 1) % currentImages.length;
-      lightboxImg.src = currentImages[currentIndex];
+      showImage();
     }
   });
 

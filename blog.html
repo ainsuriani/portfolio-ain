@@ -10,78 +10,97 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
-<body class="bg-[#fdf2f8]">
+<body class="bg-[#e0f2fe]">
 
-    <!-- Header -->
+<!-- Header -->
 <header id="navbar" class="bg-white shadow-sm sticky top-0 z-40 transition-all duration-300">
   <div class="max-w-6xl mx-auto px-4 py-4 flex items-center">
-
-    <!-- Logo (LEFT) -->
     <div class="flex items-center gap-3">
-      <img src="image/logonama1.png" 
-           class="w-12 h-12 rounded-full object-cover border-2 border-[var(--soft-accent-2)]" />
+      <img src="image/logonama1.png" class="w-12 h-12 rounded-full object-cover border-2 border-[var(--soft-accent-2)]" />
       <a href="index.html" class="text-2xl font-bold">Nur Ain Suriani</a>
     </div>
-
-    <!-- Desktop Nav (RIGHT) -->
     <nav class="hidden md:flex gap-6 items-center text-sm font-medium ml-auto">
-      <a href="about.html" class="hover:text-[var(--soft-accent-2)]">About</a>
-      <a href="portfolio.html" class="hover:text-[var(--soft-accent-2)]">Portfolio</a>
-
-      <!-- ACTIVE PAGE -->
-      <a href="blog.html"
-         class="font-semibold text-[var(--soft-accent-2)] hover:text-[var(--soft-accent-2)]">
-        Blog
-      </a>
-
-      <a href="album.html" class="hover:text-[var(--soft-accent-2)]">Album</a>
-      <a href="contact.html" class="hover:text-[var(--soft-accent-2)]">Contact</a>
-
-      <a href="resume.html"
-         class="px-4 py-2 border rounded-md hover:bg-[var(--soft-accent)] hover:text-white transition">
-        Resume
-      </a>
+      <a href="about.html">About</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="blog.html" class="font-semibold text-[var(--soft-accent-2)]">Blog</a>
+      <a href="album.html">Album</a>
+      <a href="contact.html">Contact</a>
+      <a href="resume.html" class="px-4 py-2 border rounded-md hover:bg-[var(--soft-accent)] hover:text-white transition">Resume</a>
     </nav>
-
-    <!-- Mobile Button -->
     <button id="mobileBtn" class="md:hidden text-2xl ml-auto">☰</button>
   </div>
-
-  <!-- Mobile Menu -->
-  <div id="mobileMenu" class="hidden flex flex-col px-6 pb-4 bg-white border-t text-sm">
-    <a href="about.html" class="py-2">About</a>
-    <a href="portfolio.html" class="py-2">Portfolio</a>
-    <a href="blog.html" class="py-2 font-semibold text-[var(--soft-accent-2)]">Blog</a>
-    <a href="album.html" class="py-2">Album</a>
-    <a href="contact.html" class="py-2">Contact</a>
-    <a href="resume.html" class="py-2">Resume</a>
-  </div>
 </header>
-    
-         
-<main>
-<section class="py-20">
+
+<main class="py-20">
   <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-3xl font-bold">Blog</h2>
 
-    <div class="mt-10 grid md:grid-cols-3 gap-8">
+    <!-- Page Title -->
+    <h2 class="text-3xl font-bold" data-aos="fade-up">Blog</h2>
+    <p class="text-gray-600 mt-2 mb-8" data-aos="fade-up" data-aos-delay="100">
+      “Believe you can and you're halfway there.” – Theodore Roosevelt
+    </p>
 
-      <div class="bg-white rounded-xl shadow p-5" data-aos="fade-up">
-        <img src="https://source.unsplash.com/random/400x250?notebook" class="rounded-lg w-full h-48 object-cover">
-        <h3 class="mt-4 font-semibold text-xl">Blog Title 1</h3>
-        <p class="text-sm mt-2 text-gray-600">Short summary of your blog.</p>
+    <!-- Blog Posts Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Blog Post 1 -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition" data-aos="fade-up">
+        <img src="image/motivation1.jpg" class="h-48 w-full object-cover">
+        <div class="p-5">
+          <h4 class="font-semibold text-lg">Chasing Your Dreams</h4>
+          <p class="text-gray-600 text-sm mt-2">Every step you take brings you closer to your goals. Never stop learning and growing.</p>
+          <a href="#" class="inline-block mt-3 px-4 py-2 bg-[var(--soft-accent-2)] text-white rounded hover:bg-[var(--soft-accent)] transition">Read More</a>
+        </div>
       </div>
 
-      <div class="bg-white rounded-xl shadow p-5" data-aos="fade-up" data-aos-delay="150">
-        <img src="https://source.unsplash.com/random/400x250?desk" class="rounded-lg w-full h-48 object-cover">
-        <h3 class="mt-4 font-semibold text-xl">Blog Title 2</h3>
-        <p class="text-sm mt-2 text-gray-600">Short summary of your blog.</p>
+      <!-- Blog Post 2 -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition" data-aos="fade-up" data-aos-delay="100">
+        <img src="image/motivation2.jpg" class="h-48 w-full object-cover">
+        <div class="p-5">
+          <h4 class="font-semibold text-lg">Consistency is Key</h4>
+          <p class="text-gray-600 text-sm mt-2">Small consistent efforts make big changes. Focus on progress, not perfection.</p>
+          <a href="#" class="inline-block mt-3 px-4 py-2 bg-[var(--soft-accent-2)] text-white rounded hover:bg-[var(--soft-accent)] transition">Read More</a>
+        </div>
       </div>
 
-      <div class="bg-white rounded-xl shadow p-5" data-aos="fade-up" data-aos-delay="300">
-        <img src="https://source.unsplash.com/random/400x250?workspace" class="rounded-lg w-full h-48 object-cover">
-        <h3 class="mt-4 font-semibold text-xl">Blog Title 3</h3>
-        <p class="text-sm mt-2 text-gray-600">Short summary of your blog.</p>
+      <!-- Blog Post 3 -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition" data-aos="fade-up" data-aos-delay="200">
+        <img src="image/motivation3.jpg" class="h-48 w-full object-cover">
+        <div class="p-5">
+          <h4 class="font-semibold text-lg">Embrace Challenges</h4>
+          <p class="text-gray-600 text-sm mt-2">Challenges are opportunities in disguise. Keep pushing forward and stay positive.</p>
+          <a href="#" class="inline-block mt-3 px-4 py-2 bg-[var(--soft-accent-2)] text-white rounded hover:bg-[var(--soft-accent)] transition">Read More</a>
+        </div>
+      </div>
+
+      <!-- Blog Post 4 -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition" data-aos="fade-up" data-aos-delay="300">
+        <img src="image/motivation4.jpg" class="h-48 w-full object-cover">
+        <div class="p-5">
+          <h4 class="font-semibold text-lg">Believe in Yourself</h4>
+          <p class="text-gray-600 text-sm mt-2">Your mindset determines your success. Confidence is the first step to achievement.</p>
+          <a href="#" class="inline-block mt-3 px-4 py-2 bg-[var(--soft-accent-2)] text-white rounded hover:bg-[var(--soft-accent)] transition">Read More</a>
+        </div>
+      </div>
+
+      <!-- Blog Post 5 -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition" data-aos="fade-up" data-aos-delay="400">
+        <img src="image/motivation5.jpg" class="h-48 w-full object-cover">
+        <div class="p-5">
+          <h4 class="font-semibold text-lg">Keep Learning</h4>
+          <p class="text-gray-600 text-sm mt-2">Every day is a new chance to grow. Seek knowledge and improve yourself continuously.</p>
+          <a href="#" class="inline-block mt-3 px-4 py-2 bg-[var(--soft-accent-2)] text-white rounded hover:bg-[var(--soft-accent)] transition">Read More</a>
+        </div>
+      </div>
+
+      <!-- Blog Post 6 -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition" data-aos="fade-up" data-aos-delay="500">
+        <img src="image/motivation6.jpg" class="h-48 w-full object-cover">
+        <div class="p-5">
+          <h4 class="font-semibold text-lg">Your Journey Matters</h4>
+          <p class="text-gray-600 text-sm mt-2">Focus on the journey, not just the destination. Enjoy every step and learn along the way.</p>
+          <a href="#" class="inline-block mt-3 px-4 py-2 bg-[var(--soft-accent-2)] text-white rounded hover:bg-[var(--soft-accent)] transition">Read More</a>
+        </div>
       </div>
 
     </div>
@@ -89,13 +108,15 @@
 </section>
 </main>
 
+<!-- Footer -->
 <footer class="py-6 bg-[#0f172a] text-center text-gray-300 text-sm">
-    © 2025 ainsarizam — All rights reserved.
+  © 2025 ainsarizam — All rights reserved.
 </footer>
 
-<div id="backToTop">↑</div>
-<script src="script.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>AOS.init();</script>
+<script>
+  AOS.init();
+</script>
+
 </body>
 </html>

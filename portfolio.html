@@ -137,7 +137,7 @@
 
 <!-- Project 6 -->
 <div class="project-card bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition"
-     data-images="image/wwa-ramai.jpg,image/wwa-dewan.jpg,image/wwa-taklimat.jpgimage/wwa-post.jpg"
+     data-images="image/wwa-ramai.jpg,image/wwa-dewan.jpg,image/wwa-taklimat.jpg,image/wwa-post.jpg"
      data-aos="zoom-in">
   <img src="image/wwa-ramai.jpg" class="h-48 w-full object-cover" />
   <div class="p-5">
@@ -156,6 +156,8 @@
   </div>
 </div>
 
+</div>
+</div>
 </section>
 </main>
 
@@ -183,8 +185,8 @@ const closeBtn = document.getElementById("closeLightbox");
 
 buttons.forEach(btn => {
   btn.onclick = () => {
-    const img = btn.closest(".project-card").dataset.image;
-    lightboxImg.src = img;
+    const images = btn.closest(".project-card").dataset.images.split(',');
+    lightboxImg.src = images[0]; // Show first image
     lightbox.classList.remove("hidden");
     lightbox.classList.add("flex");
   };
@@ -192,6 +194,7 @@ buttons.forEach(btn => {
 
 closeBtn.onclick = () => {
   lightbox.classList.add("hidden");
+  lightbox.classList.remove("flex");
 };
 </script>
 

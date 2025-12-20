@@ -58,7 +58,7 @@
       Website and Programming
     </span>
     <h4 class="font-semibold text-lg mt-2">Diploma and Degree</h4>
-    <p class="text-sm text-gray-600 mt-1">Use GitHub as my main localhost</p>
+    <p class="text-sm text-gray-600 mt-1">Use GitHub as my main tool</p>
     <button class="viewBtn mt-3 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition">
       View Project
     </button>
@@ -84,7 +84,7 @@
 
 <!-- Project 3 -->
 <div class="project-card bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition"
-     data-images="image/interfac.jpg,image/interfac-nisa'.jpg"
+     data-images="image/interfac.jpg,image/interfac-nisa.jpg"
      data-aos="zoom-in">
   <img src="image/interfac.jpg" class="h-48 w-full object-cover" />
   <div class="p-5">
@@ -101,7 +101,7 @@
 
 <!-- Project 4 -->
 <div class="project-card bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition"
-     data-images="image/agm-ramai.jpg,image/agm-smf.jpg,image/agm-smfnisa'.jpg"
+     data-images="image/agm-ramai.jpg,image/agm-smf.jpg,image/agm-smfnisa.jpg"
      data-aos="zoom-in">
   <img src="image/agm-ramai.jpg" class="h-48 w-full object-cover" />
   <div class="p-5">
@@ -175,27 +175,28 @@
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-AOS.init();
+document.addEventListener("DOMContentLoaded", () => {
+  AOS.init();
 
-// LIGHTBOX SCRIPT
-const buttons = document.querySelectorAll(".viewBtn");
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightboxImg");
-const closeBtn = document.getElementById("closeLightbox");
+  const buttons = document.querySelectorAll(".viewBtn");
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightboxImg");
+  const closeBtn = document.getElementById("closeLightbox");
 
-buttons.forEach(btn => {
-  btn.onclick = () => {
-    const images = btn.closest(".project-card").dataset.images.split(',');
-    lightboxImg.src = images[0]; // Show first image
-    lightbox.classList.remove("hidden");
-    lightbox.classList.add("flex");
+  buttons.forEach(btn => {
+    btn.onclick = () => {
+      const images = btn.closest(".project-card").dataset.images.split(',');
+      lightboxImg.src = images[0]; // Show first image
+      lightbox.classList.remove("hidden");
+      lightbox.classList.add("flex");
+    };
+  });
+
+  closeBtn.onclick = () => {
+    lightbox.classList.add("hidden");
+    lightbox.classList.remove("flex");
   };
 });
-
-closeBtn.onclick = () => {
-  lightbox.classList.add("hidden");
-  lightbox.classList.remove("flex");
-};
 </script>
 
 </body>

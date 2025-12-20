@@ -112,10 +112,10 @@
 
 <!-- LIGHTBOX -->
 <div id="lightbox" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50">
-  <button id="prevBtn" class="absolute left-6 top-1/2 -translate-y-1/2 text-white text-3xl font-bold">❮</button>
+  <button id="prevBtn" class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-3xl font-bold">❮</button>
   <img id="lightboxImg" class="max-w-[80%] max-h-[85vh] rounded-xl shadow-xl">
-  <button id="nextBtn" class="absolute right-6 top-1/2 -translate-y-1/2 text-white text-3xl font-bold">❯</button>
-  <button id="closeLightbox" class="absolute top-6 right-6 bg-white px-4 py-2 rounded-full font-bold">✕</button>
+  <button id="nextBtn" class="absolute right-4 top-1/2 -translate-y-1/2 text-white text-3xl font-bold">❯</button>
+  <button id="closeLightbox" class="absolute top-4 right-4 bg-white px-4 py-2 rounded-full font-bold">✕</button>
 </div>
 
 <footer class="py-6 bg-[#0f172a] text-center text-gray-300 text-sm">
@@ -137,14 +137,19 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentImages = [];
   let currentIndex = 0;
 
+  // Touch swipe support
+  let startX = 0;
+  let endX = 0;
+
   buttons.forEach(btn => {
-    btn.addEventListener("click", () => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
       const data = btn.closest(".project-card").getAttribute("data-images");
       currentImages = data.split(",").map(img => img.trim());
       currentIndex = 0;
       lightboxImg.src = currentImages[currentIndex];
       lightbox.classList.remove("hidden");
-      lightbox.classList.add("flex", "items-center", "justify-center");
+      lightbox.classList.add("flex");
     });
   });
 
@@ -155,26 +160,37 @@ document.addEventListener("DOMContentLoaded", () => {
     lightbox.classList.remove("flex");
   });
 
-  prevBtn.addEventListener("click", () => {
-    if(currentImages.length){
-      currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
-      showImage();
-    }
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) closeBtn.click();
   });
 
-  nextBtn.addEventListener("click", () => {
-    if(currentImages.length){
-      currentIndex = (currentIndex + 1) % currentImages.length;
-      showImage();
-    }
+  prevBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+    showImage();
   });
 
+  nextBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    currentIndex = (currentIndex + 1) % currentImages.length;
+    showImage();
+  });
+
+  // Keyboard navigation
   document.addEventListener("keydown", (e) => {
     if (!lightbox.classList.contains("hidden")) {
       if (e.key === "ArrowLeft") prevBtn.click();
       if (e.key === "ArrowRight") nextBtn.click();
       if (e.key === "Escape") closeBtn.click();
     }
+  });
+
+  // Swipe support for mobile
+  lightboxImg.addEventListener("touchstart", (e) => startX = e.touches[0].clientX);
+  lightboxImg.addEventListener("touchmove", (e) => endX = e.touches[0].clientX);
+  lightboxImg.addEventListener("touchend", () => {
+    if (startX - endX > 50) nextBtn.click(); // swipe left
+    if (endX - startX > 50) prevBtn.click(); // swipe right
   });
 });
 </script>

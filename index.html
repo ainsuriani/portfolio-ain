@@ -17,108 +17,79 @@
       transition: max-height 0.4s ease, padding 0.4s ease;
     }
     #mobileMenu.open {
-      max-height: 500px;
+      max-height: 500px; /* enough to show all links */
       padding-top: 1rem;
       padding-bottom: 1rem;
     }
-
-    /* Layout toggle button */
-    #viewToggle {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #38bdf8;
-      color: white;
-      padding: 0.75rem 1.5rem;
-      border-radius: 12px;
-      font-weight: 600;
-      z-index: 100;
-      cursor: pointer;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      transition: background-color 0.3s;
-    }
-    #viewToggle:hover {
-      background-color: #0ea5e9;
-    }
-
-    /* Container width for toggle */
-    #pageWrapper.desktop { max-width: 100%; margin: 0 auto; }
-    #pageWrapper.mobile { max-width: 375px; margin: 0 auto; border: 1px solid #ccc; }
   </style>
 </head>
 
 <body class="bg-[var(--soft-bg)]">
 
-  <div id="pageWrapper" class="desktop">
+  <!-- Header -->
+  <header id="navbar" class="bg-white shadow-sm sticky top-0 z-50 transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center">
 
-    <!-- Header -->
-    <header id="navbar" class="bg-white shadow-sm sticky top-0 z-50 transition-all duration-300">
-      <div class="max-w-6xl mx-auto px-4 py-4 flex items-center">
-
-        <!-- Logo -->
-        <div class="flex items-center gap-3">
-          <img src="image/logonama1.png" class="w-12 h-12 rounded-full object-cover border-2 border-[var(--soft-accent-2)]" />
-          <a href="index.html" class="text-2xl font-bold">Nur Ain Suriani</a>
-        </div>
-
-        <!-- Desktop Nav -->
-        <nav class="hidden md:flex gap-6 items-center text-sm font-medium ml-auto">
-          <a href="about.html" class="hover:text-[var(--soft-accent-2)]">About</a>
-          <a href="portfolio.html" class="hover:text-[var(--soft-accent-2)]">Portfolio</a>
-          <a href="blog.html" class="hover:text-[var(--soft-accent-2)]">Blog</a>
-          <a href="album.html" class="hover:text-[var(--soft-accent-2)]">Album</a>
-          <a href="contact.html" class="hover:text-[var(--soft-accent-2)]">Contact</a>
-          <a href="resume.html" class="px-4 py-2 border rounded-md hover:bg-[var(--soft-accent)] hover:text-white transition">Resume</a>
-        </nav>
-
-        <!-- Mobile Button -->
-        <button id="mobileBtn" class="md:hidden text-2xl ml-auto z-50">☰</button>
+      <!-- Logo -->
+      <div class="flex items-center gap-3">
+        <img src="image/logonama1.png" class="w-12 h-12 rounded-full object-cover border-2 border-[var(--soft-accent-2)]" />
+        <a href="index.html" class="text-2xl font-bold">Nur Ain Suriani</a>
       </div>
 
-      <!-- Mobile Menu -->
-      <div id="mobileMenu" class="flex flex-col px-6 bg-white border-t text-sm">
-        <a href="about.html" class="py-2">About</a>
-        <a href="portfolio.html" class="py-2">Portfolio</a>
-        <a href="blog.html" class="py-2">Blog</a>
-        <a href="album.html" class="py-2">Album</a>
-        <a href="contact.html" class="py-2">Contact</a>
-        <a href="resume.html" class="py-2">Resume</a>
-      </div>
-    </header>
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex gap-6 items-center text-sm font-medium ml-auto">
+        <a href="about.html" class="hover:text-[var(--soft-accent-2)]">About</a>
+        <a href="portfolio.html" class="hover:text-[var(--soft-accent-2)]">Portfolio</a>
+        <a href="blog.html" class="hover:text-[var(--soft-accent-2)]">Blog</a>
+        <a href="album.html" class="hover:text-[var(--soft-accent-2)]">Album</a>
+        <a href="contact.html" class="hover:text-[var(--soft-accent-2)]">Contact</a>
+        <a href="resume.html" class="px-4 py-2 border rounded-md hover:bg-[var(--soft-accent)] hover:text-white transition">Resume</a>
+      </nav>
 
-    <!-- Main Section -->
-    <main>
-      <section class="pt-24 pb-24 bg-[#0f172a] text-white">
-        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+      <!-- Mobile Button -->
+      <button id="mobileBtn" class="md:hidden text-2xl ml-auto z-50">☰</button>
+    </div>
 
-          <div data-aos="fade-right">
-            <h1 class="text-5xl md:text-6xl font-extrabold leading-tight">
-              Welcome to My Portfolio
-              <span class="block text-[var(--soft-accent-2)] mt-3">Nur Ain Suriani</span>
-            </h1>
-            <p class="mt-6 text-gray-300 max-w-xl text-lg">
-              Explore my journey — from personal projects to creative work.
-            </p>
-          </div>
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="flex flex-col px-6 bg-white border-t text-sm">
+      <a href="about.html" class="py-2">About</a>
+      <a href="portfolio.html" class="py-2">Portfolio</a>
+      <a href="blog.html" class="py-2">Blog</a>
+      <a href="album.html" class="py-2">Album</a>
+      <a href="contact.html" class="py-2">Contact</a>
+      <a href="resume.html" class="py-2">Resume</a>
+    </div>
+  </header>
 
-          <div data-aos="fade-left">
-            <div class="w-full h-72 md:h-96 rounded-2xl overflow-hidden shadow-xl hover:scale-105 transition">
-              <img src="image/gambarkathome.jpg" class="w-full h-full object-cover" alt="Nur Ain Suriani">
-            </div>
-          </div>
+  <!-- Main Section -->
+  <main>
+    <section class="pt-24 pb-24 bg-[#0f172a] text-white">
+      <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
 
+        <div data-aos="fade-right">
+          <h1 class="text-5xl md:text-6xl font-extrabold leading-tight">
+            Welcome to My Portfolio
+            <span class="block text-[var(--soft-accent-2)] mt-3">Nur Ain Suriani</span>
+          </h1>
+          <p class="mt-6 text-gray-300 max-w-xl text-lg">
+            Explore my journey — from personal projects to creative work.
+          </p>
         </div>
-      </section>
-    </main>
 
-    <!-- Footer -->
-    <footer class="py-6 bg-[#0f172a] text-center text-gray-300 text-sm">
-      © 2025 ainsarizam — All rights reserved.
-    </footer>
-  </div>
+        <div data-aos="fade-left">
+          <div class="w-full h-72 md:h-96 rounded-2xl overflow-hidden shadow-xl hover:scale-105 transition">
+            <img src="image/gambarkathome.jpg" class="w-full h-full object-cover" alt="Nur Ain Suriani">
+          </div>
+        </div>
 
-  <!-- Toggle Button -->
-  <button id="viewToggle">Switch to Mobile View</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-6 bg-[#0f172a] text-center text-gray-300 text-sm">
+    © 2025 ainsarizam — All rights reserved.
+  </footer>
 
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -134,26 +105,9 @@
       mobileMenu.classList.toggle("open");
     });
 
+    // Close menu when a link is clicked
     mobileLinks.forEach(link => {
       link.addEventListener("click", () => mobileMenu.classList.remove("open"));
-    });
-
-    // Layout Toggle
-    const viewToggle = document.getElementById("viewToggle");
-    const pageWrapper = document.getElementById("pageWrapper");
-    let isMobileView = false;
-
-    viewToggle.addEventListener("click", () => {
-      isMobileView = !isMobileView;
-      if(isMobileView){
-        pageWrapper.classList.remove("desktop");
-        pageWrapper.classList.add("mobile");
-        viewToggle.innerText = "Switch to Desktop View";
-      } else {
-        pageWrapper.classList.remove("mobile");
-        pageWrapper.classList.add("desktop");
-        viewToggle.innerText = "Switch to Mobile View";
-      }
     });
   </script>
 </body>

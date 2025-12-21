@@ -31,8 +31,8 @@
       margin: 0 auto 1rem;
     }
 
-    .contact-form input,
-    .contact-form textarea {
+    .motivation-form input,
+    .motivation-form textarea {
       width: 100%;
       padding: 0.75rem 1rem;
       border: 1px solid #cbd5e1;
@@ -42,13 +42,13 @@
       transition: border-color 0.3s, box-shadow 0.3s;
     }
 
-    .contact-form input:focus,
-    .contact-form textarea:focus {
+    .motivation-form input:focus,
+    .motivation-form textarea:focus {
       border-color: #38bdf8;
       box-shadow: 0 0 0 2px rgba(56,189,248,0.3);
     }
 
-    .contact-form button {
+    .motivation-form button {
       background-color: #38bdf8;
       color: white;
       padding: 0.75rem 2rem;
@@ -57,8 +57,36 @@
       transition: background-color 0.3s;
     }
 
-    .contact-form button:hover {
+    .motivation-form button:hover {
       background-color: #0ea5e9;
+    }
+
+    .motivation-message {
+      background: #ffffff;
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      margin-bottom: 1rem;
+      word-wrap: break-word;
+      position: relative;
+    }
+
+    .heart-btn {
+      position: absolute;
+      right: 1rem;
+      bottom: 1rem;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+      color: #ef4444;
+      font-weight: bold;
+    }
+
+    .heart-btn span {
+      margin-left: 0.25rem;
+      font-weight: normal;
+      color: #000;
     }
   </style>
 </head>
@@ -69,31 +97,20 @@
 <header id="navbar" class="bg-white shadow-sm sticky top-0 z-40 transition-all duration-300">
   <div class="max-w-6xl mx-auto px-4 py-4 flex items-center">
 
-    <!-- Logo (LEFT) -->
+    <!-- Logo -->
     <div class="flex items-center gap-3">
-      <img src="image/logonama1.png" 
-           class="w-12 h-12 rounded-full object-cover border-2 border-[var(--soft-accent-2)]" />
+      <img src="image/logonama1.png" class="w-12 h-12 rounded-full object-cover border-2 border-[var(--soft-accent-2)]" />
       <a href="index.html" class="text-2xl font-bold">Nur Ain Suriani</a>
     </div>
 
-    <!-- Desktop Nav (RIGHT) -->
+    <!-- Nav -->
     <nav class="hidden md:flex gap-6 items-center text-sm font-medium ml-auto">
       <a href="about.html" class="hover:text-[var(--soft-accent-2)]">About</a>
       <a href="portfolio.html" class="hover:text-[var(--soft-accent-2)]">Portfolio</a>
       <a href="blog.html" class="hover:text-[var(--soft-accent-2)]">Blog</a>
-
       <a href="album.html" class="hover:text-[var(--soft-accent-2)]">Album</a>
-
-      <a href="contact.html"
-         class="font-semibold text-[var(--soft-accent-2)] hover:text-[var(--soft-accent-2)]">
-         Contact
-      </a>
-
-      <a href="resume.html"
-         class="px-4 py-2 border rounded-md hover:bg-[var(--soft-accent)] hover:text-white transition">
-        Resume
-      </a>
-
+      <a href="contact.html" class="font-semibold text-[var(--soft-accent-2)] hover:text-[var(--soft-accent-2)]">Contact</a>
+      <a href="resume.html" class="px-4 py-2 border rounded-md hover:bg-[var(--soft-accent)] hover:text-white transition">Resume</a>
     </nav>
 
     <!-- Mobile Button -->
@@ -114,8 +131,8 @@
 <main class="py-24">
   <div class="max-w-6xl mx-auto px-6">
 
-    <h2 class="text-3xl font-bold text-center">Contact Me</h2>
-    <p class="text-gray-600 mt-2 text-center">Get in touch via social media or the contact form.</p>
+    <h2 class="text-3xl font-bold text-center">Motivate Me</h2>
+    <p class="text-gray-600 mt-2 text-center">Leave your motivational words and brighten my day!</p>
 
     <!-- CONTACT CARDS -->
     <div class="mt-12 grid md:grid-cols-3 gap-8">
@@ -131,11 +148,10 @@
       data-aos-delay="100" 
       target="_blank" 
       rel="noopener noreferrer">
-     <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
-     <h4 class="text-xl font-semibold">Email</h4>
-     <p class="text-gray-600 mt-1">Send me an email</p>
-     </a>
-       
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
+        <h4 class="text-xl font-semibold">Email</h4>
+        <p class="text-gray-600 mt-1">Send me an email</p>
+      </a>
 
       <a href="https://www.instagram.com/ainsarizam" target="_blank" class="contact-card" data-aos="fade-up" data-aos-delay="200">
         <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
@@ -144,17 +160,19 @@
       </a>
     </div>
 
-    <!-- CONTACT FORM -->
+    <!-- MOTIVATION FORM -->
     <div class="mt-16 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="300">
-      <h3 class="text-2xl font-semibold mb-6 text-center">Send Me a Message</h3>
-      <form class="contact-form bg-white p-8 rounded-xl shadow-md">
+      <h3 class="text-2xl font-semibold mb-6 text-center">Share Your Motivation</h3>
+      <form id="motivationForm" class="motivation-form bg-white p-8 rounded-xl shadow-md">
         <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <textarea rows="4" placeholder="Your Motivational Words" required></textarea>
         <div class="text-center">
-          <button type="submit">Send Message</button>
+          <button type="submit">Send Motivation</button>
         </div>
       </form>
+
+      <!-- DISPLAY MESSAGES -->
+      <div id="messages" class="mt-8 space-y-4"></div>
     </div>
 
   </div>
@@ -167,9 +185,43 @@
 
 <div id="backToTop">↑</div>
 
-<script src="script.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>AOS.init();</script>
+<script>
+  AOS.init();
+
+  const form = document.getElementById("motivationForm");
+  const messagesDiv = document.getElementById("messages");
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    const name = this.querySelector("input").value.trim();
+    const text = this.querySelector("textarea").value.trim();
+    if(name && text){
+      const msgEl = document.createElement("div");
+      msgEl.className = "motivation-message";
+      msgEl.innerHTML = `
+        <strong>${name}</strong>: ${text}
+        <div class="heart-btn">❤️ <span>0</span></div>
+      `;
+      messagesDiv.prepend(msgEl);
+
+      // Heart toggle functionality
+      const heart = msgEl.querySelector(".heart-btn");
+      const counter = heart.querySelector("span");
+      let liked = false;
+      let likes = 0;
+
+      heart.addEventListener("click", () => {
+        liked = !liked;
+        heart.style.color = liked ? "#ef4444" : "#000"; // red if liked, black if unliked
+        likes += liked ? 1 : -1;
+        counter.textContent = likes;
+      });
+
+      this.reset();
+    }
+  });
+</script>
 
 </body>
 </html>

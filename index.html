@@ -14,44 +14,40 @@
     #mobileMenu {
       overflow: hidden;
       max-height: 0;
-      transition: max-height 0.4s ease-out, padding 0.4s ease;
+      transition: max-height 0.4s ease, padding 0.4s ease;
     }
     #mobileMenu.open {
-      max-height: 500px; /* large enough to show all links */
+      max-height: 500px; /* enough to show all links */
       padding-top: 1rem;
       padding-bottom: 1rem;
     }
   </style>
 </head>
 
-<body class="bg-[#fdf2f8]">
+<body class="bg-[var(--soft-bg)]">
 
   <!-- Header -->
-  <header id="navbar" class="bg-white shadow-sm sticky top-0 z-40 transition-all duration-300">
+  <header id="navbar" class="bg-white shadow-sm sticky top-0 z-50 transition-all duration-300">
     <div class="max-w-6xl mx-auto px-4 py-4 flex items-center">
-  
-      <!-- Logo (LEFT) -->
+
+      <!-- Logo -->
       <div class="flex items-center gap-3">
-        <img src="image/logonama1.png" 
-             class="w-12 h-12 rounded-full object-cover border-2 border-[var(--soft-accent-2)]" />
+        <img src="image/logonama1.png" class="w-12 h-12 rounded-full object-cover border-2 border-[var(--soft-accent-2)]" />
         <a href="index.html" class="text-2xl font-bold">Nur Ain Suriani</a>
       </div>
-  
-      <!-- Desktop Nav (RIGHT) -->
+
+      <!-- Desktop Nav -->
       <nav class="hidden md:flex gap-6 items-center text-sm font-medium ml-auto">
         <a href="about.html" class="hover:text-[var(--soft-accent-2)]">About</a>
         <a href="portfolio.html" class="hover:text-[var(--soft-accent-2)]">Portfolio</a>
         <a href="blog.html" class="hover:text-[var(--soft-accent-2)]">Blog</a>
         <a href="album.html" class="hover:text-[var(--soft-accent-2)]">Album</a>
         <a href="contact.html" class="hover:text-[var(--soft-accent-2)]">Contact</a>
-        <a href="resume.html"
-           class="px-4 py-2 border rounded-md hover:bg-[var(--soft-accent)] hover:text-white transition">
-          Resume
-        </a>
+        <a href="resume.html" class="px-4 py-2 border rounded-md hover:bg-[var(--soft-accent)] hover:text-white transition">Resume</a>
       </nav>
-  
+
       <!-- Mobile Button -->
-      <button id="mobileBtn" class="md:hidden text-2xl ml-auto">☰</button>
+      <button id="mobileBtn" class="md:hidden text-2xl ml-auto z-50">☰</button>
     </div>
 
     <!-- Mobile Menu -->
@@ -64,7 +60,7 @@
       <a href="resume.html" class="py-2">Resume</a>
     </div>
   </header>
-    
+
   <!-- Main Section -->
   <main>
     <section class="pt-24 pb-24 bg-[#0f172a] text-white">
@@ -95,16 +91,12 @@
     © 2025 ainsarizam — All rights reserved.
   </footer>
 
-  <!-- Back to Top -->
-  <div id="backToTop">↑</div>
-
   <!-- Scripts -->
-  <script src="script.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
 
-    // MOBILE MENU TOGGLE WITH SLIDE
+    // Mobile Menu
     const mobileBtn = document.getElementById("mobileBtn");
     const mobileMenu = document.getElementById("mobileMenu");
     const mobileLinks = mobileMenu.querySelectorAll("a");
@@ -113,13 +105,10 @@
       mobileMenu.classList.toggle("open");
     });
 
-    // Close menu when link is clicked
+    // Close menu when a link is clicked
     mobileLinks.forEach(link => {
-      link.addEventListener("click", () => {
-        mobileMenu.classList.remove("open");
-      });
+      link.addEventListener("click", () => mobileMenu.classList.remove("open"));
     });
   </script>
-
 </body>
 </html>

@@ -8,9 +8,23 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    /* Smooth slide-down menu */
+    #mobileMenu {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.4s ease-out, padding 0.4s ease;
+    }
+    #mobileMenu.open {
+      max-height: 500px; /* large enough to show all links */
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+  </style>
 </head>
 
-<body class="bg-[var(--soft-bg)]">
+<body class="bg-[#fdf2f8]">
 
   <!-- Header -->
   <header id="navbar" class="bg-white shadow-sm sticky top-0 z-40 transition-all duration-300">
@@ -30,7 +44,6 @@
         <a href="blog.html" class="hover:text-[var(--soft-accent-2)]">Blog</a>
         <a href="album.html" class="hover:text-[var(--soft-accent-2)]">Album</a>
         <a href="contact.html" class="hover:text-[var(--soft-accent-2)]">Contact</a>
-        <!-- Resume Button -->
         <a href="resume.html"
            class="px-4 py-2 border rounded-md hover:bg-[var(--soft-accent)] hover:text-white transition">
           Resume
@@ -42,7 +55,7 @@
     </div>
 
     <!-- Mobile Menu -->
-    <div id="mobileMenu" class="hidden flex flex-col px-6 pb-4 bg-white border-t text-sm">
+    <div id="mobileMenu" class="flex flex-col px-6 bg-white border-t text-sm">
       <a href="about.html" class="py-2">About</a>
       <a href="portfolio.html" class="py-2">Portfolio</a>
       <a href="blog.html" class="py-2">Blog</a>
@@ -69,7 +82,7 @@
 
         <div data-aos="fade-left">
           <div class="w-full h-72 md:h-96 rounded-2xl overflow-hidden shadow-xl hover:scale-105 transition">
-            <img src="image/gambarkathome.jpg" class="w-full h-full object-cover" />
+            <img src="image/gambarkathome.jpg" class="w-full h-full object-cover" alt="Nur Ain Suriani">
           </div>
         </div>
 
@@ -91,19 +104,19 @@
   <script>
     AOS.init();
 
-    // MOBILE MENU TOGGLE
+    // MOBILE MENU TOGGLE WITH SLIDE
     const mobileBtn = document.getElementById("mobileBtn");
     const mobileMenu = document.getElementById("mobileMenu");
     const mobileLinks = mobileMenu.querySelectorAll("a");
 
     mobileBtn.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
+      mobileMenu.classList.toggle("open");
     });
 
     // Close menu when link is clicked
     mobileLinks.forEach(link => {
       link.addEventListener("click", () => {
-        mobileMenu.classList.add("hidden");
+        mobileMenu.classList.remove("open");
       });
     });
   </script>

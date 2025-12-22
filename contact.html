@@ -93,7 +93,7 @@
 
 <body class="bg-[#f1f5f9]">
 
-<!-- Header -->
+<!-- ================= HEADER ================= -->
 <header id="navbar" class="bg-white shadow-sm sticky top-0 z-40 transition-all duration-300">
   <div class="max-w-6xl mx-auto px-4 py-4 flex items-center">
 
@@ -103,7 +103,7 @@
       <a href="index.html" class="text-2xl font-bold">Nur Ain Suriani</a>
     </div>
 
-    <!-- Nav -->
+    <!-- Desktop Nav -->
     <nav class="hidden md:flex gap-6 items-center text-sm font-medium ml-auto">
       <a href="about.html" class="hover:text-[var(--soft-accent-2)]">About</a>
       <a href="portfolio.html" class="hover:text-[var(--soft-accent-2)]">Portfolio</a>
@@ -128,6 +128,7 @@
   </div>
 </header>
 
+<!-- ================= MAIN ================= -->
 <main class="py-24">
   <div class="max-w-6xl mx-auto px-6">
 
@@ -143,11 +144,11 @@
       </a>
 
       <a href="mailto:ainsuriani23@gmail.com?subject=Hello%20Ain" 
-      class="contact-card" 
-      data-aos="fade-up" 
-      data-aos-delay="100" 
-      target="_blank" 
-      rel="noopener noreferrer">
+         class="contact-card" 
+         data-aos="fade-up" 
+         data-aos-delay="100" 
+         target="_blank" 
+         rel="noopener noreferrer">
         <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
         <h4 class="text-xl font-semibold">Email</h4>
         <p class="text-gray-600 mt-1">Send me an email</p>
@@ -178,17 +179,31 @@
   </div>
 </main>
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 <footer class="bg-[#0f172a] text-center text-gray-300 text-sm py-6 mt-24">
   © 2025 ainsarizam — All rights reserved.
 </footer>
 
-<div id="backToTop">↑</div>
-
+<!-- ================= SCRIPTS ================= -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   AOS.init();
 
+  // Mobile Menu
+  const mobileBtn = document.getElementById("mobileBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  mobileBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+
+  document.querySelectorAll("#mobileMenu a").forEach(link => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.add("hidden");
+    });
+  });
+
+  // Motivation Form
   const form = document.getElementById("motivationForm");
   const messagesDiv = document.getElementById("messages");
 
@@ -213,7 +228,7 @@
 
       heart.addEventListener("click", () => {
         liked = !liked;
-        heart.style.color = liked ? "#ef4444" : "#000"; // red if liked, black if unliked
+        heart.style.color = liked ? "#ef4444" : "#000";
         likes += liked ? 1 : -1;
         counter.textContent = likes;
       });

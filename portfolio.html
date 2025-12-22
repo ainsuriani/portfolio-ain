@@ -10,183 +10,180 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
-<body class="bg-[#fdf2f8]">
+<body class="bg-[#fdf2f8] min-h-screen">
 
-<!-- Header -->
-<header id="navbar" class="bg-white shadow-sm sticky top-0 z-40 transition-all duration-300">
+<!-- ================= HEADER ================= -->
+<header id="navbar" class="bg-white shadow-sm sticky top-0 z-40">
   <div class="max-w-6xl mx-auto px-4 py-4 flex items-center">
 
-    <!-- Logo (LEFT) -->
+    <!-- Logo -->
     <div class="flex items-center gap-3">
-      <img src="image/logonama1.png" 
+      <img src="image/logonama1.png"
            class="w-12 h-12 rounded-full object-cover border-2 border-[var(--soft-accent-2)]" />
       <a href="index.html" class="text-2xl font-bold">Nur Ain Suriani</a>
     </div>
 
-    <!-- Desktop Nav (RIGHT) -->
+    <!-- Desktop Nav -->
     <nav class="hidden md:flex gap-6 items-center text-sm font-medium ml-auto">
       <a href="about.html" class="hover:text-[var(--soft-accent-2)]">About</a>
-
-      <!-- ACTIVE PAGE -->
-      <a href="portfolio.html"
-         class="font-semibold text-[var(--soft-accent-2)] hover:text-[var(--soft-accent-2)]">
-        Portfolio
-      </a>
-
+      <a href="portfolio.html" class="font-semibold text-[var(--soft-accent-2)]">Portfolio</a>
       <a href="blog.html" class="hover:text-[var(--soft-accent-2)]">Blog</a>
-
       <a href="album.html" class="hover:text-[var(--soft-accent-2)]">Album</a>
-      </a>
-
       <a href="contact.html" class="hover:text-[var(--soft-accent-2)]">Contact</a>
-
       <a href="resume.html"
          class="px-4 py-2 border rounded-md hover:bg-[var(--soft-accent)] hover:text-white transition">
         Resume
       </a>
     </nav>
 
-     <!-- Mobile Button (RIGHT) -->
-     <button id="mobileBtn" class="md:hidden text-2xl ml-auto">☰</button>
+    <!-- Mobile Button -->
+    <button id="mobileBtn" class="md:hidden text-2xl ml-auto">☰</button>
+  </div>
 
-    </div>
-  
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="hidden flex flex-col px-6 pb-4 bg-white border-t text-sm">
-      <a href="about.html" class="py-2">About</a>
-      <a href="portfolio.html" class="py-2 font-semibold text-[var(--soft-accent-2)]">Portfolio</a>
-      <a href="blog.html" class="py-2">Blog</a>
-      <a href="album.html" class="py-2">Album</a>
-      <a href="contact.html" class="py-2">Contact</a>
-      <a href="resume.html" class="py-2">Resume</a>
-    </div>
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden flex flex-col px-6 pb-4 bg-white border-t text-sm">
+    <a href="about.html" class="py-2">About</a>
+    <a href="portfolio.html" class="py-2 font-semibold text-[var(--soft-accent-2)]">Portfolio</a>
+    <a href="blog.html" class="py-2">Blog</a>
+    <a href="album.html" class="py-2">Album</a>
+    <a href="contact.html" class="py-2">Contact</a>
+    <a href="resume.html" class="py-2">Resume</a>
+  </div>
+</header>
 
-<main>
+<!-- ================= MAIN ================= -->
+<main class="bg-[#fdf2f8]">
+
 <section class="py-20">
   <div class="max-w-6xl mx-auto px-6">
     <h2 class="text-3xl font-bold">Portfolio</h2>
     <p class="text-gray-600 mt-2">A showcase of my work and experiences.</p>
 
-    <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-     <!-- 1 -->
-     <div class="project-card bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition"
-     data-images="image/byd.jpg,image/crochet.jpg,image/mywebsite.jpg" data-aos="zoom-in">
-     <img src="image/github.jpg" class="h-48 w-full object-cover">
-     <div class="p-5">
-       <span class="inline-block bg-blue-200 text-blue-800 text-xs px-2 py-1 rounded-full">
-         Website and Programming
-       </span>
-       <h4 class="font-semibold text-lg mt-2">Diploma and Degree</h4>
-       <p class="text-sm text-gray-600 mt-1">Use GitHub as my main tool</p>
-       <button class="viewBtn mt-3 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
-         View Project
-       </button>
-     </div>
-   </div>
+      <!-- ===== 1 ===== -->
+      <div class="project-card bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition"
+        data-images="image/byd.jpg,image/crochet.jpg,image/mywebsite.jpg"
+        data-aos="zoom-in">
+        <img src="image/github.jpg" class="h-48 w-full object-cover">
+        <div class="p-5">
+          <span class="inline-block bg-blue-200 text-blue-800 text-xs px-2 py-1 rounded-full">
+            Website and Programming
+          </span>
+          <h4 class="font-semibold text-lg mt-2">Diploma and Degree</h4>
+          <p class="text-sm text-gray-600 mt-1">Use GitHub as my main tool</p>
+          <button class="viewBtn mt-3 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+            View Project
+          </button>
+        </div>
+      </div>
 
-   <!-- 2 -->
-   <div class="project-card bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition"
-     data-images="image/emceekickstart.jpg,image/kickstart.jpg,image/group-kickstart.jpg" data-aos="zoom-in">
-     <img src="image/group-kickstart.jpg" class="h-48 w-full object-cover">
-     <div class="p-5">
-       <span class="inline-block bg-green-200 text-green-800 text-xs px-2 py-1 rounded-full">
-         Programme
-       </span>
-       <h4 class="font-semibold text-lg mt-2">ICONS Kickstart</h4>
-       <p class="text-sm text-gray-600 mt-1">Emcee and Hosting</p>
-       <button class="viewBtn mt-3 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">
-         View Project
-       </button>
-     </div>
-   </div>
+      <!-- ===== 2 ===== -->
+      <div class="project-card bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition"
+        data-images="image/emceekickstart.jpg,image/kickstart.jpg,image/group-kickstart.jpg"
+        data-aos="zoom-in">
+        <img src="image/group-kickstart.jpg" class="h-48 w-full object-cover">
+        <div class="p-5">
+          <span class="inline-block bg-green-200 text-green-800 text-xs px-2 py-1 rounded-full">
+            Programme
+          </span>
+          <h4 class="font-semibold text-lg mt-2">ICONS Kickstart</h4>
+          <p class="text-sm text-gray-600 mt-1">Emcee and Hosting</p>
+          <button class="viewBtn mt-3 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">
+            View Project
+          </button>
+        </div>
+      </div>
 
-   <!-- 3 -->
-   <div class="project-card bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition"
-     data-images="image/interfac.jpg,image/interfac-nisa'.jpg" data-aos="zoom-in">
-     <img src="image/interfac.jpg" class="h-48 w-full object-cover">
-     <div class="p-5">
-       <span class="inline-block bg-purple-200 text-purple-800 text-xs px-2 py-1 rounded-full">
-         Programme
-       </span>
-       <h4 class="font-semibold text-lg mt-2">Interfac - Interfaculty Sports</h4>
-       <p class="text-sm text-gray-600 mt-1">Committee member in managing athletes</p>
-       <button class="viewBtn mt-3 px-4 py-2 bg-purple-500 text-white rounded hover:bg-purple-600">
-         View Project
-       </button>
-     </div>
-   </div>
+      <!-- ===== 3 ===== -->
+      <div class="project-card bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition"
+        data-images="image/interfac.jpg,image/interfac-nisa'.jpg"
+        data-aos="zoom-in">
+        <img src="image/interfac.jpg" class="h-48 w-full object-cover">
+        <div class="p-5">
+          <span class="inline-block bg-purple-200 text-purple-800 text-xs px-2 py-1 rounded-full">
+            Programme
+          </span>
+          <h4 class="font-semibold text-lg mt-2">Interfac - Interfaculty Sports</h4>
+          <p class="text-sm text-gray-600 mt-1">Committee member in managing athletes</p>
+          <button class="viewBtn mt-3 px-4 py-2 bg-purple-500 text-white rounded hover:bg-purple-600">
+            View Project
+          </button>
+        </div>
+      </div>
 
-   <!-- 4 -->
-   <div class="project-card bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition"
-     data-images="image/agm-ramai.jpg,image/agm-smf.jpg,image/agm-smfnisa.jpg" data-aos="zoom-in">
-     <img src="image/agm-ramai.jpg" class="h-48 w-full object-cover">
-     <div class="p-5">
-       <span class="inline-block bg-yellow-200 text-yellow-800 text-xs px-2 py-1 rounded-full">
-         Sekretatriat Mahasiswa Fakulti Sains Maklumat
-       </span>
-       <h4 class="font-semibold text-lg mt-2">Watikah Perlantikan</h4>
-       <p class="text-sm text-gray-600 mt-1">
-         Received Official Letter as SMF
-       </p>
-       <button class="viewBtn mt-3 px-4 py-2 bg-yellow-500 text-white rounded hover:bg-yellow-600">
-         View Project
-       </button>
-     </div>
-   </div>
+      <!-- ===== 4 ===== -->
+      <div class="project-card bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition"
+        data-images="image/agm-ramai.jpg,image/agm-smf.jpg,image/agm-smfnisa.jpg"
+        data-aos="zoom-in">
+        <img src="image/agm-ramai.jpg" class="h-48 w-full object-cover">
+        <div class="p-5">
+          <span class="inline-block bg-yellow-200 text-yellow-800 text-xs px-2 py-1 rounded-full">
+            Sekretariat Mahasiswa Fakulti Sains Maklumat
+          </span>
+          <h4 class="font-semibold text-lg mt-2">Watikah Perlantikan</h4>
+          <p class="text-sm text-gray-600 mt-1">Received Official Letter as SMF</p>
+          <button class="viewBtn mt-3 px-4 py-2 bg-yellow-500 text-white rounded hover:bg-yellow-600">
+            View Project
+          </button>
+        </div>
+      </div>
 
-   <!-- 5 -->
-   <div class="project-card bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition"
-     data-images="image/emceeinkspire.jpg,image/inkspire-viewdewan.jpg,image/inkspire-kelas.jpg,image/inkspire-makebookmark.jpg,image/mtinkspire.jpg" data-aos="zoom-in">
-     <img src="image/mtinkspire.jpg" class="h-48 w-full object-cover">
-     <div class="p-5">
-       <span class="inline-block bg-blue-200 text-blue-800 text-xs px-2 py-1 rounded-full">
-         Programme
-       </span>
-       <h4 class="font-semibold text-lg mt-2">Inkspire Future</h4>
-       <p class="text-sm text-gray-600 mt-1">Diploma final year project.</p>
-       <button class="viewBtn mt-3 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
-         View Project
-       </button>
-     </div>
-   </div>
+      <!-- ===== 5 ===== -->
+      <div class="project-card bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition"
+        data-images="image/emceeinkspire.jpg,image/inkspire-viewdewan.jpg,image/inkspire-kelas.jpg,image/inkspire-makebookmark.jpg,image/mtinkspire.jpg"
+        data-aos="zoom-in">
+        <img src="image/mtinkspire.jpg" class="h-48 w-full object-cover">
+        <div class="p-5">
+          <span class="inline-block bg-blue-200 text-blue-800 text-xs px-2 py-1 rounded-full">
+            Programme
+          </span>
+          <h4 class="font-semibold text-lg mt-2">Inkspire Future</h4>
+          <p class="text-sm text-gray-600 mt-1">Diploma final year project</p>
+          <button class="viewBtn mt-3 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+            View Project
+          </button>
+        </div>
+      </div>
 
-   <!-- 6 -->
-   <div class="project-card bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition"
-     data-images="image/wwa-ramai.jpg,image/wwa-dewan.jpg,image/wwa-taklimat.jpg,image/wwa-post.jpg" data-aos="zoom-in">
-     <img src="image/wwa-ramai.jpg" class="h-48 w-full object-cover">
-     <div class="p-5">
-       <span class="inline-block bg-teal-200 text-teal-800 text-xs px-2 py-1 rounded-full">
-         Programme
-       </span>
-       <h4 class="font-semibold text-lg mt-2">Walk With Art - Steps of Inspiration</h4>
-       <p class="text-sm text-gray-600 mt-1">Programme Director</p>
-       <button class="viewBtn mt-3 px-4 py-2 bg-teal-500 text-white rounded hover:bg-teal-600">
-         View Project
-       </button>
-     </div>
-   </div>
+      <!-- ===== 6 ===== -->
+      <div class="project-card bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition"
+        data-images="image/wwa-ramai.jpg,image/wwa-dewan.jpg,image/wwa-taklimat.jpg,image/wwa-post.jpg"
+        data-aos="zoom-in">
+        <img src="image/wwa-ramai.jpg" class="h-48 w-full object-cover">
+        <div class="p-5">
+          <span class="inline-block bg-teal-200 text-teal-800 text-xs px-2 py-1 rounded-full">
+            Programme
+          </span>
+          <h4 class="font-semibold text-lg mt-2">Walk With Art - Steps of Inspiration</h4>
+          <p class="text-sm text-gray-600 mt-1">Programme Director</p>
+          <button class="viewBtn mt-3 px-4 py-2 bg-teal-500 text-white rounded hover:bg-teal-600">
+            View Project
+          </button>
+        </div>
+      </div>
 
     </div>
   </div>
 </section>
+
 </main>
 
-<!-- LIGHTBOX (UNCHANGED HTML) -->
-<div id="lightbox" class="fixed inset-0 bg-black/70 flex items-center justify-center z-50" style="display:none;">
+<!-- ================= LIGHTBOX ================= -->
+<div id="lightbox" class="fixed inset-0 bg-black/70 flex items-center justify-center z-50 hidden">
   <button id="prevBtn" class="absolute left-4 text-white text-3xl">❮</button>
   <img id="lightboxImg" class="max-w-[80%] max-h-[85vh] rounded-xl shadow-xl">
   <button id="nextBtn" class="absolute right-4 text-white text-3xl">❯</button>
   <button id="closeLightbox" class="absolute top-4 right-4 bg-white px-4 py-2 rounded-full">✕</button>
 </div>
 
+<!-- ================= FOOTER ================= -->
 <footer class="py-6 bg-[#0f172a] text-center text-gray-300 text-sm">
   © 2025 ainsarizam — All rights reserved.
 </footer>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-<!-- ✅ FIXED VIEW PROJECT FUNCTION -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   AOS.init();
@@ -206,7 +203,7 @@ document.addEventListener("DOMContentLoaded", () => {
       images = btn.closest(".project-card").dataset.images.split(",");
       index = 0;
       lightboxImg.src = images[index];
-      lightbox.style.display = "flex";   // ✅ SAME AS ALBUM (FIX)
+      lightbox.classList.remove("hidden");
       document.body.style.overflow = "hidden";
     };
   });
@@ -224,7 +221,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   closeBtn.onclick = () => {
-    lightbox.style.display = "none";
+    lightbox.classList.add("hidden");
     document.body.style.overflow = "auto";
   };
 

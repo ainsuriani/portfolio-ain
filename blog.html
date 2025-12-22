@@ -12,28 +12,47 @@
 
 <body class="bg-[#e0f2fe]">
 
-<!-- Header -->
-<header id="navbar" class="bg-white shadow-sm sticky top-0 z-40 transition-all duration-300">
+<!-- ================= HEADER ================= -->
+<header id="navbar" class="bg-white shadow-sm sticky top-0 z-40">
   <div class="max-w-6xl mx-auto px-4 py-4 flex items-center">
 
+    <!-- Logo -->
     <div class="flex items-center gap-3">
-      <img src="image/logonama1.png" 
+      <img src="image/logonama1.png"
            class="w-12 h-12 rounded-full object-cover border-2 border-[var(--soft-accent-2)]" />
       <a href="index.html" class="text-2xl font-bold">Nur Ain Suriani</a>
     </div>
-    
+
+    <!-- Desktop Nav -->
     <nav class="hidden md:flex gap-6 items-center text-sm font-medium ml-auto">
       <a href="about.html">About</a>
       <a href="portfolio.html">Portfolio</a>
       <a href="blog.html" class="font-semibold text-[var(--soft-accent-2)]">Blog</a>
       <a href="album.html">Album</a>
       <a href="contact.html">Contact</a>
-      <a href="resume.html" class="px-4 py-2 border rounded-md hover:bg-[var(--soft-accent)] hover:text-white transition">Resume</a>
+      <a href="resume.html"
+         class="px-4 py-2 border rounded-md hover:bg-[var(--soft-accent)] hover:text-white transition">
+        Resume
+      </a>
     </nav>
+
+    <!-- Mobile Button -->
     <button id="mobileBtn" class="md:hidden text-2xl ml-auto">☰</button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu"
+       class="hidden md:hidden flex flex-col px-6 pb-4 bg-white border-t text-sm">
+    <a href="about.html" class="py-2">About</a>
+    <a href="portfolio.html" class="py-2">Portfolio</a>
+    <a href="blog.html" class="py-2 font-semibold text-[var(--soft-accent-2)]">Blog</a>
+    <a href="album.html" class="py-2">Album</a>
+    <a href="contact.html" class="py-2">Contact</a>
+    <a href="resume.html" class="py-2">Resume</a>
   </div>
 </header>
 
+<!-- ================= MAIN ================= -->
 <main class="py-20">
   <div class="max-w-6xl mx-auto px-6">
     <h2 class="text-3xl font-bold mb-4" data-aos="fade-up">Motivational Quotes</h2>
@@ -93,17 +112,29 @@
   </div>
 </main>
 
-<!-- Footer -->
+<!-- ================= FOOTER ================= -->
 <footer class="py-6 bg-[#0f172a] text-center text-gray-300 text-sm">
   © 2025 ainsarizam — All rights reserved.
 </footer>
 
+<!-- ================= SCRIPTS ================= -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-  AOS.init({
-    duration: 800,
-    once: true
+AOS.init({ duration: 800, once: true });
+
+// Mobile Menu
+const mobileBtn = document.getElementById("mobileBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+
+mobileBtn.addEventListener("click", () => {
+  mobileMenu.classList.toggle("hidden");
+});
+
+document.querySelectorAll("#mobileMenu a").forEach(link => {
+  link.addEventListener("click", () => {
+    mobileMenu.classList.add("hidden");
   });
+});
 </script>
 
 </body>

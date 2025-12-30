@@ -17,7 +17,7 @@
       transition: max-height 0.4s ease, padding 0.4s ease;
     }
     #mobileMenu.open {
-      max-height: 500px; /* enough to show all links */
+      max-height: 500px;
       padding-top: 1rem;
       padding-bottom: 1rem;
     }
@@ -32,7 +32,8 @@
 
       <!-- Logo -->
       <div class="flex items-center gap-3">
-        <img src="image/logonama1.png" class="w-12 h-12 rounded-full object-cover border-2 border-[var(--soft-accent-2)]" />
+        <img src="image/logonama1.png"
+             class="w-12 h-12 rounded-full object-cover border-2 border-[var(--soft-accent-2)]" />
         <a href="index.html" class="text-2xl font-bold">Nur Ain Suriani</a>
       </div>
 
@@ -43,7 +44,10 @@
         <a href="blog.html" class="hover:text-[var(--soft-accent-2)]">Blog</a>
         <a href="album.html" class="hover:text-[var(--soft-accent-2)]">Album</a>
         <a href="contact.html" class="hover:text-[var(--soft-accent-2)]">Contact</a>
-        <a href="resume.html" class="px-4 py-2 border rounded-md hover:bg-[var(--soft-accent)] hover:text-white transition">Resume</a>
+        <a href="resume.html"
+           class="px-4 py-2 border rounded-md hover:bg-[var(--soft-accent)] hover:text-white transition">
+           Resume
+        </a>
       </nav>
 
       <!-- Mobile Button -->
@@ -66,19 +70,30 @@
     <section class="pt-24 pb-24 bg-[#0f172a] text-white">
       <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
 
+        <!-- Text -->
         <div data-aos="fade-right">
           <h1 class="text-5xl md:text-6xl font-extrabold leading-tight">
             Welcome to My Portfolio
-            <span class="block text-[var(--soft-accent-2)] mt-3">Nur Ain Suriani</span>
+            <span class="block text-[var(--soft-accent-2)] mt-3">
+              Nur Ain Suriani
+            </span>
           </h1>
           <p class="mt-6 text-gray-300 max-w-xl text-lg">
             Explore my journey — from personal projects to creative work.
           </p>
         </div>
 
+        <!-- Video -->
         <div data-aos="fade-left">
           <div class="w-full h-72 md:h-96 rounded-2xl overflow-hidden shadow-xl hover:scale-105 transition">
-            <img src="image/gambarkathome.jpg" class="w-full h-full object-cover" alt="Nur Ain Suriani">
+            <video
+              src="video/introain.mp4"
+              class="w-full h-full object-cover"
+              autoplay
+              muted
+              loop
+              playsinline>
+            </video>
           </div>
         </div>
 
@@ -105,10 +120,12 @@
       mobileMenu.classList.toggle("open");
     });
 
-    // Close menu when a link is clicked
     mobileLinks.forEach(link => {
-      link.addEventListener("click", () => mobileMenu.classList.remove("open"));
+      link.addEventListener("click", () => {
+        mobileMenu.classList.remove("open");
+      });
     });
   </script>
+
 </body>
 </html>

@@ -34,7 +34,7 @@ if (topBtn) {
 // Create audio element dynamically
 const bgAudio = document.createElement("audio");
 bgAudio.id = "bgAudio";
-bgAudio.src = "audio/background.mp3"; // <-- make sure the path is correct
+bgAudio.src = "audio/bgsound.mp3"; // <-- make sure the path is correct
 bgAudio.autoplay = true;
 bgAudio.loop = true;
 bgAudio.muted = true; // start muted

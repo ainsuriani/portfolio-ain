@@ -8,12 +8,26 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    body {
+      background: linear-gradient(-45deg, #e0f2fe, #bae6fd, #c7d2fe, #e0e7ff);
+      background-size: 300% 300%;
+      animation: gradientMove 12s ease infinite;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+  </style>
 </head>
 
-<body class="bg-[#e0f2fe]">
+<body class="min-h-screen">
 
 <!-- ================= HEADER ================= -->
-<header id="navbar" class="bg-white shadow-sm sticky top-0 z-40">
+<header class="bg-white shadow-sm sticky top-0 z-40">
   <div class="max-w-6xl mx-auto px-4 py-4 flex items-center">
 
     <!-- Logo -->
@@ -24,14 +38,14 @@
     </div>
 
     <!-- Desktop Nav -->
-    <nav class="hidden md:flex gap-6 items-center text-sm font-medium ml-auto">
+    <nav class="hidden md:flex gap-6 ml-auto text-sm font-medium">
       <a href="about.html">About</a>
       <a href="portfolio.html">Portfolio</a>
-      <a href="blog.html" class="font-semibold text-[var(--soft-accent-2)]">Blog</a>
+      <a href="blog.html" class="font-semibold text-blue-600">Blog</a>
       <a href="album.html">Album</a>
       <a href="contact.html">Contact</a>
       <a href="resume.html"
-         class="px-4 py-2 border rounded-md hover:bg-[var(--soft-accent)] hover:text-white transition">
+         class="px-4 py-2 border rounded-md hover:bg-blue-500 hover:text-white transition">
         Resume
       </a>
     </nav>
@@ -41,11 +55,10 @@
   </div>
 
   <!-- Mobile Menu -->
-  <div id="mobileMenu"
-       class="hidden md:hidden flex flex-col px-6 pb-4 bg-white border-t text-sm">
+  <div id="mobileMenu" class="hidden flex flex-col px-6 pb-4 bg-white border-t text-sm">
     <a href="about.html" class="py-2">About</a>
     <a href="portfolio.html" class="py-2">Portfolio</a>
-    <a href="blog.html" class="py-2 font-semibold text-[var(--soft-accent-2)]">Blog</a>
+    <a href="blog.html" class="py-2 font-semibold text-blue-600">Blog</a>
     <a href="album.html" class="py-2">Album</a>
     <a href="contact.html" class="py-2">Contact</a>
     <a href="resume.html" class="py-2">Resume</a>
@@ -55,59 +68,86 @@
 <!-- ================= MAIN ================= -->
 <main class="py-20">
   <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-3xl font-bold mb-4" data-aos="fade-up">Motivational Quotes</h2>
-    <p class="text-gray-600 mb-10" data-aos="fade-up" data-aos-delay="100">
-      “Every day is a new opportunity to grow, shine, and become the best version of yourself.”
+
+    <!-- Quote of the Day -->
+    <div class="mb-14 p-8 rounded-2xl bg-white shadow-lg border-l-4 border-blue-500"
+         data-aos="zoom-in">
+      <h3 class="text-xl font-bold mb-2">✨ Quote of the Day</h3>
+      <p id="quoteOfDay" class="text-gray-700 font-medium"></p>
+    </div>
+
+    <h2 class="text-3xl font-bold mb-4" data-aos="fade-up">
+      Motivational Quotes
+    </h2>
+
+    <p class="text-gray-600 mb-12" data-aos="fade-up" data-aos-delay="100">
+      Every day is a new opportunity to grow, shine, and become the best version of yourself.
     </p>
 
+    <!-- Quotes Grid -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="bg-white rounded-xl shadow-md p-6 hover:scale-105 transition" data-aos="fade-up">
-        <p class="text-gray-700 font-semibold">Believe in yourself. You are capable of amazing things.</p>
+
+      <!-- CARD -->
+      <div class="bg-white rounded-xl shadow-md p-6 relative transition transform hover:-translate-y-2 hover:shadow-xl"
+           data-aos="fade-up">
+        <p class="text-gray-700 font-semibold">
+          Believe in yourself. You are capable of amazing things.
+        </p>
+        <button class="like-btn absolute bottom-4 right-4 text-gray-400 hover:text-red-500 transition">
+          ❤️ <span class="like-count">0</span>
+        </button>
       </div>
 
-      <div class="bg-white rounded-xl shadow-md p-6 hover:scale-105 transition" data-aos="fade-up" data-aos-delay="50">
-        <p class="text-gray-700 font-semibold">Stay positive, even in difficult times. Your mindset shapes your reality.</p>
+      <div class="bg-white rounded-xl shadow-md p-6 relative transition transform hover:-translate-y-2 hover:shadow-xl"
+           data-aos="fade-up" data-aos-delay="50">
+        <p class="text-gray-700 font-semibold">
+          Stay positive, even in difficult times. Your mindset shapes your reality.
+        </p>
+        <button class="like-btn absolute bottom-4 right-4 text-gray-400 hover:text-red-500 transition">
+          ❤️ <span class="like-count">0</span>
+        </button>
       </div>
 
-      <div class="bg-white rounded-xl shadow-md p-6 hover:scale-105 transition" data-aos="fade-up" data-aos-delay="100">
-        <p class="text-gray-700 font-semibold">Never give up. Challenges are stepping stones to success.</p>
+      <div class="bg-white rounded-xl shadow-md p-6 relative transition transform hover:-translate-y-2 hover:shadow-xl"
+           data-aos="fade-up" data-aos-delay="100">
+        <p class="text-gray-700 font-semibold">
+          Consistency is key. Small daily efforts lead to big results.
+        </p>
+        <button class="like-btn absolute bottom-4 right-4 text-gray-400 hover:text-red-500 transition">
+          ❤️ <span class="like-count">0</span>
+        </button>
       </div>
 
-      <div class="bg-white rounded-xl shadow-md p-6 hover:scale-105 transition" data-aos="fade-up" data-aos-delay="150">
-        <p class="text-gray-700 font-semibold">Embrace change. Every new chapter brings opportunities for growth.</p>
+      <div class="bg-white rounded-xl shadow-md p-6 relative transition transform hover:-translate-y-2 hover:shadow-xl"
+           data-aos="fade-up" data-aos-delay="150">
+        <p class="text-gray-700 font-semibold">
+          Focus on progress, not perfection. Every step counts.
+        </p>
+        <button class="like-btn absolute bottom-4 right-4 text-gray-400 hover:text-red-500 transition">
+          ❤️ <span class="like-count">0</span>
+        </button>
       </div>
 
-      <div class="bg-white rounded-xl shadow-md p-6 hover:scale-105 transition" data-aos="fade-up" data-aos-delay="200">
-        <p class="text-gray-700 font-semibold">Consistency is key. Small daily efforts lead to big results.</p>
+      <div class="bg-white rounded-xl shadow-md p-6 relative transition transform hover:-translate-y-2 hover:shadow-xl"
+           data-aos="fade-up" data-aos-delay="200">
+        <p class="text-gray-700 font-semibold">
+          Take action today. Dreams remain dreams until you act.
+        </p>
+        <button class="like-btn absolute bottom-4 right-4 text-gray-400 hover:text-red-500 transition">
+          ❤️ <span class="like-count">0</span>
+        </button>
       </div>
 
-      <div class="bg-white rounded-xl shadow-md p-6 hover:scale-105 transition" data-aos="fade-up" data-aos-delay="250">
-        <p class="text-gray-700 font-semibold">Invest in yourself. Learn, adapt, and evolve continuously.</p>
+      <div class="bg-white rounded-xl shadow-md p-6 relative transition transform hover:-translate-y-2 hover:shadow-xl"
+           data-aos="fade-up" data-aos-delay="250">
+        <p class="text-gray-700 font-semibold">
+          Invest in yourself. Learn, adapt, and evolve continuously.
+        </p>
+        <button class="like-btn absolute bottom-4 right-4 text-gray-400 hover:text-red-500 transition">
+          ❤️ <span class="like-count">0</span>
+        </button>
       </div>
 
-      <div class="bg-white rounded-xl shadow-md p-6 hover:scale-105 transition" data-aos="fade-up" data-aos-delay="300">
-        <p class="text-gray-700 font-semibold">Gratitude brings happiness. Appreciate the little things every day.</p>
-      </div>
-
-      <div class="bg-white rounded-xl shadow-md p-6 hover:scale-105 transition" data-aos="fade-up" data-aos-delay="350">
-        <p class="text-gray-700 font-semibold">Take action today. Dreams remain dreams until you act.</p>
-      </div>
-
-      <div class="bg-white rounded-xl shadow-md p-6 hover:scale-105 transition" data-aos="fade-up" data-aos-delay="400">
-        <p class="text-gray-700 font-semibold">Focus on progress, not perfection. Every step counts.</p>
-      </div>
-
-      <div class="bg-white rounded-xl shadow-md p-6 hover:scale-105 transition" data-aos="fade-up" data-aos-delay="450">
-        <p class="text-gray-700 font-semibold">Step out of your comfort zone. Courage leads to growth.</p>
-      </div>
-
-      <div class="bg-white rounded-xl shadow-md p-6 hover:scale-105 transition" data-aos="fade-up" data-aos-delay="500">
-        <p class="text-gray-700 font-semibold">You are enough. Believe in yourself and your abilities.</p>
-      </div>
-
-      <div class="bg-white rounded-xl shadow-md p-6 hover:scale-105 transition" data-aos="fade-up" data-aos-delay="550">
-        <p class="text-gray-700 font-semibold">Keep learning. Every day is an opportunity to improve.</p>
-      </div>
     </div>
   </div>
 </main>
@@ -117,23 +157,53 @@
   © 2025 ainsarizam — All rights reserved.
 </footer>
 
+<!-- Scroll to Top -->
+<button id="scrollTopBtn"
+  class="fixed bottom-6 right-6 bg-blue-500 text-white p-3 rounded-full shadow-lg hidden hover:bg-blue-600 transition">
+  ⬆️
+</button>
+
 <!-- ================= SCRIPTS ================= -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
 <script>
 AOS.init({ duration: 800, once: true });
 
-// Mobile Menu
+// Mobile menu
 const mobileBtn = document.getElementById("mobileBtn");
 const mobileMenu = document.getElementById("mobileMenu");
-
 mobileBtn.addEventListener("click", () => {
   mobileMenu.classList.toggle("hidden");
 });
 
-document.querySelectorAll("#mobileMenu a").forEach(link => {
-  link.addEventListener("click", () => {
-    mobileMenu.classList.add("hidden");
+// Like buttons
+document.querySelectorAll(".like-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const count = btn.querySelector(".like-count");
+    count.textContent = Number(count.textContent) + 1;
+    btn.classList.add("text-red-500");
   });
+});
+
+// Quote of the day
+const quotes = [
+  "Believe in yourself. You are capable of amazing things.",
+  "Stay positive. Better days are coming.",
+  "Small steps every day lead to big achievements.",
+  "Your future depends on what you do today.",
+  "Progress matters more than perfection."
+];
+
+document.getElementById("quoteOfDay").textContent =
+  quotes[Math.floor(Math.random() * quotes.length)];
+
+// Scroll to top
+const scrollBtn = document.getElementById("scrollTopBtn");
+window.addEventListener("scroll", () => {
+  scrollBtn.classList.toggle("hidden", window.scrollY < 300);
+});
+scrollBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
 });
 </script>
 

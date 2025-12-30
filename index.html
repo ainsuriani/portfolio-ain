@@ -65,6 +65,21 @@
     </div>
   </header>
 
+  <!-- Audio Overlay (for background music) -->
+  <div id="audioOverlay" class="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center text-white text-center p-6">
+    <div>
+      <h2 class="text-2xl font-bold mb-4">Click to start background music</h2>
+      <button id="startAudioBtn" class="px-6 py-3 bg-blue-600 rounded-lg hover:bg-blue-700 transition">
+        Play Music
+      </button>
+    </div>
+  </div>
+
+  <!-- Background Audio -->
+  <audio id="bgAudio" loop>
+    <source src="audio/background.mp3" type="audio/mpeg">
+  </audio>
+
   <!-- Main Section -->
   <main>
     <section class="pt-24 pb-24 bg-[#0f172a] text-white">
@@ -124,6 +139,18 @@
       link.addEventListener("click", () => {
         mobileMenu.classList.remove("open");
       });
+    });
+
+    // ==============================
+    // Background Music Overlay Logic
+    // ==============================
+    const audioOverlay = document.getElementById("audioOverlay");
+    const startBtn = document.getElementById("startAudioBtn");
+    const bgAudio = document.getElementById("bgAudio");
+
+    startBtn.addEventListener("click", () => {
+      bgAudio.play().catch(err => console.log(err));
+      audioOverlay.style.display = "none"; // hide overlay after user clicks
     });
   </script>
 
